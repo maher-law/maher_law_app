@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_animated_text.dart';
+
 class HoverTextButton extends StatefulWidget {
   const HoverTextButton({
     super.key,
@@ -9,6 +11,7 @@ class HoverTextButton extends StatefulWidget {
     required this.activeColor,
     required this.style,
     this.isCurrentScreen = false,
+    this.withBorder = true,
     this.activeStyle,
   });
 
@@ -18,7 +21,7 @@ class HoverTextButton extends StatefulWidget {
   final TextStyle style;
   final TextStyle? activeStyle;
   final Color? inactiveColor;
-  final bool isCurrentScreen;
+  final bool isCurrentScreen, withBorder;
 
   @override
   State<HoverTextButton> createState() => _HoverTextButtonState();
@@ -30,6 +33,7 @@ class _HoverTextButtonState extends State<HoverTextButton> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextButton(
@@ -42,33 +46,23 @@ class _HoverTextButtonState extends State<HoverTextButton> {
               isActive = value;
             });
           },
-          child: Text(
-            widget.text,
-            style: isActive
-                ? widget.activeStyle ??
-                    widget.style.copyWith(
-                      color: isActive || widget.isCurrentScreen
-                          ? widget.activeColor
-                          : widget.inactiveColor,
-                    )
-                : widget.style.copyWith(
-                    color: isActive || widget.isCurrentScreen
-                        ? widget.activeColor
-                        : widget.inactiveColor,
-                  ),
+          child: CustomAnimatedText(
+            widget: widget,
+            isActive: isActive || widget.isCurrentScreen,
           ),
         ),
-        AnimatedContainer(
-          width: isActive || widget.isCurrentScreen ? 30 : 0,
-          height: 3,
-          duration: const Duration(milliseconds: 250),
-          decoration: BoxDecoration(
-            color: isActive || widget.isCurrentScreen
-                ? widget.activeColor
-                : widget.inactiveColor,
-            borderRadius: BorderRadius.circular(2),
+        if (widget.withBorder)
+          AnimatedContainer(
+            width: isActive || widget.isCurrentScreen ? 30 : 0,
+            height: 3,
+            duration: const Duration(milliseconds: 250),
+            decoration: BoxDecoration(
+              color: isActive || widget.isCurrentScreen
+                  ? widget.activeColor
+                  : widget.inactiveColor,
+              borderRadius: BorderRadius.circular(2),
+            ),
           ),
-        ),
       ],
     );
   }

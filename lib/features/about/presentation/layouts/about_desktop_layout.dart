@@ -8,7 +8,7 @@ import '../widgets/about_owners_section.dart';
 import '../widgets/progress_bar_section.dart';
 
 class AboutDesktopLayout extends StatelessWidget {
-  const AboutDesktopLayout({super.key});
+  const   AboutDesktopLayout({super.key});
 
   @override
   Widget build(BuildContext context) {

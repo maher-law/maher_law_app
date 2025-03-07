@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:maher_law_app/core/helpers/app_router.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/theme/app_colors.dart';
-// import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // setUrlStrategy(PathUrlStrategy());
+  setUrlStrategy(PathUrlStrategy());
   runApp(const MaherApp());
   // runApp(
   //   DevicePreview(

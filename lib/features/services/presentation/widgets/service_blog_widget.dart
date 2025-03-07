@@ -21,9 +21,10 @@ class ServiceBlogWidget extends StatelessWidget {
         children: [
           if (SizeConfig.isDesktop) Icon(blog.icon, color: Colors.white),
           HoverTextButton(
-            activeStyle: AppStyles.style16bold(
-              context,
-            ).copyWith(color: Colors.yellow[100]),
+            withBorder: false,
+            activeStyle: AppStyles.style16bold(context).copyWith(
+              color: Colors.yellow[100],
+            ),
             onPressed: () {
               context.read<SelectedBlogCubit>().selectBlog(blog);
             },

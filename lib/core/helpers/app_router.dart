@@ -11,6 +11,9 @@ import '../../features/home/presentation/home_screen.dart';
 import '../../features/services/presentation/services_screen.dart'
     deferred as services_screen;
 
+import '../../features/blogs/presentation/blogs_screen.dart'
+    deferred as blogs_screen;
+
 abstract class AppRouter {
   static const home = '/home';
   static const services = '/services';
@@ -19,7 +22,7 @@ abstract class AppRouter {
   static const blogs = '/blogs';
 
   static final router = GoRouter(
-    initialLocation: home,
+    initialLocation: blogs,//TODO: change to home
     routes: [
       GoRoute(path: home, builder: (context, state) => HomeScreen()),
       GoRoute(
@@ -37,6 +40,15 @@ abstract class AppRouter {
           return DeferredWidget(
             libraryFuture: services_screen.loadLibrary(),
             widgetBuilder: () => services_screen.ServicesScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        path: blogs,
+        builder: (context, state) {
+          return DeferredWidget(
+            libraryFuture: blogs_screen.loadLibrary(),
+            widgetBuilder: () => blogs_screen.BlogsScreen(),
           );
         },
       ),
