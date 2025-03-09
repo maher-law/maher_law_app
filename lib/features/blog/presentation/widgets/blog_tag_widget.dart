@@ -1,27 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../../../../core/theme/app_colors.dart'; // Add this import
 import '../../../../core/theme/app_styles.dart';
 import '../../../../core/widget/hover_button.dart';
 
-class BlogTagWidget extends StatelessWidget {
-  const BlogTagWidget({
-    super.key
-  });
+class CustomTextButton extends StatefulWidget {
+  const CustomTextButton(
+      {super.key, required this.text, this.style, required this.onTap});
+  final String text;
+  final TextStyle? style;
+  final GestureTapCallback onTap;
 
   @override
+  State<CustomTextButton> createState() => _CustomTextButtonState();
+}
+
+class _CustomTextButtonState extends State<CustomTextButton> {
+  bool isActive = false;
+  @override
   Widget build(BuildContext context) {
-    return HoverButton(
-      endScale: 1.05,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: .8.w, vertical: 4),
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey.shade500),
-        ),
-        child: Text(
-          'استثمار',
-          style: AppStyles.style14medium(context).copyWith(
-            color: Colors.black,
+    return InkWell(
+      onTap: widget.onTap,
+      child: HoverButton(
+        onHoverStart: () {
+          setState(() {
+            isActive = true;
+          });
+        },
+        onHoverEnd: () {
+          setState(() {
+            isActive = false;
+          });
+        },
+        endScale: 1.05,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          padding: EdgeInsets.symmetric(horizontal: .8.w, vertical: 4),
+          decoration: BoxDecoration(
+            color: isActive
+                ? AppColors.green
+                : Colors.transparent, // Change color on hover
+            border: Border.all(color: Colors.grey.shade500),
+          ),
+          child: Text(
+            widget.text,
+            style: (widget.style ?? AppStyles.style14medium(context)).copyWith(
+              color: isActive
+                  ? Colors.white
+                  : widget.style == null
+                      ? null
+                      : Colors.black,
+            ),
           ),
         ),
       ),

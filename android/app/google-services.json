@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1006683624179",
+    "project_id": "maher-law",
+    "storage_bucket": "maher-law.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006683624179:android:86626b59bf8ffe81dcdd86",
+        "android_client_info": {
+          "package_name": "com.example.maher_law_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc5DtvE5g3fDjJLkST6pz8RzXoHemKkCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

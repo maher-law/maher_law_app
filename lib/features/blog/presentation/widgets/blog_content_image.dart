@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maher_law_app/core/widget/hover_button.dart';
 import 'package:maher_law_app/features/blog/presentation/cubits/cubit/blog_cubit.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class BlogContentImage extends StatelessWidget {
   const BlogContentImage({super.key});
@@ -23,8 +24,10 @@ class BlogContentImage extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(40),
-          child: Image.asset(context.read<BlogCubit>().blog!.thumbnailImageUrl!,
-              width: double.infinity,),
+          child: Image.asset(
+            context.read<BlogCubit>().blog!.thumbnailImageUrl!,
+            width: 40.w,
+          ),
         ),
       ),
     );

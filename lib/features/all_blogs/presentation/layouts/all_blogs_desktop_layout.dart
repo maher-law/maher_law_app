@@ -5,6 +5,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../../../core/widget/blog_sidebar.dart';
 import '../../../../core/widget/footer/footer_widget.dart';
 import '../widgets/blogs_list_view.dart';
+import '../widgets/pagination_controllers.dart';
 
 class AllBlogsDesktopLayout extends StatelessWidget {
   const AllBlogsDesktopLayout({super.key});
@@ -14,7 +15,6 @@ class AllBlogsDesktopLayout extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverDesktopNavBar(),
-        SliverToBoxAdapter(child: SizedBox(height: 5.h)),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 5.w),
           sliver: SliverFillRemaining(
@@ -27,6 +27,9 @@ class AllBlogsDesktopLayout extends StatelessWidget {
             ),
           ),
         ),
+        // SliverToBoxAdapter(child: SizedBox(height: 2.h)),
+        // SliverToBoxAdapter(child: PaginationControllers()),
+        // SliverToBoxAdapter(child: SizedBox(height: 6.h)),
         SliverToBoxAdapter(child: Footer()),
       ],
     );

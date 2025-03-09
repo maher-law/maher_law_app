@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:maher_law_app/core/helpers/app_router.dart';
+import 'package:maher_law_app/core/models/blog_model.dart';
 import 'package:maher_law_app/core/widget/hover_text_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -7,9 +10,8 @@ import '../../../../core/theme/app_styles.dart';
 import '../../../services/presentation/widgets/decorated_button.dart';
 
 class MiniBlogDetails extends StatelessWidget {
-  const MiniBlogDetails({
-    super.key,
-  });
+  const MiniBlogDetails({super.key, required this.blog});
+  final Blog blog;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +26,12 @@ class MiniBlogDetails extends StatelessWidget {
           style: AppStyles.style14medium(context),
         ),
         HoverTextButton(
-          onPressed: () {},
+          onPressed: () {
+            context.go('${AppRouter.blogs}/${blog.slug}', extra: blog);
+          },
           withBorder: false,
-          text: 'عقد الفرنشايز فى المملكة العربية السعودية',
+          // text: 'عقد الفرنشايز فى المملكة العربية السعودية',
+          text: blog.title,
           activeColor: AppColors.orange,
           style: AppStyles.style24bold(context),
         ),
@@ -41,7 +46,9 @@ class MiniBlogDetails extends StatelessWidget {
         ),
         SizedBox(height: 0),
         DecoratedButton(
-          onTap: () {},
+          onTap: () {
+            context.go('${AppRouter.blogs}/${blog.slug}', extra: blog);
+          },
           padding: EdgeInsets.symmetric(horizontal: 1.4.w, vertical: 1.h),
           child: Text(
             'اقرأ أكثر',

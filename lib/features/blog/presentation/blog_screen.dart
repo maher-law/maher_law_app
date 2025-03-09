@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/helpers/size_config.dart';
+import '../../../core/models/blog_model.dart';
 import '../../../core/widget/custom_drawer.dart';
-import '../../all_blogs/data/models/blog_model.dart';
 import 'cubits/cubit/blog_cubit.dart';
 import 'widgets/blog_screen_body.dart';
 
@@ -18,7 +18,7 @@ class BlogScreen extends StatelessWidget {
       backgroundColor: Colors.grey.shade50,
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       body: BlocProvider(
-        create: (context) => BlogCubit(blog)..initController(),
+        create: (context) => BlogCubit(blog)..initController(context),
         child: BlogScreenBody(),
       ),
     );

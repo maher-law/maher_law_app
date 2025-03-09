@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:maher_law_app/core/models/blog_model.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../theme/app_colors.dart';
@@ -60,7 +62,24 @@ class BlogsSidebar extends StatelessWidget {
                   SizedBox(width: 4),
                   InkWell(
                     borderRadius: BorderRadius.circular(100),
-                    onTap: () {},
+                    onTap: () {
+                      //TODO
+
+                      // List<Map<String, dynamic>> test = List.generate(
+                      //   50,
+                      //   (index) => {
+                      //     ApiKeys.title: 'Blog Testing Number $index',
+                      //     'timestap': DateTime.now()
+                      //         .copyWith(day: index + 1, minute: index + 5),
+                      //   },
+                      // );
+
+                      // for (var doc in test) {
+                      //   FirebaseFirestore.instance
+                      //       .collection(ApiKeys.blogsCollection)
+                      //       .add(doc);
+                      // }
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: AppColors.green,

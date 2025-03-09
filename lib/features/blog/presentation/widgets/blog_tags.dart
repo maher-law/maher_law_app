@@ -19,7 +19,10 @@ class BlogTags extends StatelessWidget {
         ),
         ...List.generate(
           4,
-          (index) => InkWell(onTap: () {}, child: BlogTagWidget()),
+          (index) =>  CustomTextButton(
+            onTap: () {},
+            text: 'استثمار',
+          ),
         ),
       ],
     );

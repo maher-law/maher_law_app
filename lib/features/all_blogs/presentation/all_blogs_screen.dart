@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:maher_law_app/features/all_blogs/presentation/cubits/cubit/pagination_cubit.dart';
 
 import '../../../core/helpers/size_config.dart';
 import '../../../core/widget/custom_drawer.dart';
@@ -15,7 +17,10 @@ class AllBlogsScreen extends StatelessWidget {
       backgroundColor: Colors.grey.shade50,
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: WhatsappButton(),
-      body: AllBlogsScreenBody(),
+      body: BlocProvider(
+        create: (context) => PaginationCubit()..loadFirstPage(),
+        child: AllBlogsScreenBody(),
+      ),
     );
   }
 }

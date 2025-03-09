@@ -1,17 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ApiKeys {
-  static const String id = 'id';
-  static const String title = 'title';
-  static const String contentJson = 'content_json';
-  static const String htmlContent = 'html_content';
-  static const String imageUrls = 'image_urls';
-  static const String slug = 'slug';
-  static const String createdAt = 'created_at';
-  static const String metaTitle = 'meta_title';
-  static const String metaDescription = 'meta_description';
-  static const String tags = 'tags';
-  static const String thumbnailImageUrl = 'thumbnail_image_url';
+  static const blogsCollection = 'blogs';
+  static const id = 'id';
+  static const title = 'title';
+  static const contentJson = 'content_json';
+  static const htmlContent = 'html_content';
+  static const imageUrls = 'image_urls';
+  static const slug = 'slug';
+  static const createdAt = 'created_at';
+  static const metaTitle = 'meta_title';
+  static const metaDescription = 'meta_description';
+  static const tags = 'tags';
+  static const thumbnailImageUrl = 'thumbnail_image_url';
 }
 
 class Blog {
@@ -49,7 +50,7 @@ class Blog {
       title: data[ApiKeys.title],
       contentJson: data[ApiKeys.contentJson],
       htmlContent: data[ApiKeys.htmlContent],
-      imageUrls:  data[ApiKeys.imageUrls] != null
+      imageUrls: data[ApiKeys.imageUrls] != null
           ? List<String>.from(data[ApiKeys.imageUrls])
           : null,
       slug: data[ApiKeys.slug],
