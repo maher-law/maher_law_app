@@ -5,27 +5,26 @@ import '../../../../core/widget/footer/footer_widget.dart';
 import '../../../../core/widget/nav_bar/sliver_nav_bar.dart';
 import '../../../../core/widget/refresh_indicator.dart';
 
-class BlogsTabletLayout extends StatefulWidget {
-  const BlogsTabletLayout({super.key});
+class BlogMobileLayout extends StatefulWidget {
+  const BlogMobileLayout({super.key});
 
   @override
-  State<BlogsTabletLayout> createState() => _BlogsTabletLayoutState();
+  State<BlogMobileLayout> createState() => _BlogMobileLayoutState();
 }
 
-class _BlogsTabletLayoutState extends State<BlogsTabletLayout> {
+class _BlogMobileLayoutState extends State<BlogMobileLayout> {
   @override
   Widget build(BuildContext context) {
     return CustomRefreshIndicator(
-       onRefresh: () async {
+      onRefresh: () async {
         setState(() {});
       },
       child: CustomScrollView(
         slivers: [
-          SliverTabletNavBar(),
+          SliverMobileNavBar(),
           SliverList(
             delegate: SliverChildListDelegate.fixed(
               [
-              
                 SizedBox(height: 8.h),
                 Footer(),
               ],

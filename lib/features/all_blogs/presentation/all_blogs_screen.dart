@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../core/helpers/size_config.dart';
 import '../../../core/widget/custom_drawer.dart';
 import '../../../core/widget/whatsapp_button.dart';
-import 'widgets/blogs_screen_body.dart';
+import 'widgets/all_blogs_screen_body.dart';
 
-class BlogsScreen extends StatelessWidget {
-  const BlogsScreen({super.key});
+class AllBlogsScreen extends StatelessWidget {
+  const AllBlogsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class BlogsScreen extends StatelessWidget {
       backgroundColor: Colors.grey.shade50,
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: WhatsappButton(),
-      body: BlogsScreenBody(),
+      body: AllBlogsScreenBody(),
     );
   }
 }

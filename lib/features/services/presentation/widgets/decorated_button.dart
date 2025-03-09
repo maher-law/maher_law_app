@@ -10,16 +10,20 @@ class DecoratedButton extends StatelessWidget {
     required this.child,
     this.padding,
     this.reversed = false,
-    this.onTap,
+    this.onTap, this.radius,
   });
   final GestureTapCallback? onTap;
   final Widget child;
   final EdgeInsets? padding;
   final bool reversed;
+  final double? radius;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
       onTap: onTap,
       child: HoverButton(
         endScale: 1.04,
@@ -27,7 +31,7 @@ class DecoratedButton extends StatelessWidget {
           padding:
               padding ?? EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.5.h),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(radius??12),
             boxShadow: [
               BoxShadow(
                 color: AppColors.grey.withAlpha(60),

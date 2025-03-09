@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:maher_law_app/core/helpers/app_router.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
-import 'package:maher_law_app/core/theme/app_colors.dart';
+import 'package:maher_law_app/core/theme/app_themes.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() async {
@@ -36,17 +37,10 @@ class MaherApp extends StatelessWidget {
             GlobalMaterialLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
+            FlutterQuillLocalizations.delegate,
           ],
           title: 'Maher',
-          theme: ThemeData(
-            scrollbarTheme: ScrollbarThemeData(
-              thumbColor: WidgetStateProperty.all(AppColors.green),
-            ),
-            useMaterial3: true,
-            brightness: Brightness.light,
-            scaffoldBackgroundColor: AppColors.white,
-            fontFamily: 'Cairo',
-          ),
+          theme: AppThemes.lightTheme,
           routerConfig: AppRouter.router,
         );
       },
