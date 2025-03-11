@@ -25,6 +25,7 @@ class BlogContentImage extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(40),
           child: Image.asset(
+            //TODO: network asset
             context.read<BlogCubit>().blog!.thumbnailImageUrl!,
             width: 40.w,
           ),

@@ -8,7 +8,9 @@ import 'mini_blog_widget.dart';
 import 'pagination_controllers.dart';
 
 class BlogsListView extends StatelessWidget {
-  const BlogsListView({super.key});
+  const BlogsListView({super.key, this.padding,  this.sliver=false});
+  final EdgeInsets? padding;
+  final bool sliver;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,8 @@ class BlogsListView extends StatelessWidget {
         builder: (context, state) {
           switch (state) {
             case PaginationLoaded():
-              return ListView.separated(
-                padding: EdgeInsets.symmetric(vertical: 10.h),
+            if(sliver){
+              return SliverList.separated(
                 itemCount: state.data.length + 1,
                 itemBuilder: (context, index) {
                   List<Blog> blogs = state.data
@@ -36,10 +38,43 @@ class BlogsListView extends StatelessWidget {
                 },
                 separatorBuilder: (context, index) => SizedBox(height: 8.h),
               );
+            }else{
+              return ListView.separated(
+                padding: padding ?? EdgeInsets.symmetric(vertical: 10.h),
+                itemCount: state.data.length + 1,
+                itemBuilder: (context, index) {
+                  List<Blog> blogs = state.data
+                      .map(
+                          (doc) => Blog.fromFirestore(doc.id, data: doc.data()))
+                      .toList();
+                  if (index == state.data.length) {
+                    return PaginationControllers();
+                  }
+                  return Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+                    child: MiniBlogWidget(blog: blogs[index]),
+                  );
+                },
+                separatorBuilder: (context, index) => SizedBox(height: 8.h),
+              );
+            }
+              
             case PaginationError():
+              if(sliver){
+              return SliverToBoxAdapter(child: Center(child: Text(state.message)));
+
+              }else{
               return Center(child: Text(state.message));
+
+              }
             default:
+            if(sliver){
+              return SliverToBoxAdapter(child: Center(child: CircularProgressIndicator()));
+
+              }else{
               return Center(child: CircularProgressIndicator());
+
+              }
           }
         },
       ),

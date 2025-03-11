@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/widget/hover_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -23,7 +24,7 @@ class MiniBlogImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(24),
           child: Image.asset(
             AppImages.team,
-            width: 20.w,
+            width: SizeConfig.isMobile ? 100.w : 20.w,
             fit: BoxFit.cover,
           ),
         ),

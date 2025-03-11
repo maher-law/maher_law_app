@@ -13,6 +13,7 @@ class BlogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       drawer: SizeConfig.isMobile ? CustomDrawer(selectedIndex: 3) : null,
       backgroundColor: Colors.grey.shade50,

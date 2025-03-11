@@ -7,9 +7,6 @@ abstract class AppThemes {
     scrollbarTheme: ScrollbarThemeData(
       thumbColor: WidgetStateProperty.all(AppColors.green),
     ),
-    textTheme: TextTheme(
-      
-    ),
     useMaterial3: true,
     brightness: Brightness.light,
     scaffoldBackgroundColor: AppColors.white,

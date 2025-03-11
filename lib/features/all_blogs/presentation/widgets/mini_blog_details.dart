@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:maher_law_app/core/helpers/app_router.dart';
+import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/models/blog_model.dart';
 import 'package:maher_law_app/core/widget/hover_text_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -17,7 +18,7 @@ class MiniBlogDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       spacing: 2.h,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:CrossAxisAlignment.start,
       children: [
         Text(
           'أبريل ٢٥, ٢٠٢٤',
@@ -27,7 +28,10 @@ class MiniBlogDetails extends StatelessWidget {
         ),
         HoverTextButton(
           onPressed: () {
-            context.go('${AppRouter.blogs}/${blog.slug}', extra: blog);
+            context.go(
+              '${AppRouter.blogs}/${blog.id}/${blog.slug}',
+              extra: blog,
+            );
           },
           withBorder: false,
           // text: 'عقد الفرنشايز فى المملكة العربية السعودية',
@@ -44,12 +48,15 @@ class MiniBlogDetails extends StatelessWidget {
             color: AppColors.grey.withAlpha(200),
           ),
         ),
-        SizedBox(height: 0),
         DecoratedButton(
           onTap: () {
-            context.go('${AppRouter.blogs}/${blog.slug}', extra: blog);
+            context.go('${AppRouter.blogs}/${blog.id}/${blog.slug}',
+                extra: blog);
           },
-          padding: EdgeInsets.symmetric(horizontal: 1.4.w, vertical: 1.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: SizeConfig.isMobile ? 6.w : 1.4.w,
+            vertical: 1.h,
+          ),
           child: Text(
             'اقرأ أكثر',
             style: AppStyles.style16medium(context).copyWith(

@@ -28,13 +28,11 @@ class PaginationCubit extends Cubit<PaginationState> {
   Future<void> loadFirstPage() async {
     emit(PaginationLoading());
     try {
-      print('Loading first page...');
       final snapshot = await collection
           .orderBy(ApiKeys.createdAt, descending: true)
           .limit(pageSize)
           .get();
 
-      print('Snapshot received: ${snapshot.docs.length} documents');
       currentPageItems = snapshot.docs;
       hasNextPage = snapshot.docs.length == pageSize;
 
@@ -45,9 +43,7 @@ class PaginationCubit extends Cubit<PaginationState> {
           currentPage: currentPage,
         ),
       );
-      print('First page loaded successfully');
     } catch (e) {
-      print('Error loading first page: $e');
       emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
     }
   }
@@ -64,10 +60,8 @@ class PaginationCubit extends Cubit<PaginationState> {
             .limit(pageSize)
             .get();
 
-        print('snapshot: $snapshot');
 
         currentPageItems = snapshot.docs;
-        print('currentPageItems: $currentPageItems');
 
         hasNextPage = currentPageItems.length == pageSize;
 

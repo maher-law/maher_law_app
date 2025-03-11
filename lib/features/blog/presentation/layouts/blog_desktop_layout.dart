@@ -4,8 +4,9 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/widget/blog_sidebar.dart';
 import '../../../../core/widget/footer/footer_widget.dart';
+import '../widgets/blog_comment_section.dart';
 import '../widgets/blog_content.dart';
-import '../widgets/blog_tags.dart';
+// import '../widgets/blog_content.dart';
 
 class BlogDesktopLayout extends StatelessWidget {
   const BlogDesktopLayout({super.key});
@@ -30,13 +31,17 @@ class BlogDesktopLayout extends StatelessWidget {
                     Expanded(flex: 1, child: BlogsSidebar(shrinkWrap: true)),
                   ],
                 ),
-                SizedBox(height: 3.h),
-                BlogTags(),
-                SizedBox(height: 5.h),
+                SizedBox(height: 8.h),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: BlogCommentSection(),
+                ),
+                SizedBox(height: 8.h),
               ],
             ),
           ),
         ),
+
         SliverToBoxAdapter(child: Footer()),
       ],
     );
