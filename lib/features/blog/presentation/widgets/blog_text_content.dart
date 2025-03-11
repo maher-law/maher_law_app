@@ -7,7 +7,6 @@ import '../cubits/cubit/blog_cubit.dart';
 class BlogTextContent extends StatelessWidget {
   const BlogTextContent({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return QuillEditor.basic(

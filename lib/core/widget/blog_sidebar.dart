@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:maher_law_app/core/models/blog_model.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../app_constants.dart';
+import '../models/blog_model.dart';
 import '../theme/app_colors.dart';
+import '../theme/app_images.dart';
 import 'hover_button.dart';
 
 class BlogsSidebar extends StatelessWidget {
@@ -65,20 +67,28 @@ class BlogsSidebar extends StatelessWidget {
                     onTap: () {
                       //TODO
 
-                      // List<Map<String, dynamic>> test = List.generate(
-                      //   50,
-                      //   (index) => {
-                      //     ApiKeys.title: 'Blog Testing Number $index',
-                      //     'timestap': DateTime.now()
-                      //         .copyWith(day: index + 1, minute: index + 5),
-                      //   },
-                      // );
+                      List<Map<String, dynamic>> test =
+                          List.generate(15, (index) {
+                        var title = 'Testing number: ${index + 1}';
+                        return Blog(
+                          id: index.toString(),
+                          title: title,
+                          contentJson: AppConstants.textBlogContentJson,
+                          createdAt: Timestamp.fromDate(
+                              DateTime.now().copyWith(day: index + 1)),
+                          htmlContent: '',
+                          imageUrls: [],
+                          slug: title.replaceAll(' ', '-'),
+                          tags: ['tag $index', 'tag ${index + 1}'],
+                          thumbnailImageUrl: AppImages.team,
+                        ).toFirestore();
+                      });
 
-                      // for (var doc in test) {
-                      //   FirebaseFirestore.instance
-                      //       .collection(ApiKeys.blogsCollection)
-                      //       .add(doc);
-                      // }
+                      for (var doc in test) {
+                        FirebaseFirestore.instance
+                            .collection(ApiKeys.blogsCollection)
+                            .add(doc);
+                      }
                     },
                     child: Container(
                       decoration: BoxDecoration(

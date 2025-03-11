@@ -12,24 +12,30 @@ class PaginationCubit extends Cubit<PaginationState> {
 
   var collection =
       getIt<FirebaseFirestore>().collection(ApiKeys.blogsCollection);
+  // .withConverter<Blog>(
+  //   fromFirestore: (snapshot, _) => Blog.fromFirestore(snapshot),
+  //   toFirestore: (Blog blog, _) => blog.toFirestore(),
+  // );
 
   int pageSize = 5;
   int currentPage = -1;
 
-  List currentPageItems = [];
+  List<QueryDocumentSnapshot<Map<String, dynamic>>> currentPageItems = [];
+  // Query<Blog>? lastDoc;
 
   bool hasNextPage = true;
 
   Future<void> loadFirstPage() async {
     emit(PaginationLoading());
     try {
+      print('Loading first page...');
       final snapshot = await collection
-          .orderBy('timestap', descending: true)
+          .orderBy(ApiKeys.createdAt, descending: true)
           .limit(pageSize)
           .get();
 
+      print('Snapshot received: ${snapshot.docs.length} documents');
       currentPageItems = snapshot.docs;
-
       hasNextPage = snapshot.docs.length == pageSize;
 
       currentPage = 1;
@@ -39,7 +45,9 @@ class PaginationCubit extends Cubit<PaginationState> {
           currentPage: currentPage,
         ),
       );
+      print('First page loaded successfully');
     } catch (e) {
+      print('Error loading first page: $e');
       emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
     }
   }
@@ -51,12 +59,15 @@ class PaginationCubit extends Cubit<PaginationState> {
 
         final lastDoc = currentPageItems.last;
         final snapshot = await collection
-            .orderBy('timestap', descending: true)
+            .orderBy(ApiKeys.createdAt, descending: true)
             .startAfterDocument(lastDoc)
             .limit(pageSize)
             .get();
 
+        print('snapshot: $snapshot');
+
         currentPageItems = snapshot.docs;
+        print('currentPageItems: $currentPageItems');
 
         hasNextPage = currentPageItems.length == pageSize;
 
@@ -81,7 +92,7 @@ class PaginationCubit extends Cubit<PaginationState> {
 
         final firstDoc = currentPageItems.first;
         final snapshot = await collection
-            .orderBy('timestap', descending: true)
+            .orderBy(ApiKeys.createdAt, descending: true)
             .endBeforeDocument(firstDoc)
             .limitToLast(pageSize)
             .get();
@@ -93,10 +104,7 @@ class PaginationCubit extends Cubit<PaginationState> {
         currentPage--;
 
         emit(
-          PaginationLoaded(
-            data: currentPageItems,
-            currentPage: currentPage,
-          ),
+          PaginationLoaded(data: currentPageItems, currentPage: currentPage),
         );
       } catch (e) {
         emit(PaginationError(e.toString()));

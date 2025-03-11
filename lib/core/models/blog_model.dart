@@ -21,7 +21,7 @@ class Blog {
   final String contentJson; // Quill Delta JSON for editing
   final String htmlContent; // HTML version for SEO
   final String slug; // SEO-friendly URL (e.g., "how-to-bake-cake")
-  final DateTime createdAt;
+  final Timestamp createdAt;
   final List<String>? imageUrls; // Links to Supabase images
   final String? metaTitle;
   final String? metaDescription; // SEO meta description
@@ -43,10 +43,10 @@ class Blog {
   });
 
   // Convert Firestore Document to Blog
-  factory Blog.fromFirestore(DocumentSnapshot doc) {
-    final data = doc.data() as Map<String, dynamic>;
+  factory Blog.fromFirestore(String id ,{required Map data}) {
+    
     return Blog(
-      id: doc.id,
+      id: id,
       title: data[ApiKeys.title],
       contentJson: data[ApiKeys.contentJson],
       htmlContent: data[ApiKeys.htmlContent],
@@ -54,7 +54,7 @@ class Blog {
           ? List<String>.from(data[ApiKeys.imageUrls])
           : null,
       slug: data[ApiKeys.slug],
-      createdAt: (data[ApiKeys.createdAt] as Timestamp).toDate(),
+      createdAt: data[ApiKeys.createdAt] as Timestamp,
       metaTitle: data[ApiKeys.metaTitle],
       metaDescription: data[ApiKeys.metaDescription],
       tags: data[ApiKeys.tags] != null
@@ -72,47 +72,11 @@ class Blog {
       ApiKeys.htmlContent: htmlContent,
       ApiKeys.imageUrls: imageUrls,
       ApiKeys.slug: slug,
-      ApiKeys.createdAt: Timestamp.fromDate(createdAt),
+      ApiKeys.createdAt: createdAt,
       ApiKeys.metaTitle: metaTitle,
       ApiKeys.metaDescription: metaDescription,
       ApiKeys.tags: tags,
       ApiKeys.thumbnailImageUrl: thumbnailImageUrl,
     };
-  }
-
-  // Convert Blog to JSON (for Supabase or other APIs)
-  Map<String, dynamic> toJson() {
-    return {
-      ApiKeys.id: id,
-      ApiKeys.title: title,
-      ApiKeys.contentJson: contentJson,
-      ApiKeys.htmlContent: htmlContent,
-      ApiKeys.imageUrls: imageUrls,
-      ApiKeys.slug: slug,
-      ApiKeys.createdAt: createdAt.toIso8601String(),
-      ApiKeys.metaTitle: metaTitle,
-      ApiKeys.metaDescription: metaDescription,
-      ApiKeys.tags: tags,
-      ApiKeys.thumbnailImageUrl: thumbnailImageUrl,
-    };
-  }
-
-  // Convert JSON to Blog (for Supabase or other APIs)
-  factory Blog.fromJson(Map<String, dynamic> json) {
-    return Blog(
-      id: json[ApiKeys.id],
-      title: json[ApiKeys.title],
-      contentJson: json[ApiKeys.contentJson],
-      htmlContent: json[ApiKeys.htmlContent],
-      imageUrls: List<String>.from(json[ApiKeys.imageUrls]),
-      slug: json[ApiKeys.slug],
-      createdAt: DateTime.parse(json[ApiKeys.createdAt]),
-      metaTitle: json[ApiKeys.metaTitle],
-      metaDescription: json[ApiKeys.metaDescription],
-      tags: json[ApiKeys.tags] != null
-          ? List<String>.from(json[ApiKeys.tags])
-          : null,
-      thumbnailImageUrl: json[ApiKeys.thumbnailImageUrl],
-    );
   }
 }

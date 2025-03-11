@@ -40,4 +40,10 @@ class BlogCubit extends Cubit<BlogState> {
     //   print('slug');
     // }
   }
+
+  @override
+  Future<void> close() {
+    controller.dispose();
+    return super.close();
+  }
 }

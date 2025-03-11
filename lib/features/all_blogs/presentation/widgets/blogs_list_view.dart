@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:maher_law_app/core/models/blog_model.dart';
-import 'package:maher_law_app/core/theme/app_images.dart';
 import 'package:maher_law_app/features/all_blogs/presentation/cubits/cubit/pagination_cubit.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/app_constants.dart';
+import '../../../../core/models/blog_model.dart';
 import 'mini_blog_widget.dart';
 import 'pagination_controllers.dart';
 
@@ -24,29 +22,22 @@ class BlogsListView extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 itemCount: state.data.length + 1,
                 itemBuilder: (context, index) {
+                  List<Blog> blogs = state.data
+                      .map(
+                          (doc) => Blog.fromFirestore(doc.id, data: doc.data()))
+                      .toList();
                   if (index == state.data.length) {
                     return PaginationControllers();
                   }
                   return Padding(
                     padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-                    child: MiniBlogWidget(
-                      blog: Blog(
-                        id: '123',
-                        thumbnailImageUrl: AppImages.lawyer,
-                        title: state.data[index]['title'],
-                        contentJson: AppConstants.textBlogContentJson,
-                        htmlContent: 'htmlContent',
-                        imageUrls: [],
-                        slug: 'slugTest',
-                        createdAt: DateTime.now(),
-                      ),
-                    ),
+                    child: MiniBlogWidget(blog: blogs[index]),
                   );
                 },
                 separatorBuilder: (context, index) => SizedBox(height: 8.h),
               );
             case PaginationError():
-              return Center(child: Text('يرجى المحاول مرة أخرى'));
+              return Center(child: Text(state.message));
             default:
               return Center(child: CircularProgressIndicator());
           }
