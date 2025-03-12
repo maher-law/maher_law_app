@@ -19,7 +19,7 @@ class HomeTabletAboutSection extends StatelessWidget {
         bottom: 7.5.h,
       ),
       width: SizeConfig.width,
-      child: HomeAboutDetails(),
+      child: const HomeAboutDetails(),
     );
   }
 }

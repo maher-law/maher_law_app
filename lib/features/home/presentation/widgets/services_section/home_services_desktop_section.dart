@@ -20,7 +20,7 @@ class HomeServicesDesktopSection extends StatelessWidget {
         bottom: 7.5.h,
       ),
       width: SizeConfig.width,
-      child: Row(
+      child: const Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

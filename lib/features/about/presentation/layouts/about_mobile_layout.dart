@@ -19,23 +19,23 @@ class _AboutMobileLayoutState extends State<AboutMobileLayout> {
   @override
   Widget build(BuildContext context) {
     return CustomRefreshIndicator(
-       onRefresh: () async {
+      onRefresh: () async {
         setState(() {});
       },
       child: CustomScrollView(
         slivers: [
-          SliverMobileNavBar(),
+          const SliverMobileNavBar(),
           SliverList(
             delegate: SliverChildListDelegate.fixed(
               [
                 SizedBox(height: 6.h),
-                AboutDetails(),
+                const AboutDetails(),
                 SizedBox(height: 6.h),
-                ProgressBarMobileSection(),
+                const ProgressBarMobileSection(),
                 SizedBox(height: 6.h),
-                AboutOwnersMobileSection(),
+                const AboutOwnersMobileSection(),
                 SizedBox(height: 10.h),
-                Footer(),
+                const Footer(),
               ],
             ),
           ),

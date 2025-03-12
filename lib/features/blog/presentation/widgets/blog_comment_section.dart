@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../../../../core/helpers/size_config.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_styles.dart';
 import '../../../../core/widget/custom_text_field.dart';
@@ -13,7 +14,7 @@ class BlogCommentSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: Container(
-        width: 45.w,
+        width: SizeConfig.isDesktop ? 45.w : 100.w,
         padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
         decoration: BoxDecoration(
           border: Border.all(color: AppColors.green, width: 2),
@@ -31,7 +32,7 @@ class BlogCommentSection extends StatelessWidget {
             ),
             SizedBox(height: 2.h),
             Text(
-              'لن يتم نشر عنوان بريدك الإلكتروني.',
+              'لن يتم نشر عنوان بريدك الإلكتروني أو اسمك.',
               style: AppStyles.style16medium(context).copyWith(
                 color: AppColors.grey,
               ),
@@ -41,6 +42,7 @@ class BlogCommentSection extends StatelessWidget {
               minLines: 4,
               maxLines: 8,
               hintText: 'التعليق',
+              textAlign: TextAlign.center,
               controller: TextEditingController(),
             ),
             SizedBox(height: 4.h),

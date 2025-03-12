@@ -24,7 +24,7 @@ class ConsultantMobileBanner extends StatelessWidget {
           width: SizeConfig.width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40),
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [AppColors.orange, AppColors.green],
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -42,7 +42,7 @@ class ConsultantMobileBanner extends StatelessWidget {
                       context,
                     ).copyWith(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     'يمكنك الوصول إلينا بسهولة وسرعة',
                     style: AppStyles.style16medium(context),

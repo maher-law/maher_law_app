@@ -12,7 +12,7 @@ class ContactUpperSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
         3,
-        (index) => ContactWidget(),
+        (index) => const ContactWidget(),
       ),
     );
   }
@@ -29,7 +29,7 @@ class ContactMobileUpperSection extends StatelessWidget {
       spacing: 2.3.h,
       children: List.generate(
         3,
-        (index) => ContactMobileWidget(),
+        (index) => const ContactMobileWidget(),
       ),
     );
   }

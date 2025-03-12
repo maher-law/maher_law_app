@@ -29,14 +29,14 @@ class HomeRatesSection extends StatelessWidget {
               SvgPicture.asset(AppIcons.stars, height: 5.h),
             ],
           ),
-          SizedBox(height: 14),
+          const SizedBox(height: 14),
           Text(
             'ماذا قال عملاؤنا؟',
             style: AppStyles.style16bold(
               context,
             ).copyWith(color: Colors.black45),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             'الشهادات',
             style: AppStyles.style40bold(
@@ -44,7 +44,7 @@ class HomeRatesSection extends StatelessWidget {
             ).copyWith(color: AppColors.green),
           ),
           SizedBox(height: 5.h),
-          SizedBox(height: 34.h, child: CustomersRateList()),
+          SizedBox(height: 34.h, child: const CustomersRateList()),
         ],
       ),
     );

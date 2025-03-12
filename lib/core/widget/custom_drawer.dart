@@ -17,12 +17,12 @@ class CustomDrawer extends StatelessWidget {
       showToggleButton: false,
       theme: SidebarXTheme(
         width: 200,
-        selectedIconTheme: IconThemeData(color: AppColors.grey),
+        selectedIconTheme: const IconThemeData(color: AppColors.grey),
         textStyle: AppStyles.style16medium(context).copyWith(
           color: Colors.white,
         ),
         padding: EdgeInsets.only(left: 4.w),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppColors.grey,
         ),
         selectedTextStyle: AppStyles.style16bold(context).copyWith(

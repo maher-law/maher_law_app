@@ -37,8 +37,8 @@ class HomeAboutDetails extends StatelessWidget {
           ).copyWith(color: AppColors.grey, fontWeight: FontWeight.w700),
         ),
         SizedBox(height: 4.h),
-        if (SizeConfig.isDesktop) Expanded(child: HomeAboutFeatures()),
-        if (!SizeConfig.isDesktop) HomeAboutFeatures(),
+        if (SizeConfig.isDesktop) const Expanded(child: HomeAboutFeatures()),
+        if (!SizeConfig.isDesktop) const HomeAboutFeatures(),
         SizedBox(height: 2.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +46,7 @@ class HomeAboutDetails extends StatelessWidget {
             CustomButton(
               padding:
                   SizeConfig.isDesktop
-                      ? EdgeInsets.symmetric(horizontal: 18, vertical: 16)
+                      ? const EdgeInsets.symmetric(horizontal: 18, vertical: 16)
                       // : null,
                       : EdgeInsets.symmetric(horizontal: 8.w, vertical: 1.4.h),
               borderRadius: 14,
@@ -63,8 +63,8 @@ class HomeAboutDetails extends StatelessWidget {
                       context,
                     ).copyWith(color: Colors.white),
                   ),
-                  SizedBox(width: 10),
-                  Icon(
+                  const SizedBox(width: 10),
+                  const Icon(
                     Icons.arrow_right_rounded,
                     color: Colors.white,
                     size: 30,

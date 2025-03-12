@@ -13,14 +13,13 @@ class BlogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      drawer: SizeConfig.isMobile ? CustomDrawer(selectedIndex: 3) : null,
+      drawer: SizeConfig.isMobile ? const CustomDrawer(selectedIndex: 3) : null,
       backgroundColor: Colors.grey.shade50,
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       body: BlocProvider(
         create: (context) => BlogCubit(blog)..initController(context),
-        child: BlogScreenBody(),
+        child: const BlogScreenBody(),
       ),
     );
   }

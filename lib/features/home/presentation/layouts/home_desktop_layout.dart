@@ -17,18 +17,18 @@ class HomeDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverDesktopNavBar(),
+        const SliverDesktopNavBar(),
         SliverList(
           delegate: SliverChildListDelegate.fixed([
-            HomeWelcomeSection(),
-            HomeServicesDesktopSection(),
-            ConsultantBanner(),
-            HomeStepsSection(),
-            HomeRatesSection(),
+            const HomeWelcomeSection(),
+            const HomeServicesDesktopSection(),
+            const ConsultantBanner(),
+            const HomeStepsSection(),
+            const HomeRatesSection(),
             SizedBox(height: 5.h),
-            HomeLocationSection(),
+            const HomeLocationSection(),
             SizedBox(height: 10.h),
-            Footer(),
+            const Footer(),
           ]),
         ),
       ],

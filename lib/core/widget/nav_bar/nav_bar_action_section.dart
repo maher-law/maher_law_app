@@ -14,14 +14,14 @@ class NavBarActionsSection extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(navData.length, (index) {
-        bool isCurrentScreen =
-            GoRouter.of(
+        bool isCurrentScreen = GoRouter.of(
               context,
             ).routeInformationProvider.value.uri.toString() ==
             navData[index].route;
         return Container(
           alignment: Alignment.center,
-          padding: padding ?? EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+          padding: padding ??
+              const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
           child: HoverTextButton(
             isCurrentScreen: isCurrentScreen,
             onPressed: () {

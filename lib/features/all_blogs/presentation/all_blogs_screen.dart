@@ -13,13 +13,13 @@ class AllBlogsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SizeConfig.isMobile ? CustomDrawer(selectedIndex: 3) : null,
+      drawer: SizeConfig.isMobile ? const CustomDrawer(selectedIndex: 3) : null,
       backgroundColor: Colors.grey.shade50,
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: WhatsappButton(),
+      floatingActionButton: const WhatsappButton(),
       body: BlocProvider(
         create: (context) => PaginationCubit()..loadFirstPage(),
-        child: AllBlogsScreenBody(),
+        child: const AllBlogsScreenBody(),
       ),
     );
   }

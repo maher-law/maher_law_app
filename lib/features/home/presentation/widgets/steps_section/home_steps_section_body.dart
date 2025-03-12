@@ -17,12 +17,12 @@ class HomeStepsSectionBody extends StatelessWidget {
       children: [
         // SizedBox(height: 8.h,),
         SvgPicture.asset(AppIcons.court, height: 5.h),
-        SizedBox(height: 14),
+        const SizedBox(height: 14),
         Text(
           'خطوة بخطوة',
           style: AppStyles.style16bold(context).copyWith(color: Colors.white),
         ),
-        SizedBox(height: 4),
+        const SizedBox(height: 4),
         Text(
           'كيف نعمل؟',
           style: AppStyles.style40bold(
@@ -30,7 +30,7 @@ class HomeStepsSectionBody extends StatelessWidget {
           ).copyWith(color: AppColors.green),
         ),
         SizedBox(height: 5.h),
-        StepsListWidget(),
+        const StepsListWidget(),
       ],
     );
   }
@@ -46,12 +46,12 @@ class HomeMobileStepsSectionBody extends StatelessWidget {
       children: [
         SizedBox(height: 8.h),
         SvgPicture.asset(AppIcons.court, height: 5.h),
-        SizedBox(height: 14),
+        const SizedBox(height: 14),
         Text(
           'خطوة بخطوة',
           style: AppStyles.style16bold(context).copyWith(color: Colors.white),
         ),
-        SizedBox(height: 4),
+        const SizedBox(height: 4),
         Text(
           'كيف نعمل؟',
           style: AppStyles.style40bold(
@@ -59,7 +59,7 @@ class HomeMobileStepsSectionBody extends StatelessWidget {
           ).copyWith(color: AppColors.green),
         ),
         SizedBox(height: 5.h),
-        StepsListWidget(),
+        const StepsListWidget(),
       ],
     );
   }

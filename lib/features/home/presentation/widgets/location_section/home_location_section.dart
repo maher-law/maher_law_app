@@ -47,7 +47,7 @@ class HomeLocationSection extends StatelessWidget {
         SizedBox(
           height: 50.h,
           width: SizeConfig.width * .75,
-          child: GoogleMapWidget(),
+          child: const GoogleMapWidget(),
         ),
       ],
     );

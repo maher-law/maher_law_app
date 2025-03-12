@@ -11,7 +11,7 @@ class BlogTextContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return QuillEditor.basic(
       controller: context.read<BlogCubit>().controller,
-      config: QuillEditorConfig(
+      config: const QuillEditorConfig(
         showCursor: false,
         readOnlyMouseCursor: SystemMouseCursors.basic,
       ),

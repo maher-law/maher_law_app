@@ -12,15 +12,15 @@ class ProgressBarDesktopSection extends StatelessWidget {
       spacing: 4.w,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CustomProgressBarWidget(
+        const CustomProgressBarWidget(
           text: 'السرية',
           colorTheme: ProgressBarColorTheme.orange,
         ),
-        CustomProgressBarWidget(
+        const CustomProgressBarWidget(
           text: 'الثقة',
           colorTheme: ProgressBarColorTheme.cyan,
         ),
-        CustomProgressBarWidget(
+        const CustomProgressBarWidget(
           text: 'الشفافية',
           colorTheme: ProgressBarColorTheme.purple,
         ),
@@ -38,15 +38,15 @@ class ProgressBarMobileSection extends StatelessWidget {
       spacing: 5.h,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CustomProgressBarWidget(
+        const CustomProgressBarWidget(
           text: 'السرية',
           colorTheme: ProgressBarColorTheme.orange,
         ),
-        CustomProgressBarWidget(
+        const CustomProgressBarWidget(
           text: 'الثقة',
           colorTheme: ProgressBarColorTheme.cyan,
         ),
-        CustomProgressBarWidget(
+        const CustomProgressBarWidget(
           text: 'الشفافية',
           colorTheme: ProgressBarColorTheme.purple,
         ),

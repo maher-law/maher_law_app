@@ -6,7 +6,6 @@ import '../../../../core/widget/blog_sidebar.dart';
 import '../../../../core/widget/footer/footer_widget.dart';
 import '../widgets/blog_comment_section.dart';
 import '../widgets/blog_content.dart';
-// import '../widgets/blog_content.dart';
 
 class BlogDesktopLayout extends StatelessWidget {
   const BlogDesktopLayout({super.key});
@@ -15,9 +14,8 @@ class BlogDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverDesktopNavBar(),
+        const SliverDesktopNavBar(),
         SliverToBoxAdapter(child: SizedBox(height: 10.h)),
-        //! SliverToBoxAdapter(child: Text(context.read<BlogCubit>().blog.title)),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 4.w),
           sliver: SliverList(
@@ -26,13 +24,16 @@ class BlogDesktopLayout extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(flex: 2, child: BlogContent()),
+                    const Expanded(flex: 2, child: BlogContent()),
                     SizedBox(width: 4.w),
-                    Expanded(flex: 1, child: BlogsSidebar(shrinkWrap: true)),
+                    const Expanded(
+                      flex: 1,
+                      child: BlogsSidebar(shrinkWrap: true),
+                    ),
                   ],
                 ),
                 SizedBox(height: 8.h),
-                Align(
+                const Align(
                   alignment: Alignment.centerRight,
                   child: BlogCommentSection(),
                 ),
@@ -41,8 +42,7 @@ class BlogDesktopLayout extends StatelessWidget {
             ),
           ),
         ),
-
-        SliverToBoxAdapter(child: Footer()),
+        const SliverToBoxAdapter(child: Footer()),
       ],
     );
   }

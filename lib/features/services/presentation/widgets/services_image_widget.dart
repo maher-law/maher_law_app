@@ -19,7 +19,7 @@ class ServicesDesktopImageWidget extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(width: 4, color: Colors.white),
         borderRadius: BorderRadius.circular(40),
-        image: DecorationImage(
+        image: const DecorationImage(
           image: AssetImage(AppImages.team),
           fit: BoxFit.cover,
         ),
@@ -107,7 +107,7 @@ class ServicesMobileImageWidget extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(width: 4, color: Colors.white),
         borderRadius: BorderRadius.circular(40),
-        image: DecorationImage(
+        image: const DecorationImage(
           image: AssetImage(AppImages.team),
           fit: BoxFit.cover,
         ),

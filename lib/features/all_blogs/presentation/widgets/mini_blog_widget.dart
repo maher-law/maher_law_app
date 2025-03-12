@@ -17,7 +17,7 @@ class MiniBlogWidget extends StatelessWidget {
     }
     return Row(
       children: [
-        Expanded(flex: 2, child: MiniBlogImage()),
+        const Expanded(flex: 2, child: MiniBlogImage()),
         SizedBox(width: 3.w),
         Expanded(flex: 3, child: MiniBlogDetails(blog: blog)),
       ],
@@ -33,7 +33,7 @@ class MiniMobileBlogWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MiniBlogImage(),
+        const MiniBlogImage(),
         SizedBox(height: 1.5.h),
         MiniBlogDetails(blog: blog),
       ],

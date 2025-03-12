@@ -28,20 +28,20 @@ class _HomeTabletLayoutState extends State<HomeTabletLayout> {
       },
       child: CustomScrollView(
         slivers: [
-          SliverTabletNavBar(),
+          const SliverTabletNavBar(),
           SliverList(
             delegate: SliverChildListDelegate.fixed(
               [
-                HomeWelcomeSection(),
-                HomeServicesTabletSection(),
-                HomeTabletAboutSection(),
-                ConsultantBanner(),
-                HomeMobileStepsSection(),
-                HomeRatesSection(),
+                const HomeWelcomeSection(),
+                const HomeServicesTabletSection(),
+                const HomeTabletAboutSection(),
+                const ConsultantBanner(),
+                const HomeMobileStepsSection(),
+                const HomeRatesSection(),
                 SizedBox(height: 5.h),
-                HomeLocationSection(),
+                const HomeLocationSection(),
                 SizedBox(height: 8.h),
-                Footer(),
+                const Footer(),
               ],
             ),
           ),

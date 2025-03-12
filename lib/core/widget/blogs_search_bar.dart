@@ -5,7 +5,7 @@ import '../theme/app_colors.dart';
 import 'hover_button.dart';
 
 class BlogsSearchBar extends StatelessWidget {
-  const BlogsSearchBar({super.key, this.decorated = true,  this.padding});
+  const BlogsSearchBar({super.key, this.decorated = true, this.padding});
   final bool decorated;
   final EdgeInsets? padding;
 
@@ -14,14 +14,15 @@ class BlogsSearchBar extends StatelessWidget {
     return HoverButton(
       endScale: 1.01,
       child: Container(
-        padding:padding?? EdgeInsets.symmetric(horizontal: 2.w, vertical: 8.h),
+        padding:
+            padding ?? EdgeInsets.symmetric(horizontal: 2.w, vertical: 4.h),
         decoration: decorated
             ? BoxDecoration(
                 color: AppColors.white,
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: AppColors.grey, width: 2.5),
+                // border: Border.all(color: AppColors.grey, width: 2.5),
                 boxShadow: [
-                  BoxShadow(
+                  const BoxShadow(
                     color: Colors.black12,
                     spreadRadius: .5,
                     blurRadius: 30,
@@ -37,56 +38,34 @@ class BlogsSearchBar extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: 'ابحث',
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.grey, width: 2),
+                    borderSide:
+                        const BorderSide(color: AppColors.green, width: 2),
                     borderRadius: BorderRadius.circular(100),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.grey, width: 2),
+                    borderSide:
+                        const BorderSide(color: AppColors.green, width: 2),
                     borderRadius: BorderRadius.circular(100),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.grey, width: 2),
+                    borderSide:
+                        const BorderSide(color: AppColors.green, width: 2),
                     borderRadius: BorderRadius.circular(100),
                   ),
                 ),
               ),
             ),
-            SizedBox(width: 4),
+            const SizedBox(width: 4),
             InkWell(
               borderRadius: BorderRadius.circular(100),
-              onTap: () {
-                //TODO
-
-                // List<Map<String, dynamic>> test =
-                //     List.generate(15, (index) {
-                //   var title = 'Testing number: ${index + 1}';
-                //   return Blog(
-                //     id: index.toString(),
-                //     title: title,
-                //     contentJson: AppConstants.textBlogContentJson,
-                //     createdAt: Timestamp.fromDate(
-                //         DateTime.now().copyWith(day: index + 1)),
-                //     htmlContent: '',
-                //     imageUrls: [],
-                //     slug: title.replaceAll(' ', '-'),
-                //     tags: ['tag $index', 'tag ${index + 1}'],
-                //     thumbnailImageUrl: AppImages.team,
-                //   ).toFirestore();
-                // });
-
-                // for (var doc in test) {
-                //   FirebaseFirestore.instance
-                //       .collection(ApiKeys.blogsCollection)
-                //       .add(doc);
-                // }
-              },
+              onTap: () {},
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: AppColors.green,
                   shape: BoxShape.circle,
                 ),
-                padding: EdgeInsets.all(12),
-                child: HoverButton(
+                padding: const EdgeInsets.all(12),
+                child: const HoverButton(
                   endScale: 1.15,
                   child: Icon(Icons.search, color: Colors.white),
                 ),

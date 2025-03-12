@@ -37,7 +37,7 @@ class DecoratedButton extends StatelessWidget {
                 color: AppColors.grey.withAlpha(60),
                 spreadRadius: 1,
                 blurRadius: 6,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ],
             gradient: LinearGradient(

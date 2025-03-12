@@ -11,9 +11,9 @@ class AllBlogsScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdaptiveLayout(
-      mobileLayout: (context) => AllBlogsMobileLayout(),
-      tabletLayout: (context) => AllBlogsTabletLayout(),
-      desktopLayout: (context) => AllBlogsDesktopLayout(),
+      mobileLayout: (context) => const AllBlogsMobileLayout(),
+      tabletLayout: (context) => const AllBlogsTabletLayout(),
+      desktopLayout: (context) => const AllBlogsDesktopLayout(),
     );
   }
 }

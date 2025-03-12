@@ -20,11 +20,11 @@ class CustomIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      shape: CircleBorder(),
+      shape: const CircleBorder(),
       color: color ?? AppColors.green,
       onPressed: onPressed,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         child: SvgPicture.asset(
           icon,
           fit: BoxFit.cover,

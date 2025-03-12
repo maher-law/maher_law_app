@@ -17,11 +17,11 @@ class SliverNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (context.screenWidth < SizeConfig.mobile) {
-      return SliverMobileNavBar();
+      return const SliverMobileNavBar();
     } else if (context.screenWidth < SizeConfig.tablet) {
-      return SliverTabletNavBar();
+      return const SliverTabletNavBar();
     } else {
-      return SliverMobileNavBar();
+      return const SliverMobileNavBar();
     }
   }
 }
@@ -38,7 +38,8 @@ class SliverDesktopNavBar extends StatelessWidget {
         minHeight: 90,
         maxHeight: 105,
         child: Container(
-          padding: EdgeInsets.only(top: 20, bottom: 14, right: 60, left: 40),
+          padding:
+              const EdgeInsets.only(top: 20, bottom: 14, right: 60, left: 40),
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border(
@@ -50,8 +51,8 @@ class SliverDesktopNavBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(AppImages.logo, fit: BoxFit.contain, width: 22.w),
-              Expanded(child: NavBarActionsSection()),
-              NavContactButton(),
+              const Expanded(child: NavBarActionsSection()),
+              const NavContactButton(),
             ],
           ),
         ),
@@ -72,7 +73,8 @@ class SliverTabletNavBar extends StatelessWidget {
         minHeight: 90,
         maxHeight: 105,
         child: Container(
-          padding: EdgeInsets.only(top: 20, bottom: 14, right: 30, left: 30),
+          padding:
+              const EdgeInsets.only(top: 20, bottom: 14, right: 30, left: 30),
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border(
@@ -84,7 +86,7 @@ class SliverTabletNavBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(AppImages.logo, fit: BoxFit.cover, width: 20.w),
-              Expanded(
+              const Expanded(
                 child: NavBarActionsSection(
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 4),
                 ),
@@ -110,7 +112,8 @@ class SliverMobileNavBar extends StatelessWidget {
         minHeight: 75,
         maxHeight: 90,
         child: Container(
-          padding: EdgeInsets.only(top: 20, bottom: 14, right: 50, left: 20),
+          padding:
+              const EdgeInsets.only(top: 20, bottom: 14, right: 50, left: 20),
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border(

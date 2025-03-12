@@ -19,23 +19,23 @@ class _AboutTabletLayoutState extends State<AboutTabletLayout> {
   @override
   Widget build(BuildContext context) {
     return CustomRefreshIndicator(
-       onRefresh: () async {
+      onRefresh: () async {
         setState(() {});
       },
       child: CustomScrollView(
         slivers: [
-          SliverTabletNavBar(),
+          const SliverTabletNavBar(),
           SliverList(
             delegate: SliverChildListDelegate.fixed(
               [
                 SizedBox(height: 6.h),
-                AboutDetails(),
+                const AboutDetails(),
                 SizedBox(height: 6.h),
-                ProgressBarDesktopSection(),
+                const ProgressBarDesktopSection(),
                 SizedBox(height: 6.h),
-                AboutOwnersDesktopSection(),
+                const AboutOwnersDesktopSection(),
                 SizedBox(height: 10.h),
-                Footer(),
+                const Footer(),
               ],
             ),
           ),

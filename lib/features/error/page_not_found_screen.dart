@@ -17,7 +17,7 @@ class PageNotFoundScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -53,10 +53,10 @@ class PageNotFoundScreen extends StatelessWidget {
                           color: AppColors.grey.withAlpha(60),
                           spreadRadius: 1,
                           blurRadius: 6,
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                         ),
                       ],
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [AppColors.orange, AppColors.green],
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,

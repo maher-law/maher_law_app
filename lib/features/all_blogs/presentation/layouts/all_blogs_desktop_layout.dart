@@ -13,20 +13,20 @@ class AllBlogsDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverDesktopNavBar(),
+        const SliverDesktopNavBar(),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 5.w),
           sliver: SliverFillRemaining(
             child: Row(
               children: [
-                Expanded(flex: 2, child: BlogsListView()),
+                const Expanded(flex: 2, child: BlogsListView()),
                 SizedBox(width: 4.w),
-                Expanded(flex: 1, child: BlogsSidebar()),
+                const Expanded(flex: 1, child: BlogsSidebar()),
               ],
             ),
           ),
         ),
-        SliverToBoxAdapter(child: Footer()),
+        const SliverToBoxAdapter(child: Footer()),
       ],
     );
   }

@@ -19,14 +19,14 @@ class ServicesBlogContent extends StatelessWidget {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 4.h),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               stops: [0.88, 1.0],
-              colors: [Colors.white, const Color.fromARGB(255, 204, 237, 232)],
+              colors: [Colors.white, Color.fromARGB(255, 204, 237, 232)],
             ),
             boxShadow: [
-              BoxShadow(color: Colors.black26, spreadRadius: 1, blurRadius: 30),
+              const BoxShadow(color: Colors.black26, spreadRadius: 1, blurRadius: 30),
             ],
             borderRadius: BorderRadius.circular(40),
             color: AppColors.white,

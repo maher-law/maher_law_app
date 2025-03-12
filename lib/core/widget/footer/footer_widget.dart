@@ -26,30 +26,29 @@ class Footer extends StatelessWidget {
             left: 3.w,
             bottom: 8.h,
           ),
-          child:
-              SizeConfig.width > SizeConfig.mobile
-                  ? Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 8.w,
-                    children: [
-                      Expanded(child: FooterRightSection()),
-                      Expanded(child: FooterCenterSection()),
-                      Expanded(child: FooterLeftSection()),
-                    ],
-                  )
-                  : Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    spacing: 8.w,
-                    children: [
-                      FooterRightSection(),
-                      FooterCenterSection(),
-                      FooterLeftSection(),
-                    ],
-                  ),
+          child: SizeConfig.width > SizeConfig.mobile
+              ? Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 8.w,
+                  children: [
+                    const Expanded(child: FooterRightSection()),
+                    const Expanded(child: FooterCenterSection()),
+                    const Expanded(child: FooterLeftSection()),
+                  ],
+                )
+              : Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  spacing: 8.w,
+                  children: [
+                    const FooterRightSection(),
+                    const FooterCenterSection(),
+                    const FooterLeftSection(),
+                  ],
+                ),
         ),
         Container(
           color: AppColors.orange,
-          padding: EdgeInsets.symmetric(vertical: 20),
+          padding: const EdgeInsets.symmetric(vertical: 20),
           width: SizeConfig.width,
           child: Center(
             child: Text(

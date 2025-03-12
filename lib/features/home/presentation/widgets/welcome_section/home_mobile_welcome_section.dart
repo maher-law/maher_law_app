@@ -17,9 +17,9 @@ class HomeMobileWelcomeSection extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          HomeMobileLawyerImage(),
+          const HomeMobileLawyerImage(),
           SizedBox(width: 5.h),
-          HomeWelcomeDetails(),
+          const HomeWelcomeDetails(),
         ],
       ),
     );

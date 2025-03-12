@@ -13,14 +13,14 @@ class ServicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(selectedIndex: 1),
+      drawer: const CustomDrawer(selectedIndex: 1),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: WhatsappButton(),
+      floatingActionButton: const WhatsappButton(),
       resizeToAvoidBottomInset: false,
       body: AdaptiveLayout(
-        mobileLayout: (_) => ServicesMobileLayout(),
-        tabletLayout: (_) => ServicesTabletLayout(),
-        desktopLayout: (_) => ServicesDesktopLayout(),
+        mobileLayout: (_) => const ServicesMobileLayout(),
+        tabletLayout: (_) => const ServicesTabletLayout(),
+        desktopLayout: (_) => const ServicesDesktopLayout(),
       ),
     );
   }

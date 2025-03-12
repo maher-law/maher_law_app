@@ -33,7 +33,7 @@ class _StepWidgetState extends State<StepWidget> {
           children: [
             Expanded(
               child:
-                  !widget.isFirst ? Divider(color: AppColors.cyan) : SizedBox(),
+                  !widget.isFirst ? const Divider(color: AppColors.cyan) : const SizedBox(),
             ),
             StepNumberWidget(
               index: widget.index,
@@ -41,11 +41,11 @@ class _StepWidgetState extends State<StepWidget> {
             ),
             Expanded(
               child:
-                  !widget.isLast ? Divider(color: AppColors.cyan) : SizedBox(),
+                  !widget.isLast ? const Divider(color: AppColors.cyan) : const SizedBox(),
             ),
           ],
         ),
-        SizedBox(height: 4.h, child: VerticalDivider(color: AppColors.cyan)),
+        SizedBox(height: 4.h, child: const VerticalDivider(color: AppColors.cyan)),
         HoverButton(
           onHoverStart: () {
             setState(() {
@@ -77,14 +77,14 @@ class _StepWidgetState extends State<StepWidget> {
                     context,
                   ).copyWith(color: AppColors.green),
                 ),
-                SizedBox(height: 4),
-                Icon(
+                const SizedBox(height: 4),
+                const Icon(
                   Icons.keyboard_arrow_down_outlined,
                   color: AppColors.green,
                   size: 35,
                   weight: 6,
                 ),
-                SizedBox(height: 14),
+                const SizedBox(height: 14),
                 Text(
                   widget.step.description,
                   textAlign: TextAlign.center,
@@ -112,7 +112,7 @@ class StepMobileWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         StepNumberWidget(index: index, size: 14.w),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           padding: EdgeInsets.only(right: 10, left: 10, bottom: 4.h, top: 2.h),
           // margin: EdgeInsets.symmetric(horizontal: 2.w),
@@ -127,7 +127,7 @@ class StepMobileWidget extends StatelessWidget {
                   context,
                 ).copyWith(color: AppColors.green),
               ),
-              SizedBox(height: 14),
+              const SizedBox(height: 14),
               Text(
                 step.description,
                 textAlign: TextAlign.center,

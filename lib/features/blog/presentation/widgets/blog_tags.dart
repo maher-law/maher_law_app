@@ -18,12 +18,12 @@ class BlogTags extends StatelessWidget {
         DecoratedButton(
           radius: 0,
           padding: EdgeInsets.symmetric(horizontal: .5.w, vertical: 4),
-          child: Icon(CupertinoIcons.share, color: Colors.white),
+          child: const Icon(CupertinoIcons.share, color: Colors.white),
         ),
         DecoratedButton(
           radius: 0,
           padding: EdgeInsets.symmetric(horizontal: .5.w, vertical: 4),
-          child: Icon(Icons.tag, color: Colors.white),
+          child: const Icon(Icons.tag, color: Colors.white),
         ),
         ...List.generate(
           context.read<BlogCubit>().blog!.tags?.length ?? 0,

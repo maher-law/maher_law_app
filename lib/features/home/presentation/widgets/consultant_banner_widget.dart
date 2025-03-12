@@ -24,7 +24,7 @@ class ConsultantBanner extends StatelessWidget {
           width: SizeConfig.width,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40),
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [AppColors.orange, AppColors.green],
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -32,7 +32,7 @@ class ConsultantBanner extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Spacer(),
+              const Spacer(),
               Column(
                 children: [
                   Text(
@@ -41,14 +41,14 @@ class ConsultantBanner extends StatelessWidget {
                       context,
                     ).copyWith(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     'يمكنك الوصول إلينا بسهولة وسرعة',
                     style: AppStyles.style16medium(context),
                   ),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               MaterialButton(
                 splashColor: AppColors.green,
                 elevation: 0,
@@ -58,7 +58,7 @@ class ConsultantBanner extends StatelessWidget {
                   pushWhatsapp(context);
                 },
                 height: 30,
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 16),
                 color: Colors.white24,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),

@@ -12,7 +12,7 @@ class HomeServicesTabletSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        HomeServicesListView(),
+        const HomeServicesListView(),
         SizedBox(height: 2.h),
         MaterialButton(
           minWidth: 40.w,
@@ -34,7 +34,7 @@ class HomeServicesTabletSection extends StatelessWidget {
                 ).copyWith(color: Colors.white),
               ),
               SizedBox(width: 1.w),
-              Icon(Icons.arrow_right_rounded, color: Colors.white, size: 34),
+              const Icon(Icons.arrow_right_rounded, color: Colors.white, size: 34),
             ],
           ),
         ),

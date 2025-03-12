@@ -13,7 +13,7 @@ class HomeServicesGridView extends StatelessWidget {
       alignment: Alignment.center,
       child: GridView.builder(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: 4,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,

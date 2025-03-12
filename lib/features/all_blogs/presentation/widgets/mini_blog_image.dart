@@ -15,7 +15,7 @@ class MiniBlogImage extends StatelessWidget {
       onTap: () {},
       endScale: 1.02,
       child: Container(
-        padding: EdgeInsets.all(3),
+        padding: const EdgeInsets.all(3),
         decoration: BoxDecoration(
           border: Border.all(color: AppColors.green, width: 3),
           borderRadius: BorderRadius.circular(28),

@@ -23,7 +23,7 @@ class _CustomersRateListState extends State<CustomersRateList> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(Duration(seconds: 2), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 2), (Timer timer) {
       if (_currentPage < 2) {
         _currentPage++;
       } else {
@@ -33,7 +33,7 @@ class _CustomersRateListState extends State<CustomersRateList> {
 
       _pageController.animateToPage(
         _currentPage,
-        duration: Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 500),
         curve: Curves.easeOut,
       );
     });
@@ -74,7 +74,7 @@ class _CustomersRateListState extends State<CustomersRateList> {
             pageSnapping: false,
             controller: _pageController,
             itemCount: 3,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             allowImplicitScrolling: true,
             scrollDirection: Axis.horizontal,
             reverse: true,
@@ -88,14 +88,14 @@ class _CustomersRateListState extends State<CustomersRateList> {
             },
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children:
               List.generate(3, (index) {
                 return AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
-                  margin: EdgeInsets.symmetric(horizontal: 4.0, vertical: 10.0),
+                  duration: const Duration(milliseconds: 300),
+                  margin: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 10.0),
                   height: 6.0,
                   width: _currentPage == index ? 35.0 : 24.0,
                   decoration: BoxDecoration(

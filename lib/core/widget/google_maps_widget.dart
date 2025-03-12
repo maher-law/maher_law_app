@@ -14,7 +14,7 @@ class GoogleMapWidget extends StatelessWidget {
         border: Border.all(color: AppColors.green, width: 4),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
-          BoxShadow(
+          const BoxShadow(
             color: Colors.black26,
             spreadRadius: 5,
             blurRadius: 20,

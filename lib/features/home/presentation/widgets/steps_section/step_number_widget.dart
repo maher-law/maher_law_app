@@ -22,8 +22,8 @@ class StepNumberWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DecoratedShadowedShape(
-      shape: RectangleShapeBorder(
-        borderRadius: const DynamicBorderRadius.all(
+      shape: const RectangleShapeBorder(
+        borderRadius: DynamicBorderRadius.all(
           DynamicRadius.circular(Length(100)),
         ),
         cornerStyles: RectangleCornerStyles.all(CornerStyle.straight),

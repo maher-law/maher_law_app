@@ -41,7 +41,7 @@ class _AboutFeatureWidgetState extends State<AboutFeatureWidget> {
               color: isActive ? AppColors.green : AppColors.orange,
               shape: BoxShape.rectangle,
             ),
-            child: Icon(
+            child: const Icon(
               Icons.check,
               color: Colors.white,
             ),

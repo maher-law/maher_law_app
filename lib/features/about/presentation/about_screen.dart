@@ -15,13 +15,13 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      drawer: SizeConfig.isMobile ? CustomDrawer(selectedIndex: 2) : null,
+      drawer: SizeConfig.isMobile ? const CustomDrawer(selectedIndex: 2) : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: WhatsappButton(),
+      floatingActionButton: const WhatsappButton(),
       body: AdaptiveLayout(
-        mobileLayout: (_) => AboutMobileLayout(),
-        tabletLayout: (_) => AboutTabletLayout(),
-        desktopLayout: (_) => AboutDesktopLayout(),
+        mobileLayout: (_) => const AboutMobileLayout(),
+        tabletLayout: (_) => const AboutTabletLayout(),
+        desktopLayout: (_) => const AboutDesktopLayout(),
       ),
     );
   }

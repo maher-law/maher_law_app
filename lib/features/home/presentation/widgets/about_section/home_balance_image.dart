@@ -14,7 +14,7 @@ class HomeBalanceImage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             width: 25.w,
             height: 70.h,
             child: Image.asset(

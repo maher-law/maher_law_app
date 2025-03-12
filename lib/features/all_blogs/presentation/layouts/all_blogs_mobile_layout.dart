@@ -24,10 +24,10 @@ class _AllBlogsMobileLayoutState extends State<AllBlogsMobileLayout> {
       },
       child: CustomScrollView(
         slivers: [
-          SliverMobileNavBar(),
+          const SliverMobileNavBar(),
           SliverPadding(
             padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 4.w),
-            sliver: BlogsListView(sliver: true),
+            sliver: const BlogsListView(sliver: true),
           ),
           SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
@@ -38,12 +38,12 @@ class _AllBlogsMobileLayoutState extends State<AllBlogsMobileLayout> {
                   padding: EdgeInsets.symmetric(horizontal: 2.w),
                 ),
                 SizedBox(height: 2.h),
-                BlogsKeywordsList(),
+                const BlogsKeywordsList(),
                 SizedBox(height: 5.h),
               ],
             ),
           ),
-          SliverToBoxAdapter(child: Footer()),
+          const SliverToBoxAdapter(child: Footer()),
         ],
       ),
     );

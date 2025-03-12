@@ -26,7 +26,7 @@ abstract class AppRouter {
   static final router = GoRouter(
     initialLocation: blogs, //TODO: change to home
     routes: [
-      GoRoute(path: home, builder: (context, state) => HomeScreen()),
+      GoRoute(path: home, builder: (context, state) => const HomeScreen()),
       GoRoute(
         path: about,
         builder: (context, state) {

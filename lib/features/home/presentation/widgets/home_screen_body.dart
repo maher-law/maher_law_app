@@ -11,9 +11,9 @@ class HomeScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdaptiveLayout(
-      mobileLayout: (context) => HomeMobileLayout(),
-      tabletLayout: (context) => HomeTabletLayout(),
-      desktopLayout: (context) => HomeDesktopLayout(),
+      mobileLayout: (context) => const HomeMobileLayout(),
+      tabletLayout: (context) => const HomeTabletLayout(),
+      desktopLayout: (context) => const HomeDesktopLayout(),
     );
   }
 }

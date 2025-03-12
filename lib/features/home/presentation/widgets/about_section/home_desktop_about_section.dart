@@ -24,9 +24,9 @@ class HomeDesktopAboutSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(child: HomeAboutDetails()),
+          const Expanded(child: HomeAboutDetails()),
           SizedBox(width: 2.w),
-          HomeBalanceImage(),
+          const HomeBalanceImage(),
         ],
       ),
     );

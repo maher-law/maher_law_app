@@ -18,12 +18,12 @@ class HomeServicesImage extends StatelessWidget {
           HoverButton(
             endScale: 1.005,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               width: 25.w,
               height: 70.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
-                image: DecorationImage(
+                image: const DecorationImage(
                   fit: BoxFit.fill,
                   alignment: Alignment.center,
                   image: AssetImage(AppImages.roman),
@@ -37,7 +37,7 @@ class HomeServicesImage extends StatelessWidget {
                     'المجالات الاخرى',
                     style: AppStyles.style22black(context),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   HoverButton(
                     endScale: 1.02,
                     child: Row(
@@ -49,7 +49,7 @@ class HomeServicesImage extends StatelessWidget {
                             color: Colors.white70,
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.arrow_right_rounded,
                           color: Colors.white70,
                           size: 24,

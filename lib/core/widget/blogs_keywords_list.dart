@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:maher_law_app/core/helpers/size_config.dart';
+import 'package:maher_law_app/core/theme/app_styles.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../theme/app_colors.dart';
+import 'keywords_desktop_list_view.dart';
+import 'keywords_tablet_grid_view.dart';
 
 class BlogsKeywordsList extends StatelessWidget {
   const BlogsKeywordsList({
@@ -15,9 +19,8 @@ class BlogsKeywordsList extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: AppColors.grey, width: 2.5),
         boxShadow: [
-          BoxShadow(
+          const BoxShadow(
             color: Colors.black12,
             spreadRadius: .5,
             blurRadius: 30,
@@ -25,10 +28,21 @@ class BlogsKeywordsList extends StatelessWidget {
           ),
         ],
       ),
-      padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 8.h),
+      padding: EdgeInsets.only(top: 4.h),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 40.h),
+          Text(
+            'وسوم',
+            style: SizeConfig.isDesktop
+                ? AppStyles.style18bold(context)
+                : AppStyles.style26bold(context).copyWith(
+                    color: Colors.black,
+                  ),
+          ),
+          SizedBox(height: 2.h),
+          if (SizeConfig.isDesktop) const KeywordsDesktopListView(),
+          if (!SizeConfig.isDesktop) const KeywordsTabletGridView(),
         ],
       ),
     );

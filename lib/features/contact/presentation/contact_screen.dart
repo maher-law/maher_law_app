@@ -13,14 +13,14 @@ class ContactScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(selectedIndex: 4),
+      drawer: const CustomDrawer(selectedIndex: 4),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: WhatsappButton(),
+      floatingActionButton: const WhatsappButton(),
       resizeToAvoidBottomInset: false,
       body: AdaptiveLayout(
-        mobileLayout: (_) => ContactMobileLayout(),
-        tabletLayout: (_) => ContactTabletLayout(),
-        desktopLayout: (_) => ContactDesktopLayout(),
+        mobileLayout: (_) => const ContactMobileLayout(),
+        tabletLayout: (_) => const ContactTabletLayout(),
+        desktopLayout: (_) => const ContactDesktopLayout(),
       ),
     );
   }

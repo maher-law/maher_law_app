@@ -14,20 +14,20 @@ class ContactDesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverDesktopNavBar(),
+        const SliverDesktopNavBar(),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           sliver: SliverList(
             delegate: SliverChildListDelegate.fixed([
               SizedBox(height: 6.h),
-              ContactUpperSection(),
+              const ContactUpperSection(),
               SizedBox(height: 10.h),
               Row(
                 children: [
-                  Expanded(child: ContactFormSection()),
+                  const Expanded(child: ContactFormSection()),
                   SizedBox(width: 4.w),
                   Expanded(
-                    child: SizedBox(height: 60.h, child: GoogleMapWidget()),
+                    child: SizedBox(height: 60.h, child: const GoogleMapWidget()),
                   ),
                 ],
               ),
@@ -35,7 +35,7 @@ class ContactDesktopLayout extends StatelessWidget {
             ]),
           ),
         ),
-        SliverToBoxAdapter(child: Footer()),
+        const SliverToBoxAdapter(child: Footer()),
       ],
     );
   }

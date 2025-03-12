@@ -26,9 +26,9 @@ class ServicesBlogsSection extends StatelessWidget {
         child: Column(
           children: [
             AdaptiveLayout(
-              mobileLayout: (_) => ServicesMobileBlog(),
-              tabletLayout: (_) => ServicesMobileBlog(),
-              desktopLayout: (_) => ServicesDesktopBlog(),
+              mobileLayout: (_) => const ServicesMobileBlog(),
+              tabletLayout: (_) => const ServicesMobileBlog(),
+              desktopLayout: (_) => const ServicesDesktopBlog(),
             ),
             SizedBox(height: 3.h),
             DecoratedButton(
@@ -56,9 +56,9 @@ class ServicesMobileBlog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ServicesBlogsMenu(),
+        const ServicesBlogsMenu(),
         SizedBox(height: 2.h),
-        ServicesBlogContent(),
+        const ServicesBlogContent(),
       ],
     );
   }
@@ -71,9 +71,9 @@ class ServicesDesktopBlog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(flex: 1, child: ServicesBlogsList()),
+        const Expanded(flex: 1, child: ServicesBlogsList()),
         SizedBox(width: 4.w),
-        Expanded(flex: 2, child: ServicesBlogContent()),
+        const Expanded(flex: 2, child: ServicesBlogContent()),
       ],
     );
   }

@@ -12,14 +12,16 @@ class BlogsSidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScrollConfiguration(
       behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-      child: ListView(
-        shrinkWrap: shrinkWrap,
+      child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 4.h),
-        children: [
-          BlogsSearchBar(),
-          SizedBox(height: 5.h),
-          BlogsKeywordsList(),
-        ],
+        child: Column(
+          // shrinkWrap: shrinkWrap,
+          children: [
+            const BlogsSearchBar(),
+            SizedBox(height: 5.h),
+            const BlogsKeywordsList(),
+          ],
+        ),
       ),
     );
   }

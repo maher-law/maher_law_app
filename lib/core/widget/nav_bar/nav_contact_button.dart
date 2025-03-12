@@ -29,7 +29,7 @@ class NavContactButton extends StatelessWidget {
             style: AppStyles.style16bold(context).copyWith(
               color: Colors.white,
               shadows: [
-                BoxShadow(
+                const BoxShadow(
                   color: Colors.black26,
                   spreadRadius: .5,
                   blurRadius: 30,

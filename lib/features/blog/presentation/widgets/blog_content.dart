@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../cubits/cubit/blog_cubit.dart';
-import 'blog_content_image.dart';
-import 'blog_tags.dart';
-import 'blog_text_content.dart';
+import 'blog_content_widgets.dart';
 
 class BlogContent extends StatelessWidget {
   const BlogContent({super.key});
@@ -16,34 +13,15 @@ class BlogContent extends StatelessWidget {
       builder: (context, state) {
         switch (state) {
           case BlogSuccess():
-            return BlogContentWidgets();
+            return const BlogContentWidgets();
           case BlogFailure():
-            return Center(
+            return const Center(
               child: Text('هناك خطأ ما يرجى المحاولة لاحقًا'),
             );
           default:
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
         }
       },
-    );
-  }
-}
-
-class BlogContentWidgets extends StatelessWidget {
-  const BlogContentWidgets({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        BlogContentImage(),
-        SizedBox(height: 8.h),
-        BlogTextContent(),
-        SizedBox(height: 3.h),
-        BlogTags(),
-      ],
     );
   }
 }

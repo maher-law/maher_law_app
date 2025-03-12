@@ -29,10 +29,10 @@ class BlogsListView extends StatelessWidget {
                           (doc) => Blog.fromFirestore(doc.id, data: doc.data()))
                       .toList();
                   if (index == state.data.length) {
-                    return PaginationControllers();
+                    return const PaginationControllers();
                   }
                   return Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
                     child: MiniBlogWidget(blog: blogs[index]),
                   );
                 },
@@ -48,10 +48,10 @@ class BlogsListView extends StatelessWidget {
                           (doc) => Blog.fromFirestore(doc.id, data: doc.data()))
                       .toList();
                   if (index == state.data.length) {
-                    return PaginationControllers();
+                    return const PaginationControllers();
                   }
                   return Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
                     child: MiniBlogWidget(blog: blogs[index]),
                   );
                 },
@@ -69,10 +69,10 @@ class BlogsListView extends StatelessWidget {
               }
             default:
             if(sliver){
-              return SliverToBoxAdapter(child: Center(child: CircularProgressIndicator()));
+              return const SliverToBoxAdapter(child: Center(child: CircularProgressIndicator()));
 
               }else{
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
 
               }
           }

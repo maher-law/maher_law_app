@@ -26,24 +26,24 @@ class _ServicesMobileLayoutState extends State<ServicesMobileLayout> {
       },
       child: CustomScrollView(
         slivers: [
-          SliverMobileNavBar(),
-          SliverToBoxAdapter(child: ServicesHeaderSection()),
+          const SliverMobileNavBar(),
+          const SliverToBoxAdapter(child: ServicesHeaderSection()),
           SliverToBoxAdapter(child: SizedBox(height: 5.h)),
-          SliverServicesGrid(),
+          const SliverServicesGrid(),
           SliverToBoxAdapter(child: SizedBox(height: 3.h)),
           SliverList(
             delegate: SliverChildListDelegate.fixed(
               [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [LearnMoreButton()],
                 ),
                 SizedBox(height: 6.h),
-                ServicesMobileImageWidget(),
+                const ServicesMobileImageWidget(),
                 SizedBox(height: 10.h),
-                ServicesBlogsSection(),
+                const ServicesBlogsSection(),
                 SizedBox(height: 10.h),
-                Footer(),
+                const Footer(),
               ],
             ),
           ),

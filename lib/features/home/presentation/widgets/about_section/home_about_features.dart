@@ -27,7 +27,7 @@ class HomeAboutFeatures extends StatelessWidget {
       );
     } else {
       return GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: SizeConfig.isTablet ? true : false,
         itemCount: 6,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

@@ -25,7 +25,7 @@ class ServiceWidget extends StatelessWidget {
               color: AppColors.grey.withAlpha(60),
               spreadRadius: 1,
               blurRadius: 6,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
           borderRadius: BorderRadius.circular(24),
@@ -45,7 +45,7 @@ class ServiceWidget extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 14),
+            const SizedBox(height: 14),
             Text(
               service.title,
               textAlign: TextAlign.center,

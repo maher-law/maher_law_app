@@ -28,22 +28,22 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
       },
       child: CustomScrollView(
         slivers: [
-          SliverMobileNavBar(),
+          const SliverMobileNavBar(),
           SliverList(
             delegate: SliverChildListDelegate.fixed(
               [
-                HomeMobileWelcomeSection(),
-                SizedBox(height: 30),
-                HomeServicesTabletSection(),
-                SizedBox(height: 20),
-                HomeTabletAboutSection(),
-                ConsultantMobileBanner(),
-                HomeMobileStepsSection(),
-                HomeRatesSection(),
+                const HomeMobileWelcomeSection(),
+                const SizedBox(height: 30),
+                const HomeServicesTabletSection(),
+                const SizedBox(height: 20),
+                const HomeTabletAboutSection(),
+                const ConsultantMobileBanner(),
+                const HomeMobileStepsSection(),
+                const HomeRatesSection(),
                 SizedBox(height: 5.h),
-                HomeLocationSection(),
+                const HomeLocationSection(),
                 SizedBox(height: 8.h),
-                Footer(),
+                const Footer(),
               ],
             ),
           ),

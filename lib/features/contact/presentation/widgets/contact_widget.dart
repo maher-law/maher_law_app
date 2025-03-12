@@ -15,7 +15,7 @@ class ContactWidget extends StatelessWidget {
           padding: EdgeInsets.all(1.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [
                 AppColors.orange,
                 AppColors.green,
@@ -24,7 +24,7 @@ class ContactWidget extends StatelessWidget {
               end: Alignment.topLeft,
             ),
           ),
-          child: Icon(
+          child: const Icon(
             Icons.mail_outline,
             color: Colors.white,
             size: 30,
@@ -65,7 +65,7 @@ class ContactMobileWidget extends StatelessWidget {
           padding: EdgeInsets.all(1.3.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               colors: [
                 AppColors.orange,
                 AppColors.green,
@@ -74,7 +74,7 @@ class ContactMobileWidget extends StatelessWidget {
               end: Alignment.topLeft,
             ),
           ),
-          child: Icon(
+          child: const Icon(
             Icons.mail_outline,
             color: Colors.white,
             size: 40,

@@ -26,27 +26,27 @@ class _ServicesTabletLayoutState extends State<ServicesTabletLayout> {
       },
       child: CustomScrollView(
         slivers: [
-          SliverTabletNavBar(),
-          SliverToBoxAdapter(child: ServicesHeaderSection()),
+          const SliverTabletNavBar(),
+          const SliverToBoxAdapter(child: ServicesHeaderSection()),
           SliverToBoxAdapter(child: SizedBox(height: 6.h)),
-          SliverServicesGrid(),
+          const SliverServicesGrid(),
           SliverToBoxAdapter(child: SizedBox(height: 3.h)),
           SliverList(
             delegate: SliverChildListDelegate.fixed(
               [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 4.h),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [LearnMoreButton()],
                   ),
                 ),
                 SizedBox(height: 4.h),
-                ServicesDesktopImageWidget(),
+                const ServicesDesktopImageWidget(),
                 SizedBox(height: 10.h),
-                ServicesBlogsSection(),
+                const ServicesBlogsSection(),
                 SizedBox(height: 10.h),
-                Footer(),
+                const Footer(),
               ],
             ),
           ),

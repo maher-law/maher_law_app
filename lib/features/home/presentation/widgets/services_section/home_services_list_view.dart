@@ -12,7 +12,7 @@ class HomeServicesListView extends StatelessWidget {
     return ListView.separated(
       padding: EdgeInsets.symmetric(horizontal: 4.w),
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: 4,
       itemBuilder: (context, index) {
         return HomeServiceWidget(service: servicesData[index]);

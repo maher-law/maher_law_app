@@ -11,11 +11,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SizeConfig.isMobile ? CustomDrawer(selectedIndex: 0) : null,
+      drawer: SizeConfig.isMobile ? const CustomDrawer(selectedIndex: 0) : null,
       backgroundColor: Colors.grey.shade50,
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: WhatsappButton(),
-      body: HomeScreenBody(),
+      floatingActionButton: const WhatsappButton(),
+      body: const HomeScreenBody(),
     );
   }
 }

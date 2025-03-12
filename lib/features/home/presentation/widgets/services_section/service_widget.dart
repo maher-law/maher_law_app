@@ -40,7 +40,7 @@ class _HomeServiceWidgetState extends State<HomeServiceWidget> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: AppColors.green,
                 borderRadius: BorderRadius.circular(12),
@@ -48,7 +48,7 @@ class _HomeServiceWidgetState extends State<HomeServiceWidget> {
               ),
               child: SvgPicture.asset(widget.service.icon, width: 35),
             ),
-            SizedBox(height: 14),
+            const SizedBox(height: 14),
             Text(
               widget.service.title,
               textAlign: TextAlign.center,
@@ -56,7 +56,7 @@ class _HomeServiceWidgetState extends State<HomeServiceWidget> {
                 context,
               ).copyWith(color: Colors.black),
             ),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             Text(
               widget.service.dsecription,
               textAlign: TextAlign.center,

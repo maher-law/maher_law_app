@@ -14,7 +14,7 @@ class ServicesBlogsList extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
       decoration: BoxDecoration(
         boxShadow: [
-          BoxShadow(color: Colors.black26, spreadRadius: 1, blurRadius: 30),
+          const BoxShadow(color: Colors.black26, spreadRadius: 1, blurRadius: 30),
         ],
         borderRadius: BorderRadius.circular(40),
         color: AppColors.green,

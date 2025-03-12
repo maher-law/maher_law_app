@@ -9,12 +9,13 @@ class CustomTextField extends StatelessWidget {
     required this.controller,
     required this.hintText,
     this.maxLines,
-    this.minLines,
+    this.minLines,  this.textAlign =TextAlign.start,
   });
 
   final TextEditingController controller;
   final String hintText;
   final int? maxLines, minLines;
+  final TextAlign textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class CustomTextField extends StatelessWidget {
       minLines: minLines,
       maxLines: maxLines,
       controller: controller,
+      textAlign: textAlign,
       style: AppStyles.style18bold(context).copyWith(color: AppColors.grey),
       decoration: InputDecoration(
         hintText: hintText,

@@ -17,7 +17,7 @@ class WhatsappButton extends StatelessWidget {
       backgroundColor: AppColors.green,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
       child: Padding(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         child: SvgPicture.asset(AppIcons.whatsapp),
       ),
     );

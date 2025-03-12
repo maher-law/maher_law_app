@@ -23,7 +23,7 @@ class RateDesktopItem extends StatelessWidget {
                 height: 24.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       AppColors.orange,
                       AppColors.green,
@@ -35,14 +35,14 @@ class RateDesktopItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 24),
+                    const SizedBox(height: 24),
                     Text(
                       rate.description,
                       style: AppStyles.style16medium(context).copyWith(
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(
                       rate.name,
                       style: AppStyles.style22bold(context).copyWith(
@@ -95,7 +95,7 @@ class RateTabletItem extends StatelessWidget {
                 height: 25.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       AppColors.orange,
                       AppColors.green,
@@ -114,7 +114,7 @@ class RateTabletItem extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(
                       rate.name,
                       style: AppStyles.style22bold(context).copyWith(
@@ -167,7 +167,7 @@ class RateMobileItem extends StatelessWidget {
                 height: 25.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       AppColors.orange,
                       AppColors.green,
@@ -187,7 +187,7 @@ class RateMobileItem extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 6),
+                    const SizedBox(height: 6),
                     Text(
                       rate.name,
                       style: AppStyles.style22bold(context).copyWith(

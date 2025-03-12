@@ -15,7 +15,7 @@ class HomeStepsSection extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40),
         boxShadow: [
-          BoxShadow(color: Colors.black45, spreadRadius: 1, blurRadius: 30),
+          const BoxShadow(color: Colors.black45, spreadRadius: 1, blurRadius: 30),
         ],
       ),
       // height: 90.h,
@@ -38,7 +38,7 @@ class HomeStepsSection extends StatelessWidget {
             ),
             width: SizeConfig.width,
             height: 90.h,
-            child: HomeStepsSectionBody(),
+            child: const HomeStepsSectionBody(),
           ),
         ],
       ),
@@ -57,15 +57,15 @@ class HomeMobileStepsSection extends StatelessWidget {
       width: SizeConfig.width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40),
-        image: DecorationImage(
+        image: const DecorationImage(
           image: AssetImage(AppImages.court),
           fit: BoxFit.cover,
         ),
         boxShadow: [
-          BoxShadow(color: Colors.black45, spreadRadius: 1, blurRadius: 30),
+          const BoxShadow(color: Colors.black45, spreadRadius: 1, blurRadius: 30),
         ],
       ),
-      child: HomeStepsSectionBody(),
+      child: const HomeStepsSectionBody(),
     );
   }
 }

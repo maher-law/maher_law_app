@@ -24,12 +24,12 @@ class _ContactMobileLayoutState extends State<ContactMobileLayout> {
       },
       child: CustomScrollView(
         slivers: [
-          SliverMobileNavBar(),
+          const SliverMobileNavBar(),
           SliverToBoxAdapter(child: SizedBox(height: 3.h)),
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w),
-              child: ContactMobileUpperSection(),
+              child: const ContactMobileUpperSection(),
             ),
           ),
           SliverPadding(
@@ -40,9 +40,9 @@ class _ContactMobileLayoutState extends State<ContactMobileLayout> {
                   SizedBox(height: 6.h),
                   Column(
                     children: [
-                      ContactFormSection(),
+                      const ContactFormSection(),
                       SizedBox(height: 6.h),
-                      SizedBox(height: 60.h, child: GoogleMapWidget()),
+                      SizedBox(height: 60.h, child: const GoogleMapWidget()),
                     ],
                   ),
                   SizedBox(height: 15.h),
@@ -50,7 +50,7 @@ class _ContactMobileLayoutState extends State<ContactMobileLayout> {
               ),
             ),
           ),
-          SliverToBoxAdapter(child: Footer()),
+          const SliverToBoxAdapter(child: Footer()),
         ],
       ),
     );

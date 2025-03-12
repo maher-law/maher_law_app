@@ -19,7 +19,7 @@ class HomeLawyerImage extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           boxShadow: [
-            BoxShadow(
+            const BoxShadow(
               color: Colors.black26,
               spreadRadius: .5,
               blurRadius: 30,
@@ -32,7 +32,7 @@ class HomeLawyerImage extends StatelessWidget {
             AppImages.lawyer,
             fit: BoxFit.cover,
             errorBuilder: (context, error, stackTrace) {
-              return Icon(
+              return const Icon(
                 Icons.error,
                 size: 40,
                 color: AppColors.orange,
@@ -55,7 +55,7 @@ class HomeMobileLawyerImage extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40),
         boxShadow: [
-          BoxShadow(
+          const BoxShadow(
             color: Colors.black26,
             spreadRadius: .5,
             blurRadius: 30,
@@ -69,7 +69,7 @@ class HomeMobileLawyerImage extends StatelessWidget {
           fit: BoxFit.cover,
           // width: SizeConfig.width * .7,
           errorBuilder: (context, error, stackTrace) {
-            return Icon(
+            return const Icon(
               Icons.error,
               size: 40,
               color: AppColors.orange,

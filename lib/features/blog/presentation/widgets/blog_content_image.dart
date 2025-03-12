@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/widget/hover_button.dart';
 import 'package:maher_law_app/features/blog/presentation/cubits/cubit/blog_cubit.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -12,7 +13,7 @@ class BlogContentImage extends StatelessWidget {
     return HoverButton(
       endScale: 1.01,
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
               color: Colors.black26,
@@ -27,7 +28,7 @@ class BlogContentImage extends StatelessWidget {
           child: Image.asset(
             //TODO: network asset
             context.read<BlogCubit>().blog!.thumbnailImageUrl!,
-            width: 40.w,
+            width: SizeConfig.isDesktop ? 40.w : 85.w,
           ),
         ),
       ),
