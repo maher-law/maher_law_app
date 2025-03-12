@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:maher_law_app/core/helpers/app_router.dart';
 import 'package:maher_law_app/core/theme/app_styles.dart';
 import 'package:maher_law_app/features/services/presentation/widgets/decorated_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -73,7 +75,9 @@ class ServicesDesktopImageWidget extends StatelessWidget {
                 ),
                 SizedBox(width: 1.w),
                 DecoratedButton(
-                  onTap: () {},
+                  onTap: () {
+                    context.go(AppRouter.consultation);
+                  },
                   reversed: true,
                   padding: EdgeInsets.symmetric(
                     horizontal: 2.w,
@@ -140,14 +144,13 @@ class ServicesMobileImageWidget extends StatelessWidget {
             SizedBox(height: 2.h),
             Text(
               'أفضل حل قانوني',
-              style:
-                  SizeConfig.isMobile
-                      ? AppStyles.style40bold(
-                        context,
-                      ).copyWith(color: Colors.white)
-                      : AppStyles.style55bold(
-                        context,
-                      ).copyWith(color: Colors.white),
+              style: SizeConfig.isMobile
+                  ? AppStyles.style40bold(
+                      context,
+                    ).copyWith(color: Colors.white)
+                  : AppStyles.style55bold(
+                      context,
+                    ).copyWith(color: Colors.white),
             ),
             SizedBox(height: 3.h),
             Column(
@@ -168,7 +171,9 @@ class ServicesMobileImageWidget extends StatelessWidget {
                 ),
                 SizedBox(height: 2.h),
                 DecoratedButton(
-                  onTap: () {},
+                  onTap: () {
+                    context.go(AppRouter.consultation);
+                  },
                   padding: EdgeInsets.symmetric(
                     horizontal: 6.w,
                     vertical: 1.2.h,

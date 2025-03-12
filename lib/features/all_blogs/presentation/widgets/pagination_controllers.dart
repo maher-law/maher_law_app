@@ -14,15 +14,37 @@ class PaginationControllers extends StatelessWidget {
       children: [
         SizedBox(width: 2.w),
         CustomTextButton(
-          onTap: () {
-            context.read<PaginationCubit>().previousPage();
+          onTap: () async {
+            if (!(await context.read<PaginationCubit>().previousPage())) {
+              if (context.mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    duration: Duration(milliseconds: 800),
+                    content: Center(
+                      child: Text('ليس هناك مقالات سابقة'),
+                    ),
+                  ),
+                );
+              }
+            }
           },
           text: 'السابق',
         ),
         SizedBox(width: .5.w),
         CustomTextButton(
-          onTap: () {
-            context.read<PaginationCubit>().nextPage();
+          onTap: () async {
+            if (!(await context.read<PaginationCubit>().nextPage())) {
+              if (context.mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    duration: Duration(milliseconds: 800),
+                    content: Center(
+                      child: Text('لم يعد هناك مقالات أخرى'),
+                    ),
+                  ),
+                );
+              }
+            }
           },
           text: 'التالي',
         ),

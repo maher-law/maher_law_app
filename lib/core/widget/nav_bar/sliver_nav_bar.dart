@@ -109,11 +109,15 @@ class SliverMobileNavBar extends StatelessWidget {
       pinned: true,
       floating: false,
       delegate: SliverAppBarDelegate(
-        minHeight: 75,
-        maxHeight: 90,
+        minHeight: 75 + MediaQuery.of(context).padding.top,
+        maxHeight: 90 + MediaQuery.of(context).padding.top,
         child: Container(
-          padding:
-              const EdgeInsets.only(top: 20, bottom: 14, right: 50, left: 20),
+          padding: EdgeInsets.only(
+            top: 20 + MediaQuery.of(context).padding.top,
+            bottom: 14,
+            right: 50,
+            left: 20,
+          ),
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border(

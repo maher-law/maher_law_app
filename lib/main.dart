@@ -19,6 +19,7 @@ void main() async {
   setupGetIt();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   // runApp(const MaherApp());
+  //TODO: مشكلة الناف بار لما تحتها بيكون جوجل مابز
   runApp(
     DevicePreview(
       enabled: kDebugMode,

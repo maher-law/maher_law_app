@@ -57,7 +57,7 @@ class BlogCommentSection extends StatelessWidget {
                 SizedBox(width: 1.w),
                 Expanded(
                   child: CustomTextField(
-                    hintText: 'بريد الالكتروني',
+                    hintText: 'البريد الالكتروني',
                     controller: TextEditingController(),
                   ),
                 ),

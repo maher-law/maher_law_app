@@ -22,6 +22,7 @@ abstract class AppRouter {
   static const about = '/about';
   static const contact = '/contact';
   static const blogs = '/blogs';
+  static const consultation = '/consultation';
 
   static final router = GoRouter(
     initialLocation: blogs, //TODO: change to home
@@ -70,7 +71,20 @@ abstract class AppRouter {
         builder: (context, state) {
           return DeferredWidget(
             libraryFuture: contact_screen.loadLibrary(),
-            widgetBuilder: () => contact_screen.ContactScreen(),
+            widgetBuilder: () => contact_screen.ContactScreen(
+              contactState: contact_screen.ContactState.contact,
+            ),
+          );
+        },
+      ),
+      GoRoute(
+        path: consultation,
+        builder: (context, state) {
+          return DeferredWidget(
+            libraryFuture: contact_screen.loadLibrary(),
+            widgetBuilder: () => contact_screen.ContactScreen(
+              contactState: contact_screen.ContactState.consultation,
+            ),
           );
         },
       ),

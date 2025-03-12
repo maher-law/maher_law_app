@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../../../../core/helpers/app_router.dart';
 import '../../../../core/theme/app_styles.dart';
 import 'decorated_button.dart';
 
@@ -15,7 +17,9 @@ class LearnMoreButton extends StatelessWidget {
         vertical: 1.h,
         horizontal: SizeConfig.isMobile ? 4.w : 2.w,
       ),
-      onTap: () {},
+      onTap: () {
+        context.go(AppRouter.blogs);
+      },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

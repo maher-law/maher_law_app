@@ -48,7 +48,7 @@ class PaginationCubit extends Cubit<PaginationState> {
     }
   }
 
-  Future<void> nextPage() async {
+  Future<bool> nextPage() async {
     if (hasNextPage) {
       try {
         emit(PaginationLoading());
@@ -59,7 +59,6 @@ class PaginationCubit extends Cubit<PaginationState> {
             .startAfterDocument(lastDoc)
             .limit(pageSize)
             .get();
-
 
         currentPageItems = snapshot.docs;
 
@@ -73,13 +72,17 @@ class PaginationCubit extends Cubit<PaginationState> {
             currentPage: currentPage,
           ),
         );
+        return true;
       } catch (e) {
-        emit(PaginationError(e.toString()));
+        emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
+        return true;
       }
+    } else {
+      return false;
     }
   }
 
-  Future<void> previousPage() async {
+  Future<bool> previousPage() async {
     if (currentPage > 1) {
       try {
         emit(PaginationLoading());
@@ -100,9 +103,13 @@ class PaginationCubit extends Cubit<PaginationState> {
         emit(
           PaginationLoaded(data: currentPageItems, currentPage: currentPage),
         );
+        return true;
       } catch (e) {
-        emit(PaginationError(e.toString()));
+        emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
+        return true;
       }
+    } else {
+      return false;
     }
   }
 }

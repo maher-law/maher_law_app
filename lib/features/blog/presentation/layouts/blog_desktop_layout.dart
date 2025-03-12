@@ -26,10 +26,7 @@ class BlogDesktopLayout extends StatelessWidget {
                   children: [
                     const Expanded(flex: 2, child: BlogContent()),
                     SizedBox(width: 4.w),
-                    const Expanded(
-                      flex: 1,
-                      child: BlogsSidebar(shrinkWrap: true),
-                    ),
+                    const Expanded(flex: 1, child: BlogsSidebarWidget()),
                   ],
                 ),
                 SizedBox(height: 8.h),

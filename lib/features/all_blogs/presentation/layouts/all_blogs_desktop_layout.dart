@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:maher_law_app/core/widget/blog_sidebar.dart';
 import 'package:maher_law_app/core/widget/nav_bar/sliver_nav_bar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/widget/blog_sidebar.dart';
 import '../../../../core/widget/footer/footer_widget.dart';
 import '../widgets/blogs_list_view.dart';
 
@@ -21,7 +21,7 @@ class AllBlogsDesktopLayout extends StatelessWidget {
               children: [
                 const Expanded(flex: 2, child: BlogsListView()),
                 SizedBox(width: 4.w),
-                const Expanded(flex: 1, child: BlogsSidebar()),
+                const Expanded(flex: 1, child: BlogsSidebarListView()),
               ],
             ),
           ),
