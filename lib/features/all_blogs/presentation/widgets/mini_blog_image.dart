@@ -4,10 +4,10 @@ import 'package:maher_law_app/core/widget/hover_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_images.dart';
 
 class MiniBlogImage extends StatelessWidget {
-  const MiniBlogImage({super.key});
+  const MiniBlogImage({super.key, required this.image});
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +22,11 @@ class MiniBlogImage extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(24),
-          child: Image.asset(
-            AppImages.team,
+          child: Image.network(
+            image,
             width: SizeConfig.isMobile ? 100.w : 20.w,
-            fit: BoxFit.cover,
+            height: 30.h,
+            fit: BoxFit.fill,
           ),
         ),
       ),

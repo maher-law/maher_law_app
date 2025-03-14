@@ -13,10 +13,12 @@ class BlogContentImage extends StatelessWidget {
     return HoverButton(
       endScale: 1.01,
       child: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+          color: Colors.white,
           boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
+            const BoxShadow(
+              color: Colors.black12,
               spreadRadius: .5,
               blurRadius: 30,
               offset: Offset(0, 2),
@@ -25,10 +27,15 @@ class BlogContentImage extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(40),
-          child: Image.asset(
-            //TODO: network asset
-            context.read<BlogCubit>().blog!.thumbnailImageUrl!,
+          child: Image.network(
+            context.read<BlogCubit>().blog!.thumbnailImageUrl,
             width: SizeConfig.isDesktop ? 40.w : 85.w,
+            errorBuilder: (_, __, ___) => const Center(
+              child: Icon(
+                Icons.error,
+                color: Colors.red,
+              ),
+            ),
           ),
         ),
       ),

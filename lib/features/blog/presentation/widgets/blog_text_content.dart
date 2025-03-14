@@ -14,6 +14,20 @@ class BlogTextContent extends StatelessWidget {
       config: const QuillEditorConfig(
         showCursor: false,
         readOnlyMouseCursor: SystemMouseCursors.basic,
+        customStyles: DefaultStyles(
+          paragraph: DefaultTextBlockStyle(
+            TextStyle(color: Colors.black),
+            HorizontalSpacing(0, 0),
+            VerticalSpacing(0, 0),
+            VerticalSpacing(0, 0),
+            BoxDecoration(),
+          ),
+          color: Colors.black,
+          bold: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }

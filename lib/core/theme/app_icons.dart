@@ -20,4 +20,6 @@ abstract class AppIcons {
   static const whatsappLight = '$_iconsPath/whatsapp_light.svg';
 
   static const error404 = '$_lottiesPath/404.json';
+  static const empty = '$_lottiesPath/empty.json';
+  static const loading = '$_lottiesPath/loading.json';
 }

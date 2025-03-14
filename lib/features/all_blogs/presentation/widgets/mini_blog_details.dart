@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:go_router/go_router.dart';
 import 'package:maher_law_app/core/helpers/app_router.dart';
+import 'package:maher_law_app/core/helpers/extensions/timestamp.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/models/blog_model.dart';
-import 'package:maher_law_app/core/widget/hover_text_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/theme/app_colors.dart';
@@ -16,55 +19,71 @@ class MiniBlogDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      spacing: 2.h,
-      crossAxisAlignment:CrossAxisAlignment.start,
-      children: [
-        Text(
-          'أبريل ٢٥, ٢٠٢٤',
-          maxLines: 3,
-          overflow: TextOverflow.ellipsis,
-          style: AppStyles.style14medium(context),
-        ),
-        HoverTextButton(
-          onPressed: () {
-            context.go(
-              '${AppRouter.blogs}/${blog.id}/${blog.slug}',
-              extra: blog,
-            );
-          },
-          withBorder: false,
-          // text: 'عقد الفرنشايز فى المملكة العربية السعودية',
-          text: blog.title,
-          activeColor: AppColors.orange,
-          style: AppStyles.style24bold(context),
-        ),
-        Text(
-          '''هو عقد يمنح بموجبه مالك الامتياز صاحب (العلامة التجارية) المانح الحق في تشغيل مشروع تجاري، أو عرض، أو بيع، أو توزيع السلع، أو الخدمات المحددة المرتبطة بالعلامة التجارية الممنوح له الامتياز.
-    في المقابل، يقوم المستفيد من الامتياز بسداد رسوم دفعات لمرة واحدة أو دورية إلى صاحب الامتياز طبقا للشروط والأحكام المنصوص عليها في  اتفاقية الامتياز''',
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: AppStyles.style16medium(context).copyWith(
-            color: AppColors.grey.withAlpha(200),
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: SizeConfig.isMobile
+            ? CrossAxisAlignment.center
+            : CrossAxisAlignment.start,
+        children: [
+          Text(
+            blog.createdAt.toArabic(),
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
+            style: AppStyles.style14medium(context),
           ),
-        ),
-        DecoratedButton(
-          onTap: () {
-            context.go('${AppRouter.blogs}/${blog.id}/${blog.slug}',
-                extra: blog);
-          },
-          padding: EdgeInsets.symmetric(
-            horizontal: SizeConfig.isMobile ? 6.w : 1.4.w,
-            vertical: 1.h,
-          ),
-          child: Text(
-            'اقرأ أكثر',
-            style: AppStyles.style16medium(context).copyWith(
-              color: Colors.white,
+          SizedBox(height: 2.h),
+          InkWell(
+            highlightColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            onTap: () {
+              context.go(
+                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
+                extra: blog,
+              );
+            },
+            child: Text(
+              blog.title,
+              style: AppStyles.style24bold(context),
             ),
           ),
-        )
-      ],
+          // HoverTextButton(
+
+          //   withBorder: false,
+          //   text: ,
+          //   activeColor: AppColors.orange,
+          //   style: AppStyles.style24bold(context),
+          // ),
+          SizedBox(height: 2.h),
+          Text(
+            Document.fromJson(jsonDecode(blog.contentJson)).toPlainText(),
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
+            style: AppStyles.style16medium(context).copyWith(
+              color: AppColors.grey.withAlpha(200),
+            ),
+          ),
+          DecoratedButton(
+            onTap: () {
+              context.go(
+                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
+                extra: blog,
+              );
+            },
+            padding: EdgeInsets.symmetric(
+              horizontal: SizeConfig.isMobile ? 6.w : 1.4.w,
+              vertical: 1.h,
+            ),
+            child: Text(
+              'اقرأ أكثر',
+              style: AppStyles.style16medium(context).copyWith(
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

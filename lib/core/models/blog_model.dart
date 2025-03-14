@@ -26,7 +26,7 @@ class Blog {
   final String? metaTitle;
   final String? metaDescription; // SEO meta description
   final List<String>? tags; // For categorization
-  final String? thumbnailImageUrl; // Main thumbnail image
+  final String thumbnailImageUrl; // Main thumbnail image
 
   Blog({
     required this.id,
@@ -39,7 +39,7 @@ class Blog {
     this.metaTitle,
     this.metaDescription,
     this.tags,
-    this.thumbnailImageUrl,
+    required this.thumbnailImageUrl,
   });
 
   // Convert Firestore Document to Blog

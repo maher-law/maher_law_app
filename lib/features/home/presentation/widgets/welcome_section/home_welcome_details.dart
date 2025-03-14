@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:maher_law_app/core/helpers/app_router.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/widget/hover_button.dart';
 
@@ -13,10 +15,9 @@ class HomeWelcomeDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment:
-          SizeConfig.width < SizeConfig.tablet
-              ? CrossAxisAlignment.center
-              : CrossAxisAlignment.start,
+      crossAxisAlignment: SizeConfig.width < SizeConfig.tablet
+          ? CrossAxisAlignment.center
+          : CrossAxisAlignment.start,
       children: [
         Text(
           'الوسيط القانوني',
@@ -31,17 +32,18 @@ class HomeWelcomeDetails extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         Row(
-          mainAxisAlignment:
-              SizeConfig.width < SizeConfig.tablet
-                  ? MainAxisAlignment.center
-                  : MainAxisAlignment.start,
+          mainAxisAlignment: SizeConfig.width < SizeConfig.tablet
+              ? MainAxisAlignment.center
+              : MainAxisAlignment.start,
           spacing: 10,
           children: [
             HoverButton(
               endScale: 1.03,
               child: CustomButton(
                 color: AppColors.orange,
-                onPressed: () {},
+                onPressed: () {
+                  context.go(AppRouter.consultation);
+                },
                 child: Text(
                   'طلب استشارة',
                   style: AppStyles.style16bold(
@@ -50,19 +52,6 @@ class HomeWelcomeDetails extends StatelessWidget {
                 ),
               ),
             ),
-            // HoverButton(
-            //   endScale: 1.03,
-            //   child: CustomButton(
-            //     padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-            //     onPressed: () {},
-            //     child: Text(
-            //       'من نحن',
-            //       style: AppStyles.style16bold(context).copyWith(
-            //         color: Colors.white,
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ],
