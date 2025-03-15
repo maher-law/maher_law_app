@@ -5,7 +5,7 @@ import 'package:maher_law_app/core/helpers/app_router.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/theme/app_icons.dart';
 import 'package:maher_law_app/core/theme/app_styles.dart';
-import 'package:maher_law_app/core/widget/hover_button.dart';
+import 'package:maher_law_app/core/widgets/hover_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../core/theme/app_colors.dart';

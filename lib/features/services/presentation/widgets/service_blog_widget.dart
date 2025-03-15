@@ -5,7 +5,7 @@ import 'package:maher_law_app/core/theme/app_styles.dart' show AppStyles;
 import 'package:maher_law_app/features/services/data/service_blog_model.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/widget/hover_text_button.dart';
+import '../../../../core/widgets/hover_text_button.dart';
 import '../cubit/selected_blog_cubit.dart';
 
 class ServiceBlogWidget extends StatelessWidget {

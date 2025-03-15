@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/theme/app_styles.dart';
-import 'package:maher_law_app/core/widget/hover_button.dart';
+import 'package:maher_law_app/core/widgets/hover_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/helpers/functions.dart';

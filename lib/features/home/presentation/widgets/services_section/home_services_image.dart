@@ -3,7 +3,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../../core/theme/app_images.dart';
 import '../../../../../core/theme/app_styles.dart';
-import '../../../../../core/widget/hover_button.dart';
+import '../../../../../core/widgets/hover_button.dart';
 
 class HomeServicesImage extends StatelessWidget {
   const HomeServicesImage({super.key});

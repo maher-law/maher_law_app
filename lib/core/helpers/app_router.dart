@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:maher_law_app/core/models/blog_model.dart';
-import 'package:maher_law_app/core/widget/deferred_loader_widget.dart';
+import 'package:maher_law_app/core/widgets/deferred_loader_widget.dart';
 import '../../features/home/presentation/home_screen.dart';
 
 import 'package:maher_law_app/features/blog/presentation/blog_screen.dart'

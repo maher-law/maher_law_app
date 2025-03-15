@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/widget/footer/footer_widget.dart';
-import '../../../../core/widget/google_maps_widget.dart';
-import '../../../../core/widget/nav_bar/sliver_nav_bar.dart';
-import '../../../../core/widget/refresh_indicator.dart';
+import '../../../../core/widgets/footer/footer_widget.dart';
+import '../../../../core/widgets/google_maps_widget.dart';
+import '../../../../core/widgets/nav_bar/sliver_nav_bar.dart';
+import '../../../../core/widgets/refresh_indicator.dart';
 import '../widgets/contact_form_section.dart';
 import '../widgets/contact_upper_section.dart';
 

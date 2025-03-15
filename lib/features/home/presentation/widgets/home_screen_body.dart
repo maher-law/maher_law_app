@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maher_law_app/core/widget/adaptive_layout.dart';
+import 'package:maher_law_app/core/widgets/adaptive_layout.dart';
 
 import '../layouts/home_desktop_layout.dart';
 import '../layouts/home_mobile_layout.dart';

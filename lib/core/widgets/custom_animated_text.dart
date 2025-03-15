@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maher_law_app/core/widget/hover_text_button.dart';
+import 'package:maher_law_app/core/widgets/hover_text_button.dart';
 
 class CustomAnimatedText extends StatelessWidget {
   const CustomAnimatedText({

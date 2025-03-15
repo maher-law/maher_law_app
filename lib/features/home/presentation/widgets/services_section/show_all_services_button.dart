@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/theme/app_styles.dart';
-import '../../../../../core/widget/hover_button.dart';
+import '../../../../../core/widgets/hover_button.dart';
 
 class ShowAllServicesButton extends StatelessWidget {
   const ShowAllServicesButton({super.key, this.color});

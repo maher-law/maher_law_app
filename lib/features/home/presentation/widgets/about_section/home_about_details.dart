@@ -6,7 +6,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_styles.dart';
-import '../../../../../core/widget/custom_button.dart';
+import '../../../../../core/widgets/custom_button.dart';
 import 'home_about_features.dart';
 
 class HomeAboutDetails extends StatelessWidget {

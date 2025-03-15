@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/widget/adaptive_layout.dart';
-import '../../../core/widget/custom_drawer.dart';
-import '../../../core/widget/whatsapp_button.dart';
+import '../../../core/widgets/adaptive_layout.dart';
+import '../../../core/widgets/custom_drawer.dart';
+import '../../../core/widgets/whatsapp_button.dart';
 import 'layouts/contact_desktop_layout.dart';
 import 'layouts/contact_mobile_layout.dart';
 import 'layouts/contact_tablet_layout.dart';

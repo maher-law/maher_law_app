@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 
-import '../../../core/widget/custom_drawer.dart';
-import '../../../core/widget/whatsapp_button.dart';
+import '../../../core/widgets/custom_drawer.dart';
+import '../../../core/widgets/whatsapp_button.dart';
 import 'widgets/home_screen_body.dart';
 
 class HomeScreen extends StatelessWidget {

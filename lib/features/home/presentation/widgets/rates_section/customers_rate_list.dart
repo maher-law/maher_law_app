@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:maher_law_app/core/theme/app_images.dart';
-import 'package:maher_law_app/core/widget/adaptive_layout.dart';
+import 'package:maher_law_app/core/widgets/adaptive_layout.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../data/models/rate_model.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maher_law_app/core/theme/app_colors.dart';
-import 'package:maher_law_app/core/widget/footer/footer_center_section.dart'
+import 'package:maher_law_app/core/widgets/footer/footer_center_section.dart'
     show FooterCenterSection;
-import 'package:maher_law_app/core/widget/footer/footer_left_section.dart'
+import 'package:maher_law_app/core/widgets/footer/footer_left_section.dart'
     show FooterLeftSection;
 import 'package:responsive_sizer/responsive_sizer.dart';
 

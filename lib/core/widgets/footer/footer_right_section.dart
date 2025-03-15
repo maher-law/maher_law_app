@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:maher_law_app/core/widget/hover_button.dart';
+import 'package:maher_law_app/core/app_constants.dart';
+import 'package:maher_law_app/core/helpers/functions.dart';
+import 'package:maher_law_app/core/widgets/hover_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../helpers/size_config.dart';
@@ -15,10 +17,9 @@ class FooterRightSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment:
-          SizeConfig.isMobile
-              ? CrossAxisAlignment.center
-              : CrossAxisAlignment.start,
+      crossAxisAlignment: SizeConfig.isMobile
+          ? CrossAxisAlignment.center
+          : CrossAxisAlignment.start,
       children: [
         Image.asset(AppImages.logo, height: 12.h, fit: BoxFit.contain),
         SizedBox(height: 4.h),
@@ -29,10 +30,9 @@ class FooterRightSection extends StatelessWidget {
         ),
         SizedBox(height: 4.h),
         Row(
-          mainAxisAlignment:
-              SizeConfig.isMobile
-                  ? MainAxisAlignment.center
-                  : MainAxisAlignment.start,
+          mainAxisAlignment: SizeConfig.isMobile
+              ? MainAxisAlignment.center
+              : MainAxisAlignment.start,
           spacing: 14,
           children: List.generate(3, (index) {
             List icons = [Icons.phone, Icons.location_on, AppIcons.whatsapp];
@@ -62,6 +62,16 @@ class _SocialMediaButtonState extends State<SocialMediaButton> {
   @override
   Widget build(BuildContext context) {
     return HoverButton(
+      onTap: () {
+        if (widget.index == 2) {
+          pushWhatsapp(context);
+        } else if (widget.index == 1) {
+          pushToCustom(context,
+              url: 'https://maps.app.goo.gl/Zp12u9UkeqMxsoV59');
+        } else {
+          pushToCustom(context, url: 'tel:${AppConstants.whatsappNumber}');
+        }
+      },
       onHoverStart: () => setState(() => isActive = true),
       onHoverEnd: () => setState(() => isActive = false),
       endScale: 1.05,
@@ -70,13 +80,12 @@ class _SocialMediaButtonState extends State<SocialMediaButton> {
         height: 5.h,
         width: 5.h,
         color: isActive ? AppColors.green : AppColors.orange,
-        child:
-            widget.index != 2
-                ? Icon(widget.icons[widget.index], color: Colors.white)
-                : Padding(
-                  padding: const EdgeInsets.all(4),
-                  child: SvgPicture.asset(AppIcons.whatsappLight),
-                ),
+        child: widget.index != 2
+            ? Icon(widget.icons[widget.index], color: Colors.white)
+            : Padding(
+                padding: const EdgeInsets.all(4),
+                child: SvgPicture.asset(AppIcons.whatsappLight),
+              ),
       ),
     );
   }

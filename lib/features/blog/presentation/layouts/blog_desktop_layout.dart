@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:maher_law_app/core/widget/nav_bar/sliver_nav_bar.dart';
+import 'package:maher_law_app/core/widgets/nav_bar/sliver_nav_bar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/widget/blog_sidebar.dart';
-import '../../../../core/widget/footer/footer_widget.dart';
+import '../../../../core/widgets/blog_sidebar.dart';
+import '../../../../core/widgets/footer/footer_widget.dart';
 import '../widgets/blog_comment_section.dart';
 import '../widgets/blog_content.dart';
 

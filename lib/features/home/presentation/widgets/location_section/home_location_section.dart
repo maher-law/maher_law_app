@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/theme/app_colors.dart';
 import 'package:maher_law_app/core/theme/app_styles.dart';
-import 'package:maher_law_app/core/widget/google_maps_widget.dart';
-import 'package:maher_law_app/core/widget/hover_button.dart';
+import 'package:maher_law_app/core/widgets/google_maps_widget.dart';
+import 'package:maher_law_app/core/widgets/hover_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomeLocationSection extends StatelessWidget {

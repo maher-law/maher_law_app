@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:maher_law_app/features/blog/presentation/widgets/blog_content.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/widget/blogs_keywords_list.dart';
-import '../../../../core/widget/blogs_search_bar.dart';
-import '../../../../core/widget/footer/footer_widget.dart';
-import '../../../../core/widget/nav_bar/sliver_nav_bar.dart';
-import '../../../../core/widget/refresh_indicator.dart';
+import '../../../../core/widgets/blogs_keywords_list.dart';
+import '../../../../core/widgets/blogs_search_bar.dart';
+import '../../../../core/widgets/footer/footer_widget.dart';
+import '../../../../core/widgets/nav_bar/sliver_nav_bar.dart';
+import '../../../../core/widgets/refresh_indicator.dart';
 import '../widgets/blog_comment_section.dart';
 
 class BlogMobileLayout extends StatefulWidget {

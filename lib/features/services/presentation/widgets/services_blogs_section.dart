@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:maher_law_app/core/helpers/app_router.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/theme/app_styles.dart';
-import 'package:maher_law_app/core/widget/adaptive_layout.dart';
+import 'package:maher_law_app/core/widgets/adaptive_layout.dart';
 import 'package:maher_law_app/features/services/presentation/widgets/decorated_button.dart';
 import 'package:maher_law_app/features/services/presentation/widgets/services_blog_content.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';

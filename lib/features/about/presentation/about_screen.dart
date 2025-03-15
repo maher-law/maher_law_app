@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:maher_law_app/core/widget/adaptive_layout.dart';
+import 'package:maher_law_app/core/widgets/adaptive_layout.dart';
 import 'package:maher_law_app/features/about/presentation/layouts/about_mobile_layout.dart';
 
 import '../../../core/helpers/size_config.dart';
-import '../../../core/widget/custom_drawer.dart';
-import '../../../core/widget/whatsapp_button.dart';
+import '../../../core/widgets/custom_drawer.dart';
+import '../../../core/widgets/whatsapp_button.dart';
 import 'layouts/about_desktop_layout.dart';
 import 'layouts/about_tablet_layout.dart';
 

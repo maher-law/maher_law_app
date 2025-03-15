@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:maher_law_app/core/app_constants.dart';
+import 'package:maher_law_app/core/theme/app_icons.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import 'contact_widget.dart';
+
+List<ContactModel> items = [
+  ContactModel(
+    title: 'الواتس',
+    data: AppConstants.whatsappNumber,
+    svg: AppIcons.whatsapp,
+  ),
+  ContactModel(
+    title: 'الدعم',
+    data: AppConstants.email,
+    icon: Icons.email_outlined,
+  ),
+];
 
 class ContactUpperSection extends StatelessWidget {
   const ContactUpperSection({super.key});
@@ -9,10 +24,13 @@ class ContactUpperSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.start,
+      spacing: 10.w,
       children: List.generate(
-        3,
-        (index) => const ContactWidget(),
+        items.length,
+        (index) => ContactWidget(
+          item: items[index],
+        ),
       ),
     );
   }
@@ -28,8 +46,8 @@ class ContactMobileUpperSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       spacing: 2.3.h,
       children: List.generate(
-        3,
-        (index) => const ContactMobileWidget(),
+        items.length,
+        (index) => ContactMobileWidget(item: items[index]),
       ),
     );
   }

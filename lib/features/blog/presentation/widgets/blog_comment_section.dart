@@ -4,7 +4,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../../../core/helpers/size_config.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_styles.dart';
-import '../../../../core/widget/custom_text_field.dart';
+import '../../../../core/widgets/custom_text_field.dart';
 import '../../../services/presentation/widgets/decorated_button.dart';
 
 class BlogCommentSection extends StatelessWidget {

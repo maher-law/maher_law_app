@@ -3,8 +3,8 @@ import 'package:maher_law_app/core/helpers/extensions/screen_details.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/theme/app_colors.dart';
 import 'package:maher_law_app/core/theme/app_icons.dart';
-import 'package:maher_law_app/core/widget/custom_icon_button.dart';
-import 'package:maher_law_app/core/widget/nav_bar/nav_bar_action_section.dart';
+import 'package:maher_law_app/core/widgets/custom_icon_button.dart';
+import 'package:maher_law_app/core/widgets/nav_bar/nav_bar_action_section.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../../core/theme/app_images.dart';

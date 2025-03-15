@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/theme/app_styles.dart';
-import '../../../../core/widget/custom_text_field.dart';
+import '../../../../core/widgets/custom_text_field.dart';
 import '../contact_screen.dart';
 
 class ContactFormSection extends StatelessWidget {

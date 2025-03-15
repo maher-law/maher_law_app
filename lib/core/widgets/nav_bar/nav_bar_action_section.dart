@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:maher_law_app/core/theme/app_colors.dart';
 import 'package:maher_law_app/core/theme/app_styles.dart';
-import 'package:maher_law_app/core/widget/hover_text_button.dart';
-import 'package:maher_law_app/core/widget/nav_bar/nav_data.dart';
+import 'package:maher_law_app/core/widgets/hover_text_button.dart';
+import 'package:maher_law_app/core/widgets/nav_bar/nav_data.dart';
 
 class NavBarActionsSection extends StatelessWidget {
   const NavBarActionsSection({super.key, this.padding});
