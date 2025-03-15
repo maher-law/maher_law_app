@@ -32,7 +32,8 @@ class HomeLawyerImage extends StatelessWidget {
             imageUrl: AppImages.lawyer,
             fit: BoxFit.cover,
             placeholder: (context, url) {
-              return const Center(child: CircularProgressIndicator(color: AppColors.green));
+              return const Center(
+                  child: CircularProgressIndicator(color: AppColors.green));
             },
             errorWidget: (context, error, stackTrace) {
               return const Icon(
@@ -67,11 +68,14 @@ class HomeMobileLawyerImage extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(40),
-        child: Image.asset(
-          AppImages.lawyer,
+        child: CachedNetworkImage(
+          imageUrl: AppImages.lawyer,
           fit: BoxFit.cover,
-          // width: SizeConfig.width * .7,
-          errorBuilder: (context, error, stackTrace) {
+          placeholder: (context, url) {
+            return const Center(
+                child: CircularProgressIndicator(color: AppColors.green));
+          },
+          errorWidget: (context, error, stackTrace) {
             return const Icon(
               Icons.error,
               size: 40,

@@ -60,20 +60,20 @@ class ServicesDesktopImageWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                DecoratedButton(
-                  onTap: () {},
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 2.w,
-                    vertical: 1.2.h,
-                  ),
-                  child: Text(
-                    'احجز موعد',
-                    style: AppStyles.style16bold(
-                      context,
-                    ).copyWith(color: Colors.white),
-                  ),
-                ),
-                SizedBox(width: 1.w),
+                // DecoratedButton(
+                //   onTap: () {},
+                //   padding: EdgeInsets.symmetric(
+                //     horizontal: 2.w,
+                //     vertical: 1.2.h,
+                //   ),
+                //   child: Text(
+                //     'احجز موعد',
+                //     style: AppStyles.style16bold(
+                //       context,
+                //     ).copyWith(color: Colors.white),
+                //   ),
+                // ),
+                // SizedBox(width: 1.w),
                 DecoratedButton(
                   onTap: () {
                     context.go(AppRouter.consultation);
@@ -156,20 +156,20 @@ class ServicesMobileImageWidget extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                DecoratedButton(
-                  onTap: () {},
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 6.w,
-                    vertical: 1.2.h,
-                  ),
-                  child: Text(
-                    'احجز موعد',
-                    style: AppStyles.style16bold(
-                      context,
-                    ).copyWith(color: Colors.white),
-                  ),
-                ),
-                SizedBox(height: 2.h),
+                // DecoratedButton(
+                //   onTap: () {},
+                //   padding: EdgeInsets.symmetric(
+                //     horizontal: 6.w,
+                //     vertical: 1.2.h,
+                //   ),
+                //   child: Text(
+                //     'احجز موعد',
+                //     style: AppStyles.style16bold(
+                //       context,
+                //     ).copyWith(color: Colors.white),
+                //   ),
+                // ),
+                // SizedBox(height: 2.h),
                 DecoratedButton(
                   onTap: () {
                     context.go(AppRouter.consultation);

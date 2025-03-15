@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:maher_law_app/core/helpers/app_router.dart';
+import 'package:maher_law_app/core/helpers/functions.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/widgets/hover_button.dart';
 
@@ -42,7 +41,8 @@ class HomeWelcomeDetails extends StatelessWidget {
               child: CustomButton(
                 color: AppColors.orange,
                 onPressed: () {
-                  context.go(AppRouter.consultation);
+                  // context.go(AppRouter.consultation);
+                  pushWhatsapp(context);
                 },
                 child: Text(
                   'طلب استشارة',

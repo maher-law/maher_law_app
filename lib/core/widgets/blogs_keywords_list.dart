@@ -8,9 +8,7 @@ import 'keywords_desktop_list_view.dart';
 import 'keywords_tablet_grid_view.dart';
 
 class BlogsKeywordsList extends StatelessWidget {
-  const BlogsKeywordsList({
-    super.key,
-  });
+  const BlogsKeywordsList({super.key});
 
   @override
   Widget build(BuildContext context) {
