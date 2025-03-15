@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:maher_law_app/core/helpers/app_router.dart';
+import 'package:maher_law_app/core/helpers/functions.dart';
 import 'package:maher_law_app/core/theme/app_styles.dart';
 import 'package:maher_law_app/features/services/presentation/widgets/decorated_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -76,7 +75,8 @@ class ServicesDesktopImageWidget extends StatelessWidget {
                 // SizedBox(width: 1.w),
                 DecoratedButton(
                   onTap: () {
-                    context.go(AppRouter.consultation);
+                    // context.go(AppRouter.consultation);
+                    pushWhatsapp(context);
                   },
                   reversed: true,
                   padding: EdgeInsets.symmetric(
@@ -172,7 +172,8 @@ class ServicesMobileImageWidget extends StatelessWidget {
                 // SizedBox(height: 2.h),
                 DecoratedButton(
                   onTap: () {
-                    context.go(AppRouter.consultation);
+                    pushWhatsapp(context);
+                    // context.go(AppRouter.consultation);
                   },
                   padding: EdgeInsets.symmetric(
                     horizontal: 6.w,

@@ -6,15 +6,12 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_styles.dart';
 
 class ContactModel {
-  final String title, data;
-  final String? svg;
-  final IconData? icon;
+  final String title, data, svg;
 
   ContactModel({
     required this.title,
     required this.data,
-    this.icon,
-    this.svg,
+    required this.svg,
   });
 }
 
@@ -39,16 +36,10 @@ class ContactWidget extends StatelessWidget {
               end: Alignment.topLeft,
             ),
           ),
-          child: item.icon != null
-              ? Icon(
-                  item.icon,
-                  color: Colors.white,
-                  size: 30,
-                )
-              : SvgPicture.asset(
-                  item.svg!,
-                  width: 3.w,
-                ),
+          child: SvgPicture.asset(
+            item.svg,
+            width: 3.w,
+          ),
         ),
         SizedBox(width: 1.5.w),
         Column(
@@ -95,16 +86,10 @@ class ContactMobileWidget extends StatelessWidget {
               end: Alignment.topLeft,
             ),
           ),
-          child: item.icon != null
-              ? Icon(
-                  item.icon,
-                  color: Colors.white,
-                  size: 30,
-                )
-              : SvgPicture.asset(
-                  item.svg!,
-                  width: 8.w,
-                ),
+          child: SvgPicture.asset(
+            item.svg,
+            width: 8.w,
+          ),
         ),
         SizedBox(width: 6.w),
         Column(

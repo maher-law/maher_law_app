@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:maher_law_app/core/helpers/app_router.dart';
 import 'package:maher_law_app/core/theme/app_colors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -17,7 +19,9 @@ class HomeServicesTabletSection extends StatelessWidget {
         MaterialButton(
           minWidth: 40.w,
           padding: EdgeInsets.symmetric(vertical: 1.4.h, horizontal: 2.w),
-          onPressed: () {},
+          onPressed: () {
+            context.go(AppRouter.services);
+          },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24),
           ),
@@ -34,7 +38,8 @@ class HomeServicesTabletSection extends StatelessWidget {
                 ).copyWith(color: Colors.white),
               ),
               SizedBox(width: 1.w),
-              const Icon(Icons.arrow_right_rounded, color: Colors.white, size: 34),
+              const Icon(Icons.arrow_right_rounded,
+                  color: Colors.white, size: 34),
             ],
           ),
         ),

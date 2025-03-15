@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../../../../../core/helpers/app_router.dart';
 import '../../../../../core/theme/app_images.dart';
 import '../../../../../core/theme/app_styles.dart';
 import '../../../../../core/widgets/hover_button.dart';
@@ -16,6 +18,9 @@ class HomeServicesImage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           HoverButton(
+            onTap: () {
+              context.go(AppRouter.services);
+            },
             endScale: 1.005,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 30),

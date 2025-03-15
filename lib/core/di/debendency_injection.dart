@@ -6,5 +6,6 @@ final getIt = GetIt.instance;
 void setupGetIt() {
   // getIt.registerLazySingleton<FirebaseServices>(() => FirebaseServices());
   getIt.registerLazySingleton<FirebaseFirestore>(
-      () => FirebaseFirestore.instance,);
+    () => FirebaseFirestore.instance,
+  );
 }

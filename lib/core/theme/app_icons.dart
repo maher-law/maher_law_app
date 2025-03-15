@@ -13,6 +13,7 @@ abstract class AppIcons {
   static const handcuffs = '$_iconsPath/handcuffs.svg';
   static const certificate = '$_iconsPath/certificate.svg';
   static const lawBook = '$_iconsPath/law_book.svg';
+  static const email = '$_iconsPath/email.svg';
 
   static const menu = '$_iconsPath/menu.svg';
   static const phone = '$_iconsPath/phone.svg';

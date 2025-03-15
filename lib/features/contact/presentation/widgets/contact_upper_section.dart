@@ -14,7 +14,8 @@ List<ContactModel> items = [
   ContactModel(
     title: 'الدعم',
     data: AppConstants.email,
-    icon: Icons.email_outlined,
+        svg: AppIcons.email,
+
   ),
 ];
 
