@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../../features/all_blogs/presentation/cubits/cubit/pagination_cubit.dart';
 import '../theme/app_colors.dart';
 import 'hover_button.dart';
 
 class BlogsSearchBar extends StatelessWidget {
-  const BlogsSearchBar({super.key, this.decorated = true, this.padding});
+  const BlogsSearchBar(
+      {super.key,
+      this.decorated = true,
+      this.padding,
+      this.controller,
+      this.onTap});
   final bool decorated;
   final EdgeInsets? padding;
+  final TextEditingController? controller;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +44,15 @@ class BlogsSearchBar extends StatelessWidget {
           children: [
             Expanded(
               child: TextField(
+                onSubmitted: (_) {
+                  if (onTap != null) {
+                    onTap!.call();
+                  } else {
+                    context.read<PaginationCubit>().getBySearch();
+                  }
+                },
+                controller: controller ??
+                    context.read<PaginationCubit>().searchController,
                 decoration: InputDecoration(
                   hintText: 'ابحث',
                   border: OutlineInputBorder(
@@ -58,7 +76,8 @@ class BlogsSearchBar extends StatelessWidget {
             const SizedBox(width: 4),
             InkWell(
               borderRadius: BorderRadius.circular(100),
-              onTap: () {},
+              onTap:
+                  onTap ?? () => context.read<PaginationCubit>().getBySearch(),
               child: Container(
                 decoration: const BoxDecoration(
                   color: AppColors.green,

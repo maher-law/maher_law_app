@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubits/cubit/blog_cubit.dart';
+import '../cubits/blog_cubit/blog_cubit.dart';
 import 'blog_content_widgets.dart';
 
 class BlogContent extends StatelessWidget {

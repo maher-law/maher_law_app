@@ -1,6 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ApiKeys {
+  static const blog = 'blog';
+  static const message = 'message';
+  static const subject = 'subject';
+  static const email = 'email';
+  static const name = 'name';
+  static const link = 'link';
+
   static const blogsCollection = 'blogs';
   static const id = 'id';
   static const title = 'title';

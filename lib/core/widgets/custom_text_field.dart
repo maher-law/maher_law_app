@@ -9,6 +9,7 @@ class CustomTextField extends StatelessWidget {
     required this.controller,
     required this.hintText,
     this.maxLines,
+    this.validator,
     this.minLines,  this.textAlign =TextAlign.start,
   });
 
@@ -16,10 +17,12 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final int? maxLines, minLines;
   final TextAlign textAlign;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
       minLines: minLines,
       maxLines: maxLines,
       controller: controller,

@@ -21,7 +21,8 @@ class _CustomTextButtonState extends State<CustomTextButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: widget.onTap,
+      //! onTap: widget.onTap,
+      onTap: null,
       child: HoverButton(
         onHoverStart: () {
           setState(() {

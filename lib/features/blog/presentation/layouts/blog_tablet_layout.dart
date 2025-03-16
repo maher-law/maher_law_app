@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/widgets/blogs_keywords_list.dart';
-import '../../../../core/widgets/blogs_search_bar.dart';
 import '../../../../core/widgets/footer/footer_widget.dart';
 import '../../../../core/widgets/nav_bar/sliver_nav_bar.dart';
 import '../../../../core/widgets/refresh_indicator.dart';
@@ -34,11 +33,6 @@ class _BlogTabletLayoutState extends State<BlogTabletLayout> {
               children: [
                 const BlogContent(),
                 SizedBox(height: 5.h),
-                BlogsSearchBar(
-                  decorated: false,
-                  padding: EdgeInsets.symmetric(horizontal: 2.w),
-                ),
-                SizedBox(height: 2.h),
                 const BlogsKeywordsList(),
                 SizedBox(height: 5.h),
               ],

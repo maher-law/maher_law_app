@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:maher_law_app/features/contact/presentation/contact_cubit/contact_cubit.dart';
 import 'package:provider/provider.dart';
 
 import '../../../core/widgets/adaptive_layout.dart';
@@ -18,15 +20,18 @@ class ContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provider.value(
       value: contactState,
-      child: Scaffold(
-        drawer: const CustomDrawer(selectedIndex: 4),
-        floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-        floatingActionButton: const WhatsappButton(),
-        resizeToAvoidBottomInset: false,
-        body: AdaptiveLayout(
-          mobileLayout: (_) => const ContactMobileLayout(),
-          tabletLayout: (_) => const ContactTabletLayout(),
-          desktopLayout: (_) => const ContactDesktopLayout(),
+      child: BlocProvider(
+        create: (context) => ContactUsCubit(),
+        child: Scaffold(
+          drawer: const CustomDrawer(selectedIndex: 4),
+          floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+          floatingActionButton: const WhatsappButton(),
+          resizeToAvoidBottomInset: false,
+          body: AdaptiveLayout(
+            mobileLayout: (_) => const ContactMobileLayout(),
+            tabletLayout: (_) => const ContactTabletLayout(),
+            desktopLayout: (_) => const ContactDesktopLayout(),
+          ),
         ),
       ),
     );

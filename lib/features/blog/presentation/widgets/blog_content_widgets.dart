@@ -5,7 +5,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_styles.dart';
-import '../cubits/cubit/blog_cubit.dart';
+import '../cubits/blog_cubit/blog_cubit.dart';
 import 'blog_content_image.dart';
 import 'blog_tags.dart';
 import 'blog_text_content.dart';

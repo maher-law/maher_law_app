@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/widgets/hover_button.dart';
-import 'package:maher_law_app/features/blog/presentation/cubits/cubit/blog_cubit.dart';
+import 'package:maher_law_app/features/blog/presentation/cubits/blog_cubit/blog_cubit.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class BlogContentImage extends StatelessWidget {

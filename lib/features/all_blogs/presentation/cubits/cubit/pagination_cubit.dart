@@ -1,6 +1,7 @@
 // pagination_cubit.dart
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maher_law_app/core/di/debendency_injection.dart';
 import 'package:maher_law_app/core/models/blog_model.dart';
@@ -9,7 +10,7 @@ part 'pagination_state.dart';
 
 class PaginationCubit extends Cubit<PaginationState> {
   PaginationCubit() : super(PaginationInitial());
-
+  var searchController = TextEditingController();
   var collection =
       getIt<FirebaseFirestore>().collection(ApiKeys.blogsCollection);
   // .withConverter<Blog>(
@@ -37,19 +38,36 @@ class PaginationCubit extends Cubit<PaginationState> {
       hasNextPage = snapshot.docs.length == pageSize;
 
       currentPage = 1;
-      emit(
-        PaginationLoaded(
-          data: currentPageItems,
-          currentPage: currentPage,
-        ),
-      );
+      emit(PaginationLoaded(data: currentPageItems, currentPage: currentPage));
+    } catch (e) {
+      emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
+    }
+  }
+
+  Future<void> getBySearch() async {
+    emit(PaginationLoading());
+
+    try {
+      final snapshot = await getIt<FirebaseFirestore>()
+          .collection(ApiKeys.blogsCollection)
+          .where(ApiKeys.title, isGreaterThanOrEqualTo: searchController.text)
+          .where(ApiKeys.title, isLessThan: '${searchController.text}\uf8ff')
+          .get();
+
+      currentPageItems = snapshot.docs;
+      currentPage = -1;
+
+      emit(PaginationLoaded(data: currentPageItems, currentPage: -1));
     } catch (e) {
       emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
     }
   }
 
   Future<bool> nextPage() async {
-    if (hasNextPage) {
+    if (currentPage == -1) {
+      loadFirstPage();
+      return true;
+    } else if (hasNextPage) {
       try {
         emit(PaginationLoading());
 
@@ -83,7 +101,10 @@ class PaginationCubit extends Cubit<PaginationState> {
   }
 
   Future<bool> previousPage() async {
-    if (currentPage > 1) {
+    if (currentPage == -1) {
+      loadFirstPage();
+      return true;
+    } else if (currentPage > 1) {
       try {
         emit(PaginationLoading());
 

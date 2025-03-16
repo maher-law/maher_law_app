@@ -26,7 +26,7 @@ class BlogsSidebarListView extends StatelessWidget {
 class BlogsSidebarWidget extends StatelessWidget {
   const BlogsSidebarWidget({super.key, this.shrinkWrap = false});
   final bool shrinkWrap;
-  
+
   @override
   Widget build(BuildContext context) {
     return ScrollConfiguration(

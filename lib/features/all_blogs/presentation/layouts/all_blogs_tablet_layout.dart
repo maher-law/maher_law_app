@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:maher_law_app/features/all_blogs/presentation/cubits/cubit/pagination_cubit.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/widgets/blogs_keywords_list.dart';
@@ -34,6 +36,10 @@ class _AllBlogsTabletLayoutState extends State<AllBlogsTabletLayout> {
             sliver: SliverList.list(
               children: [
                 BlogsSearchBar(
+                  onTap: () {
+                    context.read<PaginationCubit>().getBySearch();
+                  },
+                  controller: context.read<PaginationCubit>().searchController,
                   decorated: false,
                   padding: EdgeInsets.symmetric(horizontal: 2.w),
                 ),

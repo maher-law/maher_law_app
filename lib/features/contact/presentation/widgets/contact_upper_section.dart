@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
+
 import 'package:maher_law_app/core/app_constants.dart';
 import 'package:maher_law_app/core/theme/app_icons.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 import 'contact_widget.dart';
 

@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:go_router/go_router.dart';
 
-
 import '../../../../../core/di/debendency_injection.dart';
 import '../../../../../core/models/blog_model.dart';
 
@@ -49,22 +48,12 @@ class BlogCubit extends Cubit<BlogState> {
 
       blog = Blog.fromFirestore(blogDoc.id, data: blogDoc.data()!);
       emit(BlogSuccess());
-    }  catch (_) {
+    } catch (_) {
       emit(BlogFailure());
     }
-
-    // Seo.head(
-    //   title: blog.title,
-    //   description: post.summary,
-    //   keywords: post.keywords,
-    //   socialMeta: SocialMeta(
-    //     ogTitle: post.title,
-    //     ogDescription: post.summary,
-    //     ogImage: post.thumbnailUrl,
-    //   ),
-    // );
-
   }
+
+  
 
   @override
   Future<void> close() {
