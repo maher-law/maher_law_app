@@ -8,23 +8,22 @@ import 'package:maher_law_app/core/models/blog_model.dart';
 
 part 'pagination_state.dart';
 
+
+
 class PaginationCubit extends Cubit<PaginationState> {
   PaginationCubit() : super(PaginationInitial());
   var searchController = TextEditingController();
   var collection =
       getIt<FirebaseFirestore>().collection(ApiKeys.blogsCollection);
-  // .withConverter<Blog>(
-  //   fromFirestore: (snapshot, _) => Blog.fromFirestore(snapshot),
-  //   toFirestore: (Blog blog, _) => blog.toFirestore(),
-  // );
 
   int pageSize = 5;
   int currentPage = -1;
 
   List<QueryDocumentSnapshot<Map<String, dynamic>>> currentPageItems = [];
-  // Query<Blog>? lastDoc;
 
   bool hasNextPage = true;
+
+  
 
   Future<void> loadFirstPage() async {
     emit(PaginationLoading());

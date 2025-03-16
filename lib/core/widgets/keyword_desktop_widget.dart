@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:maher_law_app/core/models/keyword_model.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../theme/app_colors.dart';
@@ -7,8 +8,8 @@ import '../theme/app_styles.dart';
 import 'hover_button.dart';
 
 class KeyworkDesktopWidget extends StatefulWidget {
-  const KeyworkDesktopWidget({super.key, required this.text});
-  final String text;
+  const KeyworkDesktopWidget({super.key, required this.keyword});
+  final Keyword keyword;
 
   @override
   State<KeyworkDesktopWidget> createState() => _KeyworkDesktopWidgetState();
@@ -19,6 +20,9 @@ class _KeyworkDesktopWidgetState extends State<KeyworkDesktopWidget> {
   @override
   Widget build(BuildContext context) {
     return HoverButton(
+      onTap: () {
+        
+      },
       endScale: 1.02,
       onHoverStart: () {
         setState(() {
@@ -39,7 +43,7 @@ class _KeyworkDesktopWidgetState extends State<KeyworkDesktopWidget> {
           ),
         ),
         child: Text(
-          widget.text,
+          widget.keyword.title,
           textAlign: TextAlign.center,
           style: AppStyles.style14medium(context).copyWith(
             color: AppColors.grey,

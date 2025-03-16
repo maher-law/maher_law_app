@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../features/all_blogs/presentation/cubits/cubit/pagination_cubit.dart';
+import '../../features/all_blogs/presentation/cubits/pagination_cubit/pagination_cubit.dart';
 import '../theme/app_colors.dart';
 import 'hover_button.dart';
 

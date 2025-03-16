@@ -7,6 +7,7 @@ class ApiKeys {
   static const email = 'email';
   static const name = 'name';
   static const link = 'link';
+  static const keywords = 'keywords';
 
   static const blogsCollection = 'blogs';
   static const id = 'id';
