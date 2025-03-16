@@ -19,13 +19,13 @@ class _ContactMobileLayoutState extends State<ContactMobileLayout> {
   @override
   Widget build(BuildContext context) {
     return CustomRefreshIndicator(
-       onRefresh: () async {
+      onRefresh: () async {
         setState(() {});
       },
       child: CustomScrollView(
         slivers: [
           const SliverMobileNavBar(),
-          SliverToBoxAdapter(child: SizedBox(height: 3.h)),
+          SizedBox(height: 3.h),
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w),

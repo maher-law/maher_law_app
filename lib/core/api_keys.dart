@@ -1,4 +1,5 @@
 class ApiKeys {
+  static const dsn = 'https://15b5e8ed524567e3de4ccb3a22a0cba2@o4508988918136832.ingest.us.sentry.io/4508988924362752';
   static const blog = 'blog';
   static const message = 'message';
   static const subject = 'subject';
