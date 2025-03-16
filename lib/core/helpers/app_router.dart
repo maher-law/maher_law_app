@@ -1,8 +1,7 @@
 import 'package:go_router/go_router.dart';
+import 'package:maher_law_app/core/api_keys.dart';
 import 'package:maher_law_app/core/models/blog_model.dart';
 import 'package:maher_law_app/core/widgets/deferred_loader_widget.dart';
-import '../../features/home/presentation/home_screen.dart';
-
 import 'package:maher_law_app/features/blog/presentation/blog_screen.dart'
     deferred as blog_screen;
 
@@ -14,6 +13,7 @@ import '../../features/contact/presentation/contact_screen.dart'
     deferred as contact_screen;
 import '../../features/error/page_not_found_screen.dart'
     deferred as error_screen;
+import '../../features/home/presentation/home_screen.dart';
 import '../../features/services/presentation/services_screen.dart'
     deferred as services_screen;
 
@@ -26,7 +26,7 @@ abstract class AppRouter {
   static const consultation = '/consultation';
 
   static final router = GoRouter(
-    initialLocation: home, 
+    initialLocation: home,
     routes: [
       GoRoute(path: home, builder: (context, state) => const HomeScreen()),
       GoRoute(

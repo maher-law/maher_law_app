@@ -1,8 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 
-import '../../../../core/models/blog_model.dart';
+import '../api_keys.dart';
 
 class BlogData {
   final String title;
@@ -18,25 +19,20 @@ class BlogData {
   }
 }
 
-class Message {
+class Message extends Equatable {
   final String name, email, message;
   final String? subject;
   final BlogData? blog;
   final Timestamp createdAt;
 
-  List<String> values = [];
-
-  Message({
+  const Message({
     required this.name,
     required this.email,
     required this.message,
     this.subject,
     this.blog,
     required this.createdAt,
-  }) {
-    values = [name, email, message];
-    if (subject != null) values.add(subject!);
-  }
+  });
 
   Map<String, dynamic> toJson() {
     return {
@@ -66,4 +62,14 @@ class Message {
           : null,
     );
   }
+
+  @override
+  List<Object?> get props => [
+        name,
+        email,
+        message,
+        subject,
+        blog,
+        createdAt,
+      ];
 }

@@ -35,8 +35,8 @@ class FooterRightSection extends StatelessWidget {
               : MainAxisAlignment.start,
           spacing: 14,
           children: List.generate(3, (index) {
-            List icons = [Icons.phone, Icons.location_on, AppIcons.whatsapp];
-            return SocialMediaButton(index: index, icons: icons);
+            List icons = [AppIcons.phone, AppIcons.locate, AppIcons.whatsapp];
+            return SocialMediaButton(index: index, icon: icons[index]);
           }),
         ),
       ],
@@ -47,11 +47,11 @@ class FooterRightSection extends StatelessWidget {
 class SocialMediaButton extends StatefulWidget {
   const SocialMediaButton({
     super.key,
-    required this.icons,
+    required this.icon,
     required this.index,
   });
   final int index;
-  final List icons;
+  final String icon;
 
   @override
   State<SocialMediaButton> createState() => _SocialMediaButtonState();
@@ -77,15 +77,20 @@ class _SocialMediaButtonState extends State<SocialMediaButton> {
       endScale: 1.05,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
-        height: 5.h,
-        width: 5.h,
+        // height: 5.h,
+        // width: 5.h,
         color: isActive ? AppColors.green : AppColors.orange,
-        child: widget.index != 2
-            ? Icon(widget.icons[widget.index], color: Colors.white)
-            : Padding(
-                padding: const EdgeInsets.all(4),
-                child: SvgPicture.asset(AppIcons.whatsappLight),
-              ),
+        child: Padding(
+          padding: const EdgeInsets.all(4),
+          child: SvgPicture.asset(
+            widget.icon,
+            width: SizeConfig.isDesktop
+                ? 2.w
+                : SizeConfig.isTablet
+                    ? 4.w
+                    : 8.w,
+          ),
+        ),
       ),
     );
   }

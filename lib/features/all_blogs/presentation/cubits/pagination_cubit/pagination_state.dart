@@ -1,8 +1,14 @@
 part of 'pagination_cubit.dart';
 
-sealed class PaginationState {}
+sealed class PaginationState extends Equatable {
 
-class PaginationInitial extends PaginationState {}
+@override
+  List<Object?> get props => [];
+}
+
+class PaginationInitial extends PaginationState {
+  
+}
 
 class PaginationLoading extends PaginationState {}
 
@@ -14,10 +20,14 @@ class PaginationLoaded extends PaginationState {
     required this.data,
     required this.currentPage,
   });
+  @override
+  List<Object?> get props => [data,currentPage];
 }
 
 class PaginationError extends PaginationState {
   final String message;
 
   PaginationError(this.message);
+  @override
+  List<Object?> get props => [message];
 }

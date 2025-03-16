@@ -1,6 +1,9 @@
 part of 'blog_cubit.dart';
 
-sealed class BlogState {}
+sealed class BlogState extends Equatable{
+  @override
+  List<Object?> get props => [];
+}
 
 final class BlogInitial extends BlogState {}
 

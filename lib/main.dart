@@ -29,6 +29,9 @@ void main() async {
       builder: (context) => const MaherApp(),
     ),
   );
+
+  //TODO: Change default error widget
+  //TODO: Add exceptions tracker service
 }
 
 class MaherApp extends StatelessWidget {

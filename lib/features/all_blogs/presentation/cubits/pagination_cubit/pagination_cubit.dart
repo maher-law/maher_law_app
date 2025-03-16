@@ -1,14 +1,14 @@
 // pagination_cubit.dart
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maher_law_app/core/di/debendency_injection.dart';
-import 'package:maher_law_app/core/models/blog_model.dart';
+
+import '../../../../../core/api_keys.dart';
 
 part 'pagination_state.dart';
-
-
 
 class PaginationCubit extends Cubit<PaginationState> {
   PaginationCubit() : super(PaginationInitial());
@@ -22,8 +22,6 @@ class PaginationCubit extends Cubit<PaginationState> {
   List<QueryDocumentSnapshot<Map<String, dynamic>>> currentPageItems = [];
 
   bool hasNextPage = true;
-
-  
 
   Future<void> loadFirstPage() async {
     emit(PaginationLoading());

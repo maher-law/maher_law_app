@@ -1,11 +1,13 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../core/api_keys.dart';
 import '../../../../../core/di/debendency_injection.dart';
 import '../../../../../core/models/blog_model.dart';
 
@@ -40,7 +42,7 @@ class BlogCubit extends Cubit<BlogState> {
 
     try {
       String id = route.split('/')[2];
-      // print(id);
+
       var blogDoc = await getIt<FirebaseFirestore>()
           .collection(ApiKeys.blogsCollection)
           .doc(id)
@@ -52,8 +54,6 @@ class BlogCubit extends Cubit<BlogState> {
       emit(BlogFailure());
     }
   }
-
-  
 
   @override
   Future<void> close() {

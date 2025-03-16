@@ -15,6 +15,7 @@ abstract class AppIcons {
   static const lawBook = '$_iconsPath/law_book.svg';
   static const email = '$_iconsPath/email.svg';
 
+  static const locate = '$_iconsPath/locate.svg';
   static const menu = '$_iconsPath/menu.svg';
   static const phone = '$_iconsPath/phone.svg';
   static const whatsapp = '$_iconsPath/whatsapp.svg';

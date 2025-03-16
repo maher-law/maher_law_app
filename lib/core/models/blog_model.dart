@@ -1,29 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 
-class ApiKeys {
-  static const blog = 'blog';
-  static const message = 'message';
-  static const subject = 'subject';
-  static const email = 'email';
-  static const name = 'name';
-  static const link = 'link';
-  static const keywords = 'keywords';
+import '../api_keys.dart';
 
-  static const blogsCollection = 'blogs';
-  static const id = 'id';
-  static const title = 'title';
-  static const contentJson = 'content_json';
-  static const htmlContent = 'html_content';
-  static const imageUrls = 'image_urls';
-  static const slug = 'slug';
-  static const createdAt = 'created_at';
-  static const metaTitle = 'meta_title';
-  static const metaDescription = 'meta_description';
-  static const tags = 'tags';
-  static const thumbnailImageUrl = 'thumbnail_image_url';
-}
-
-class Blog {
+class Blog extends Equatable {
   final String id; // Firestore document ID
   final String title;
   final String contentJson; // Quill Delta JSON for editing
@@ -36,7 +16,7 @@ class Blog {
   final List<String>? tags; // For categorization
   final String thumbnailImageUrl; // Main thumbnail image
 
-  Blog({
+  const Blog({
     required this.id,
     required this.title,
     required this.contentJson,
@@ -51,8 +31,7 @@ class Blog {
   });
 
   // Convert Firestore Document to Blog
-  factory Blog.fromFirestore(String id ,{required Map data}) {
-    
+  factory Blog.fromFirestore(String id, {required Map data}) {
     return Blog(
       id: id,
       title: data[ApiKeys.title],
@@ -87,4 +66,19 @@ class Blog {
       ApiKeys.thumbnailImageUrl: thumbnailImageUrl,
     };
   }
+
+  @override
+  List<Object?> get props => [
+        id,
+        title,
+        contentJson,
+        htmlContent,
+        slug,
+        createdAt,
+        imageUrls,
+        metaTitle,
+        metaDescription,
+        tags,
+        thumbnailImageUrl,
+      ];
 }
