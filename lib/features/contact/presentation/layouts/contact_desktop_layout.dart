@@ -27,7 +27,8 @@ class ContactDesktopLayout extends StatelessWidget {
                   const Expanded(child: ContactFormSection()),
                   SizedBox(width: 4.w),
                   Expanded(
-                    child: SizedBox(height: 60.h, child: const GoogleMapWidget()),
+                    child:
+                        SizedBox(height: 60.h, child: const GoogleMapWidget()),
                   ),
                 ],
               ),

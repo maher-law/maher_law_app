@@ -45,16 +45,10 @@ class MiniBlogDetails extends StatelessWidget {
             },
             child: Text(
               blog.title,
+              textAlign: SizeConfig.isMobile ? TextAlign.center : null,
               style: AppStyles.style24bold(context),
             ),
           ),
-          // HoverTextButton(
-
-          //   withBorder: false,
-          //   text: ,
-          //   activeColor: AppColors.orange,
-          //   style: AppStyles.style24bold(context),
-          // ),
           SizedBox(height: 2.h),
           Text(
             Document.fromJson(jsonDecode(blog.contentJson)).toPlainText(),
@@ -64,6 +58,7 @@ class MiniBlogDetails extends StatelessWidget {
               color: AppColors.grey.withAlpha(200),
             ),
           ),
+          SizedBox(height: 2.h),
           DecoratedButton(
             onTap: () {
               context.go(
@@ -126,13 +121,6 @@ class MiniTabletBlogDetails extends StatelessWidget {
               ),
             ),
           ),
-          // HoverTextButton(
-
-          //   withBorder: false,
-          //   text: ,
-          //   activeColor: AppColors.orange,
-          //   style: AppStyles.style24bold(context),
-          // ),
           SizedBox(height: 2.h),
           Text(
             Document.fromJson(jsonDecode(blog.contentJson)).toPlainText(),
@@ -142,6 +130,7 @@ class MiniTabletBlogDetails extends StatelessWidget {
               color: AppColors.grey.withAlpha(200),
             ),
           ),
+          SizedBox(height: 2.h),
           DecoratedButton(
             onTap: () {
               context.go(
@@ -150,8 +139,8 @@ class MiniTabletBlogDetails extends StatelessWidget {
               );
             },
             padding: EdgeInsets.symmetric(
-              horizontal: 10.w,
-              vertical: 1.h,
+              horizontal: 3.w,
+              vertical: .6.h,
             ),
             child: Text(
               'اقرأ أكثر',

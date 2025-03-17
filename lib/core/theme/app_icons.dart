@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
 
 abstract class AppIcons {
-  static const _iconsPath = kDebugMode ? 'svgs' : 'assets/svgs';
-  static const _lottiesPath = kDebugMode ? 'lotties' : 'assets/lotties';
+  
+  static const _iconsPath = kDebugMode&&kIsWeb ? 'svgs' : 'assets/svgs';
+  static const _lottiesPath = kDebugMode&&kIsWeb ? 'lotties' : 'assets/lotties';
 
   static const hammer = '$_iconsPath/hammer.svg';
   static const shield = '$_iconsPath/shield.svg';

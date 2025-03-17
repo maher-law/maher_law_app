@@ -45,7 +45,7 @@ class MiniTabletBlogWidget extends StatelessWidget {
         MiniBlogImage(
           image: blog.thumbnailImageUrl,
           width: 60.w,
-          height: 25.h,
+          height: 50.h,
         ),
         SizedBox(height: 1.5.h),
         MiniTabletBlogDetails(blog: blog),

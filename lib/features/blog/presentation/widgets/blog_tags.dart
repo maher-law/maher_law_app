@@ -21,7 +21,7 @@ class BlogTags extends StatelessWidget {
       children: [
         DecoratedButton(
           onTap: () {
-            var baseUrl = 'https://maher-law.web.app';
+            var baseUrl = 'https://maher8.web.app';
             var fullRoute = GoRouter.of(context).state.uri.toString();
             Clipboard.setData(ClipboardData(text: '$baseUrl$fullRoute'));
             ScaffoldMessenger.of(context).showSnackBar(

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:maher_law_app/core/theme/app_colors.dart';
 import 'package:maher_law_app/core/widgets/footer/footer_center_section.dart'
@@ -46,20 +47,21 @@ class Footer extends StatelessWidget {
                   ],
                 ),
         ),
-        Container(
-          color: AppColors.orange,
-          padding: const EdgeInsets.symmetric(vertical: 20),
-          width: SizeConfig.width,
-          child: Center(
-            child: Text(
-              '© حقوق النشر ٢٠٢٥. جميع الحقوق محفوظة للوسيط القانونيٍ | maher-law',
-              textAlign: TextAlign.center,
-              style: AppStyles.style16medium(
-                context,
-              ).copyWith(color: Colors.white),
+        if (kIsWeb)
+          Container(
+            color: AppColors.orange,
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            width: SizeConfig.width,
+            child: Center(
+              child: Text(
+                '© حقوق النشر ٢٠٢٥. جميع الحقوق محفوظة للوسيط القانونيٍ | maher-law',
+                textAlign: TextAlign.center,
+                style: AppStyles.style16medium(
+                  context,
+                ).copyWith(color: Colors.white),
+              ),
             ),
           ),
-        ),
       ],
     );
   }

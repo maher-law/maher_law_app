@@ -1,7 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:maher_law_app/core/theme/app_images.dart';
 
 import '../app_constants.dart';
+import '../helpers/functions.dart';
 import '../theme/app_colors.dart';
 
 class GoogleMapWidget extends StatelessWidget {
@@ -23,11 +26,21 @@ class GoogleMapWidget extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: InAppWebView(
-          initialUrlRequest: URLRequest(
-            url: WebUri(AppConstants.location),
-          ),
-        ),
+        child: kIsWeb
+            ? InAppWebView(
+                initialUrlRequest: URLRequest(
+                  url: WebUri(AppConstants.location),
+                ),
+              )
+            : GestureDetector(
+                onTap: () {
+                  pushToCustom(
+                    context,
+                    url: 'https://maps.app.goo.gl/Zp12u9UkeqMxsoV59',
+                  );
+                },
+                child: Image.asset(AppImages.location, fit: BoxFit.cover),
+              ),
       ),
     );
   }
