@@ -1,4 +1,4 @@
-package com.example.maher_law_app
+package com.maher_law.app
 
 import io.flutter.embedding.android.FlutterActivity
 
