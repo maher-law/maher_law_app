@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/theme/app_styles.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/widgets/footer/footer_widget.dart';
 import '../widgets/about_details.dart';
-import '../widgets/progress_bar_section.dart';
 import '../widgets/blogs_list_view.dart';
+import '../widgets/progress_bar_section.dart';
 import '../widgets/services_section/home_services_list_view.dart';
 
 class HomeMobileLayout extends StatelessWidget {
@@ -46,7 +47,8 @@ class AboutSliverSection extends StatelessWidget {
           SizedBox(height: 2.h),
           const AboutDetails(),
           SizedBox(height: 6.h),
-          const ProgressBarMobileSection(),
+          if (!SizeConfig.isMobile) const ProgressBarDesktopSection(),
+          if (SizeConfig.isMobile) const ProgressBarMobileSection(),
           SizedBox(height: 10.h),
         ],
       ),
@@ -55,9 +57,7 @@ class AboutSliverSection extends StatelessWidget {
 }
 
 class ServicesSliverSection extends StatelessWidget {
-  const ServicesSliverSection({
-    super.key,
-  });
+  const ServicesSliverSection({super.key});
 
   @override
   Widget build(BuildContext context) {

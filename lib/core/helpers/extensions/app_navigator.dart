@@ -47,7 +47,6 @@ class MyCustomRoute extends PageRouteBuilder {
           pageBuilder: (context, animation, secondaryAnimation) => screen,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             var begin = const Offset(1, 0);
-            //TODO:  جرب تخلي النافيجيشن بتاع لما تخش على سكرين السلة يكون البيجان بتاعه اوفوسيت س تساوي 1 وصاد تساوي -1 مع تغيرالكيرف
             if (direction == NavigationDirection.upToDown) {
               begin = const Offset(0, -1);
             } else if (direction == NavigationDirection.downToUp) {

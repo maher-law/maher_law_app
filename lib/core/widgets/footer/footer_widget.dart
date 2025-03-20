@@ -12,6 +12,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.max,
       children: [
         Container(
           color: AppColors.cyan,
@@ -23,12 +24,13 @@ class Footer extends StatelessWidget {
             bottom: 8.h,
           ),
           child: SizeConfig.width > SizeConfig.mobile
-              ? Row(
+              ? const Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: 8.w,
+                  // spacing: 8.w,
                   children: [
-                    const Expanded(child: FooterRightSection()),
-                    const Expanded(child: FooterLeftSection()),
+                    Expanded(child: FooterRightSection()),
+                    Spacer(),
+                    Expanded(child: FooterLeftSection()),
                   ],
                 )
               : Column(
