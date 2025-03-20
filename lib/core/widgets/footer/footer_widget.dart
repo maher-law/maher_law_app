@@ -1,14 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:maher_law_app/core/theme/app_colors.dart';
-import 'package:maher_law_app/core/widgets/footer/footer_center_section.dart'
-    show FooterCenterSection;
-import 'package:maher_law_app/core/widgets/footer/footer_left_section.dart'
-    show FooterLeftSection;
+import 'package:maher_law_app/core/widgets/footer/footer_left_section.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../helpers/size_config.dart';
-import '../../theme/app_styles.dart';
 import 'footer_right_section.dart';
 
 class Footer extends StatelessWidget {
@@ -33,7 +28,6 @@ class Footer extends StatelessWidget {
                   spacing: 8.w,
                   children: [
                     const Expanded(child: FooterRightSection()),
-                    const Expanded(child: FooterCenterSection()),
                     const Expanded(child: FooterLeftSection()),
                   ],
                 )
@@ -42,26 +36,10 @@ class Footer extends StatelessWidget {
                   spacing: 8.w,
                   children: [
                     const FooterRightSection(),
-                    // const FooterCenterSection(),
                     const FooterLeftSection(),
                   ],
                 ),
         ),
-        if (kIsWeb)
-          Container(
-            color: AppColors.orange,
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            width: SizeConfig.width,
-            child: Center(
-              child: Text(
-                '© حقوق النشر ٢٠٢٥. جميع الحقوق محفوظة للوسيط القانونيٍ | maher-law',
-                textAlign: TextAlign.center,
-                style: AppStyles.style16medium(
-                  context,
-                ).copyWith(color: Colors.white),
-              ),
-            ),
-          ),
       ],
     );
   }

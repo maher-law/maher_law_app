@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 import 'package:maher_law_app/core/theme/app_icons.dart';
-import 'package:maher_law_app/features/all_blogs/presentation/cubits/pagination_cubit/pagination_cubit.dart';
+import 'package:maher_law_app/features/home/presentation/cubits/pagination_cubit/pagination_cubit.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/models/blog_model.dart';

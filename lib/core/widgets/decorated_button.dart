@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maher_law_app/core/widgets/hover_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/theme/app_colors.dart';
+import '../theme/app_colors.dart';
 
 class DecoratedButton extends StatelessWidget {
   const DecoratedButton({

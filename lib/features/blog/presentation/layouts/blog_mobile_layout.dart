@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:maher_law_app/features/blog/presentation/widgets/blog_content.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/widgets/blogs_keywords_list.dart';
 import '../../../../core/widgets/footer/footer_widget.dart';
 import '../widgets/blog_comment_section.dart';
 
@@ -19,9 +18,7 @@ class BlogMobileLayout extends StatelessWidget {
           sliver: SliverList.list(
             children: [
               const BlogContent(),
-              SizedBox(height: 5.h),
-              const BlogsKeywordsList(),
-              SizedBox(height: 5.h),
+              
             ],
           ),
         ),

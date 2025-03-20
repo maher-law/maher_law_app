@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maher_law_app/core/widgets/adaptive_layout.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../layouts/home_desktop_layout.dart';
 import '../layouts/home_mobile_layout.dart';
 import '../layouts/home_tablet_layout.dart';
 
@@ -14,8 +12,7 @@ class HomeScreenBody extends StatelessWidget {
     return AdaptiveLayout(
       mobileLayout: (context) => const HomeMobileLayout(),
       tabletLayout: (context) => const HomeTabletLayout(),
-      desktopLayout: (context) => const HomeDesktopLayout(),
+      desktopLayout: (context) => const HomeTabletLayout(),
     );
   }
 }
-

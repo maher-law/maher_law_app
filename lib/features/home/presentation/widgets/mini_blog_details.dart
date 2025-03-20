@@ -2,16 +2,16 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
-import 'package:go_router/go_router.dart';
-import 'package:maher_law_app/core/helpers/app_router.dart';
+import 'package:maher_law_app/core/helpers/extensions/app_navigator.dart';
 import 'package:maher_law_app/core/helpers/extensions/timestamp.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/models/blog_model.dart';
+import 'package:maher_law_app/features/blog/presentation/blog_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_styles.dart';
-import '../../../services/presentation/widgets/decorated_button.dart';
+import '../../../../core/widgets/decorated_button.dart';
 
 class MiniBlogDetails extends StatelessWidget {
   const MiniBlogDetails({super.key, required this.blog});
@@ -38,10 +38,8 @@ class MiniBlogDetails extends StatelessWidget {
             splashColor: Colors.transparent,
             hoverColor: Colors.transparent,
             onTap: () {
-              context.go(
-                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
-                extra: blog,
-              );
+              context.push(BlogScreen(blog: blog),
+                  direction: NavigationDirection.downToUp);
             },
             child: Text(
               blog.title,
@@ -61,10 +59,8 @@ class MiniBlogDetails extends StatelessWidget {
           SizedBox(height: 2.h),
           DecoratedButton(
             onTap: () {
-              context.go(
-                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
-                extra: blog,
-              );
+              context.push(BlogScreen(blog: blog),
+                  direction: NavigationDirection.downToUp);
             },
             padding: EdgeInsets.symmetric(
               horizontal: SizeConfig.isMobile ? 6.w : 1.4.w,
@@ -108,10 +104,8 @@ class MiniTabletBlogDetails extends StatelessWidget {
             splashColor: Colors.transparent,
             hoverColor: Colors.transparent,
             onTap: () {
-              context.go(
-                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
-                extra: blog,
-              );
+              context.push(BlogScreen(blog: blog),
+                  direction: NavigationDirection.downToUp);
             },
             child: Text(
               blog.title,
@@ -133,10 +127,8 @@ class MiniTabletBlogDetails extends StatelessWidget {
           SizedBox(height: 2.h),
           DecoratedButton(
             onTap: () {
-              context.go(
-                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
-                extra: blog,
-              );
+              context.push(BlogScreen(blog: blog),
+                  direction: NavigationDirection.downToUp);
             },
             padding: EdgeInsets.symmetric(
               horizontal: 3.w,

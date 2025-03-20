@@ -30,9 +30,9 @@ class BlogContentImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(40),
           child: ImageRenderer(
             alt: 'صورة المقالة',
-            src: context.read<BlogCubit>().blog!.thumbnailImageUrl,
+            src: context.read<BlogCubit>().blog.thumbnailImageUrl,
             child: Image.network(
-              context.read<BlogCubit>().blog!.thumbnailImageUrl,
+              context.read<BlogCubit>().blog.thumbnailImageUrl,
               width: SizeConfig.isDesktop ? 40.w : 85.w,
               errorBuilder: (_, __, ___) => const Center(
                 child: Icon(

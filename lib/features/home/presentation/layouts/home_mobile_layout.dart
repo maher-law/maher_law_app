@@ -3,9 +3,9 @@ import 'package:maher_law_app/core/theme/app_styles.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/widgets/footer/footer_widget.dart';
-import '../../../about/presentation/widgets/about_details.dart';
-import '../../../about/presentation/widgets/progress_bar_section.dart';
-import '../../../all_blogs/presentation/widgets/blogs_list_view.dart';
+import '../widgets/about_details.dart';
+import '../widgets/progress_bar_section.dart';
+import '../widgets/blogs_list_view.dart';
 import '../widgets/services_section/home_services_list_view.dart';
 
 class HomeMobileLayout extends StatelessWidget {

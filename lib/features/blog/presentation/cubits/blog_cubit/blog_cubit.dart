@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:go_router/go_router.dart';
+
 // import 'package:meta_seo/meta_seo.dart';
 
 import '../../../../../core/api_keys.dart';
@@ -17,36 +18,20 @@ part 'blog_state.dart';
 
 class BlogCubit extends Cubit<BlogState> {
   BlogCubit(this.blog) : super(BlogInitial());
-  Blog? blog;
+  Blog blog;
 
   late QuillController controller;
 
-  void initSeo() {
-    // if (kIsWeb) {
-    //   MetaSEO meta = MetaSEO();
-
-    //   meta.ogTitle(ogTitle: blog!.title);
-    //   meta.description(description: blog!.title);
-    //   meta.keywords(keywords: blog!.tags?.join('، ') ?? 'محاماة، عقود، قانون');
-    //   meta.propertyContent(property: 'copyright', content: 'الوسيط القانوني');
-    // }
-  }
-
   void initController(BuildContext context) async {
-    if (blog == null) {
-      await getBlog(context);
-    } else {
-      emit(BlogSuccess());
-    }
     controller = QuillController(
       document: Document.fromJson(
-        jsonDecode(blog!.contentJson),
+        jsonDecode(blog.contentJson),
       ),
       selection: const TextSelection.collapsed(offset: 0),
       readOnly: true,
     );
 
-    initSeo();
+    emit(BlogSuccess());
   }
 
   Future<void> getBlog(BuildContext context) async {
