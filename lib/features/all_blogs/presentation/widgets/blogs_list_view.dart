@@ -46,7 +46,7 @@ class BlogsListView extends StatelessWidget {
                       );
                     }
                   },
-                  separatorBuilder: (context, index) => SizedBox(height: 8.h),
+                  separatorBuilder: (context, index) => SizedBox(height: 4.h),
                 );
               } else {
                 if (state.data.isEmpty) {

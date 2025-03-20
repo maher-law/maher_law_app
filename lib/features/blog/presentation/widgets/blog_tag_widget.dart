@@ -7,10 +7,15 @@ import '../../../../core/widgets/hover_button.dart';
 
 class CustomTextButton extends StatefulWidget {
   const CustomTextButton(
-      {super.key, required this.text, this.style, required this.onTap});
+      {super.key,
+      required this.text,
+      this.style,
+      required this.onTap,
+      this.radius = 0});
   final String text;
   final TextStyle? style;
   final GestureTapCallback onTap;
+  final double radius;
 
   @override
   State<CustomTextButton> createState() => _CustomTextButtonState();
@@ -36,8 +41,9 @@ class _CustomTextButtonState extends State<CustomTextButton> {
         endScale: 1.05,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 300),
-          padding: EdgeInsets.symmetric(horizontal: .8.w, vertical: 4),
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4),
           decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(widget.radius),
             color: isActive
                 ? AppColors.green
                 : Colors.transparent, // Change color on hover

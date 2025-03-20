@@ -21,7 +21,7 @@ class FooterLeftSection extends StatelessWidget {
         ),
         SizedBox(height: 3.h),
         Text(
-          'الهاتف: ${AppConstants.whatsappNumber}',
+          'الواتس: ${AppConstants.whatsappNumber}',
           textAlign: SizeConfig.isMobile ? TextAlign.center : null,
           style: AppStyles.style16medium(context).copyWith(
             color: Colors.black,

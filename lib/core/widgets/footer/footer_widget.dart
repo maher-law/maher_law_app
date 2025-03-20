@@ -42,7 +42,7 @@ class Footer extends StatelessWidget {
                   spacing: 8.w,
                   children: [
                     const FooterRightSection(),
-                    const FooterCenterSection(),
+                    // const FooterCenterSection(),
                     const FooterLeftSection(),
                   ],
                 ),

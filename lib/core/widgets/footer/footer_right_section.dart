@@ -35,7 +35,7 @@ class FooterRightSection extends StatelessWidget {
               : MainAxisAlignment.start,
           spacing: 14,
           children: List.generate(2, (index) {
-            List icons = [AppIcons.phone, AppIcons.whatsapp];
+            List icons = [AppIcons.email, AppIcons.whatsapp];
             return SocialMediaButton(index: index, icon: icons[index]);
           }),
         ),
@@ -50,6 +50,7 @@ class SocialMediaButton extends StatefulWidget {
     required this.icon,
     required this.index,
   });
+  
   final int index;
   final String icon;
 
@@ -66,7 +67,7 @@ class _SocialMediaButtonState extends State<SocialMediaButton> {
         if (widget.index == 1) {
           pushWhatsapp(context);
         } else {
-          pushToCustom(context, url: 'tel:${AppConstants.whatsappNumber}');
+          pushToCustom(context, url: 'mailto:${AppConstants.email}');
         }
       },
       onHoverStart: () => setState(() => isActive = true),

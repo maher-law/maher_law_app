@@ -14,18 +14,11 @@ import 'core/di/debendency_injection.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  //TODO
-  // setUrlStrategy(PathUrlStrategy());
-
   setupGetIt();
+  
   Bloc.observer = CustomBlocObserver();
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
-  // if (kIsWeb) {
-  //   MetaSEO().config();
-  // }
-  //TODO: جرب تشيل ال deffered widget ممكن تحل مشكلة دخول مقالة مباشرة
 
   runApp(const MaherApp());
 }

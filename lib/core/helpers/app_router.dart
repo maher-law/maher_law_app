@@ -10,8 +10,6 @@ import '../../features/all_blogs/presentation/all_blogs_screen.dart'
     deferred as blogs_screen;
 import '../../features/contact/presentation/contact_screen.dart'
     deferred as contact_screen;
-import '../../features/error/page_not_found_screen.dart'
-    deferred as error_screen;
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/services/presentation/services_screen.dart'
     deferred as services_screen;
@@ -84,11 +82,5 @@ abstract class AppRouter {
       //   },
       // ),
     ],
-    errorBuilder: (context, state) {
-      return DeferredWidget(
-        libraryFuture: error_screen.loadLibrary(),
-        widgetBuilder: () => error_screen.PageNotFoundScreen(),
-      );
-    },
   );
 }

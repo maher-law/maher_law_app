@@ -19,8 +19,3 @@ class HomeScreenBody extends StatelessWidget {
   }
 }
 
-extension SpaceExtension on num {
-  SizedBox get verticalSpacing => SizedBox(height: h);
-  SizedBox get horizontalSpacing => SizedBox(width: w);
-}
-
