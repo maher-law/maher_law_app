@@ -34,8 +34,8 @@ class FooterRightSection extends StatelessWidget {
               ? MainAxisAlignment.center
               : MainAxisAlignment.start,
           spacing: 14,
-          children: List.generate(3, (index) {
-            List icons = [AppIcons.phone, AppIcons.locate, AppIcons.whatsapp];
+          children: List.generate(2, (index) {
+            List icons = [AppIcons.phone, AppIcons.whatsapp];
             return SocialMediaButton(index: index, icon: icons[index]);
           }),
         ),
@@ -63,11 +63,8 @@ class _SocialMediaButtonState extends State<SocialMediaButton> {
   Widget build(BuildContext context) {
     return HoverButton(
       onTap: () {
-        if (widget.index == 2) {
+        if (widget.index == 1) {
           pushWhatsapp(context);
-        } else if (widget.index == 1) {
-          pushToCustom(context,
-              url: 'https://maps.app.goo.gl/Zp12u9UkeqMxsoV59');
         } else {
           pushToCustom(context, url: 'tel:${AppConstants.whatsappNumber}');
         }

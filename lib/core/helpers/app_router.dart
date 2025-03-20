@@ -2,8 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:maher_law_app/core/api_keys.dart';
 import 'package:maher_law_app/core/models/blog_model.dart';
 import 'package:maher_law_app/core/widgets/deferred_loader_widget.dart';
-import 'package:maher_law_app/features/blog/presentation/blog_screen.dart'
-    deferred as blog_screen;
+import 'package:maher_law_app/features/blog/presentation/blog_screen.dart';
 
 import '../../features/about/presentation/about_screen.dart'
     deferred as about_screen;
@@ -59,12 +58,7 @@ abstract class AppRouter {
       GoRoute(
         path: '$blogs/:${ApiKeys.id}/:${ApiKeys.slug}',
         builder: (context, state) {
-          return DeferredWidget(
-            libraryFuture: blog_screen.loadLibrary(),
-            widgetBuilder: () => blog_screen.BlogScreen(
-              blog: state.extra as Blog?,
-            ),
-          );
+          return BlogScreen(blog: state.extra as Blog?);
         },
       ),
       GoRoute(
@@ -78,17 +72,17 @@ abstract class AppRouter {
           );
         },
       ),
-      GoRoute(
-        path: consultation,
-        builder: (context, state) {
-          return DeferredWidget(
-            libraryFuture: contact_screen.loadLibrary(),
-            widgetBuilder: () => contact_screen.ContactScreen(
-              contactState: contact_screen.ContactState.consultation,
-            ),
-          );
-        },
-      ),
+      // GoRoute(
+      //   path: consultation,
+      //   builder: (context, state) {
+      //     return DeferredWidget(
+      //       libraryFuture: contact_screen.loadLibrary(),
+      //       widgetBuilder: () => contact_screen.ContactScreen(
+      //         contactState: contact_screen.ContactState.consultation,
+      //       ),
+      //     );
+      //   },
+      // ),
     ],
     errorBuilder: (context, state) {
       return DeferredWidget(

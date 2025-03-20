@@ -14,7 +14,7 @@ abstract class AppImages {
   // static const profilePic = '$_imagesDebugPath/profile_pic.jpg';
   static const logo = '$_imagesDebugPath/logo.png';
   static const location = '$_imagesDebugPath/location.png';
-  static const lawyer = 'https://ovgkzhlcvbcocfoaksdr.supabase.co/storage/v1/object/public/blogs-thumbnails/assets/lawyer.webp';
+  static const lawyer = '$_imagesDebugPath/lawyer.webp';
   static const team = '$_imagesDebugPath/team.jpg';
   static const court = '$_imagesDebugPath/court.jpg';
   static const roman = '$_imagesDebugPath/roman.jpg';

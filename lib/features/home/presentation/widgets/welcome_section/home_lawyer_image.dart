@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -28,14 +27,10 @@ class HomeLawyerImage extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(40),
-          child: CachedNetworkImage(
-            imageUrl: AppImages.lawyer,
+          child: Image.asset(
+            AppImages.lawyer,
             fit: BoxFit.cover,
-            placeholder: (context, url) {
-              return const Center(
-                  child: CircularProgressIndicator(color: AppColors.green));
-            },
-            errorWidget: (context, error, stackTrace) {
+            errorBuilder: (context, error, stackTrace) {
               return const Icon(
                 Icons.error,
                 size: 40,
@@ -68,14 +63,10 @@ class HomeMobileLawyerImage extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(40),
-        child: CachedNetworkImage(
-          imageUrl: AppImages.lawyer,
+        child: Image.asset(
+          AppImages.lawyer,
           fit: BoxFit.cover,
-          placeholder: (context, url) {
-            return const Center(
-                child: CircularProgressIndicator(color: AppColors.green));
-          },
-          errorWidget: (context, error, stackTrace) {
+          errorBuilder: (context, error, stackTrace) {
             return const Icon(
               Icons.error,
               size: 40,

@@ -24,7 +24,7 @@ class ContactWidget extends StatelessWidget {
     return Row(
       children: [
         Container(
-          padding: EdgeInsets.all(1.w),
+          padding: EdgeInsets.all(.6.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
             gradient: const LinearGradient(

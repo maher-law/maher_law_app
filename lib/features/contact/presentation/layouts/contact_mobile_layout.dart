@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/widgets/footer/footer_widget.dart';
-import '../../../../core/widgets/google_maps_widget.dart';
 import '../../../../core/widgets/nav_bar/sliver_nav_bar.dart';
 import '../widgets/contact_form_section.dart';
 import '../widgets/contact_upper_section.dart';
@@ -27,11 +26,11 @@ class ContactMobileLayout extends StatelessWidget {
             delegate: SliverChildListDelegate.fixed(
               [
                 SizedBox(height: 6.h),
-                Column(
+                const Column(
                   children: [
-                    const ContactFormSection(),
-                    SizedBox(height: 6.h),
-                    SizedBox(height: 60.h, child: const GoogleMapWidget()),
+                    ContactFormSection(),
+                    // SizedBox(height: 6.h),
+                    // SizedBox(height: 60.h, child: const GoogleMapWidget()),
                   ],
                 ),
                 SizedBox(height: 15.h),

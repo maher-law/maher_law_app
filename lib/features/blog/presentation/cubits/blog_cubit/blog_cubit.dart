@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:go_router/go_router.dart';
+// import 'package:meta_seo/meta_seo.dart';
 
 import '../../../../../core/api_keys.dart';
 import '../../../../../core/di/debendency_injection.dart';
@@ -18,6 +20,17 @@ class BlogCubit extends Cubit<BlogState> {
   Blog? blog;
 
   late QuillController controller;
+
+  void initSeo() {
+    // if (kIsWeb) {
+    //   MetaSEO meta = MetaSEO();
+
+    //   meta.ogTitle(ogTitle: blog!.title);
+    //   meta.description(description: blog!.title);
+    //   meta.keywords(keywords: blog!.tags?.join('، ') ?? 'محاماة، عقود، قانون');
+    //   meta.propertyContent(property: 'copyright', content: 'الوسيط القانوني');
+    // }
+  }
 
   void initController(BuildContext context) async {
     if (blog == null) {
@@ -32,6 +45,8 @@ class BlogCubit extends Cubit<BlogState> {
       selection: const TextSelection.collapsed(offset: 0),
       readOnly: true,
     );
+
+    initSeo();
   }
 
   Future<void> getBlog(BuildContext context) async {

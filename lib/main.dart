@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:maher_law_app/bloc_observer.dart';
 import 'package:maher_law_app/firebase_options.dart';
+// import 'package:meta_seo/meta_seo.dart';
 
 import 'app.dart';
 import 'core/di/debendency_injection.dart';
@@ -13,6 +14,7 @@ import 'core/di/debendency_injection.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  //TODO
   // setUrlStrategy(PathUrlStrategy());
 
   setupGetIt();
@@ -20,15 +22,10 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  // if (kReleaseMode) {
-  //   await SentryFlutter.init(
-  //     (options) {
-  //       options.dsn = ApiKeys.dsn;
-  //       options.tracesSampleRate = 1;
-  //     },
-  //     appRunner: () => const MaherApp(),
-  //   );
-  // } else {
-  runApp(const MaherApp());
+  // if (kIsWeb) {
+  //   MetaSEO().config();
   // }
+  //TODO: جرب تشيل ال deffered widget ممكن تحل مشكلة دخول مقالة مباشرة
+
+  runApp(const MaherApp());
 }
