@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:go_router/go_router.dart';
+
 // import 'package:meta_seo/meta_seo.dart';
 
 import '../../../../../core/api_keys.dart';
@@ -21,16 +23,7 @@ class BlogCubit extends Cubit<BlogState> {
 
   late QuillController controller;
 
-  void initSeo() {
-    // if (kIsWeb) {
-    //   MetaSEO meta = MetaSEO();
-
-    //   meta.ogTitle(ogTitle: blog!.title);
-    //   meta.description(description: blog!.title);
-    //   meta.keywords(keywords: blog!.tags?.join('، ') ?? 'محاماة، عقود، قانون');
-    //   meta.propertyContent(property: 'copyright', content: 'الوسيط القانوني');
-    // }
-  }
+  void initSeo() {}
 
   void initController(BuildContext context) async {
     if (blog == null) {
@@ -56,14 +49,15 @@ class BlogCubit extends Cubit<BlogState> {
     ).routeInformationProvider.value.uri.toString();
 
     try {
-      String id = route.split('/')[2];
-
+      String slug = Uri.decodeComponent(route.split('/')[2]);
+      log(slug);
       var blogDoc = await getIt<FirebaseFirestore>()
           .collection(ApiKeys.blogsCollection)
-          .doc(id)
+          .where(ApiKeys.slug, isEqualTo: slug)
           .get();
 
-      blog = Blog.fromFirestore(blogDoc.id, data: blogDoc.data()!);
+      blog =
+          Blog.fromFirestore(blogDoc.docs[0].id, data: blogDoc.docs[0].data());
       emit(BlogSuccess());
     } catch (_) {
       emit(BlogFailure());

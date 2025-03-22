@@ -16,14 +16,16 @@ class BlogTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = context.read<BlogCubit>();
     return Row(
       spacing: 8,
       children: [
         DecoratedButton(
           onTap: () {
-            var baseUrl = 'https://maher8.web.app';
+            var baseUrl = 'https://maher-law.web.app';
             var fullRoute = GoRouter.of(context).state.uri.toString();
-            Clipboard.setData(ClipboardData(text: '$baseUrl$fullRoute'));
+            Clipboard.setData(ClipboardData(
+                text: '$baseUrl${Uri.decodeComponent(fullRoute)}'));
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 backgroundColor: AppColors.green,
@@ -46,7 +48,9 @@ class BlogTags extends StatelessWidget {
           child: const Icon(Icons.tag, color: Colors.white),
         ),
         ...List.generate(
-          context.read<BlogCubit>().blog!.tags?.length ?? 0,
+          (cubit.blog!.tags?.length ?? 0) > 5
+              ? 5
+              : cubit.blog!.tags?.length ?? 0,
           (index) => CustomTextButton(
             onTap: () {},
             text: context.read<BlogCubit>().blog!.tags![index],

@@ -39,7 +39,7 @@ class MiniBlogDetails extends StatelessWidget {
             hoverColor: Colors.transparent,
             onTap: () {
               context.go(
-                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
+                '${AppRouter.blogs}/${blog.slug}',
                 extra: blog,
               );
             },
@@ -62,7 +62,7 @@ class MiniBlogDetails extends StatelessWidget {
           DecoratedButton(
             onTap: () {
               context.go(
-                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
+                '${AppRouter.blogs}/${blog.slug}',
                 extra: blog,
               );
             },
@@ -109,7 +109,7 @@ class MiniTabletBlogDetails extends StatelessWidget {
             hoverColor: Colors.transparent,
             onTap: () {
               context.go(
-                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
+                '${AppRouter.blogs}/${blog.slug}',
                 extra: blog,
               );
             },
@@ -134,7 +134,7 @@ class MiniTabletBlogDetails extends StatelessWidget {
           DecoratedButton(
             onTap: () {
               context.go(
-                '${AppRouter.blogs}/${blog.id}/${blog.slug}',
+                '${AppRouter.blogs}/${blog.slug}',
                 extra: blog,
               );
             },

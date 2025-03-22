@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 
 import '../api_keys.dart';
 
-class Keyword extends Equatable{
+class Keyword extends Equatable {
   final String link, title;
 
   const Keyword({required this.link, required this.title});
@@ -11,9 +11,7 @@ class Keyword extends Equatable{
   factory Keyword.fromJson(Map data) {
     return Keyword(link: data[ApiKeys.link], title: data[ApiKeys.title]);
   }
-  
+
   @override
-  List<Object?> get props => [link,title];
-
-
+  List<Object?> get props => [link, title];
 }

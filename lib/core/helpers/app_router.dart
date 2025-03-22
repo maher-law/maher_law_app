@@ -55,8 +55,14 @@ abstract class AppRouter {
           );
         },
       ),
+      // GoRoute(
+      //   path: '$blogs/:${ApiKeys.id}/:${ApiKeys.slug}',
+      //   builder: (context, state) {
+      //     return BlogScreen(blog: state.extra as Blog?);
+      //   },
+      // ),
       GoRoute(
-        path: '$blogs/:${ApiKeys.id}/:${ApiKeys.slug}',
+        path: '$blogs/:${ApiKeys.slug}',
         builder: (context, state) {
           return BlogScreen(blog: state.extra as Blog?);
         },
