@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/widgets/footer/footer_widget.dart';
 import '../widgets/blog_comment_section.dart';
 import '../widgets/blog_content.dart';
 
@@ -12,14 +11,11 @@ class BlogTabletLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        // SliverToBoxAdapter(child: SizedBox(height: 5.h)),
-        // const SliverToBoxAdapter(child: BlogContent()),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
           sliver: SliverList.list(
             children: [
               const BlogContent(),
-              
             ],
           ),
         ),
@@ -38,7 +34,6 @@ class BlogTabletLayout extends StatelessWidget {
             ),
           ),
         ),
-        const SliverToBoxAdapter(child: Footer()),
       ],
     );
   }

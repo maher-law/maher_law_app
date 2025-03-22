@@ -1,27 +1,20 @@
 part of 'pagination_cubit.dart';
 
 sealed class PaginationState extends Equatable {
-
-@override
+  @override
   List<Object?> get props => [];
 }
 
-class PaginationInitial extends PaginationState {
-  
-}
+class PaginationInitial extends PaginationState {}
 
 class PaginationLoading extends PaginationState {}
 
 class PaginationLoaded extends PaginationState {
   final List<QueryDocumentSnapshot<Map<String, dynamic>>> data;
-  final int currentPage;
 
-  PaginationLoaded({
-    required this.data,
-    required this.currentPage,
-  });
+  PaginationLoaded({required this.data});
   @override
-  List<Object?> get props => [data,currentPage];
+  List<Object?> get props => [data];
 }
 
 class PaginationError extends PaginationState {

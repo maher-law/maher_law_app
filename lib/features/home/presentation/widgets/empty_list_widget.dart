@@ -11,9 +11,10 @@ class EmptyListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Lottie.asset(AppIcons.empty, width: 30.w),
+        Lottie.asset(AppIcons.empty, width: 80.w),
         SizedBox(height: 1.h),
         Text('لا توجد نتائج', style: AppStyles.style18bold(context)),
       ],

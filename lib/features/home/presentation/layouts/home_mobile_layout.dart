@@ -3,7 +3,6 @@ import 'package:maher_law_app/core/helpers/size_config.dart';
 import 'package:maher_law_app/core/theme/app_styles.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/widgets/footer/footer_widget.dart';
 import '../widgets/about_details.dart';
 import '../widgets/blogs_list_view.dart';
 import '../widgets/progress_bar_section.dart';
@@ -28,7 +27,7 @@ class HomeMobileLayout extends StatelessWidget {
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 4.w),
-          sliver: const BlogsListView(sliver: true),
+          sliver: const BlogsListView(),
         ),
         const ServicesSliverSection(),
       ],
@@ -49,7 +48,7 @@ class AboutSliverSection extends StatelessWidget {
           SizedBox(height: 6.h),
           if (!SizeConfig.isMobile) const ProgressBarDesktopSection(),
           if (SizeConfig.isMobile) const ProgressBarMobileSection(),
-          SizedBox(height: 10.h),
+          SizedBox(height: 8.h),
         ],
       ),
     );
@@ -64,7 +63,6 @@ class ServicesSliverSection extends StatelessWidget {
     return SliverList(
       delegate: SliverChildListDelegate.fixed(
         [
-          SizedBox(height: 8.h),
           Text(
             'خدماتنا',
             textAlign: TextAlign.center,
@@ -74,8 +72,7 @@ class ServicesSliverSection extends StatelessWidget {
           ),
           SizedBox(height: 2.h),
           const HomeServicesListView(),
-          SizedBox(height: 8.h),
-          const Footer(),
+          SizedBox(height: 10.h),
         ],
       ),
     );

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_quill/flutter_quill.dart';
-import 'package:maher_law_app/features/home/presentation/home_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import 'core/helpers/size_config.dart';
 import 'core/theme/app_themes.dart';
+import 'features/main/presentation/main_screen.dart';
 
 class MaherApp extends StatelessWidget {
   const MaherApp({super.key});
@@ -29,7 +29,7 @@ class MaherApp extends StatelessWidget {
           ],
           title: 'الوسيط القانوني',
           theme: AppThemes.lightTheme,
-          home: const HomeScreen(),
+          home: const MainScreen(),
         );
       },
     );

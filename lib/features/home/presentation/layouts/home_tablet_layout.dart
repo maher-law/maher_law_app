@@ -24,7 +24,7 @@ class HomeTabletLayout extends StatelessWidget {
         ),
         SliverPadding(
           padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 4.w),
-          sliver: const BlogsListView(sliver: true),
+          sliver: const BlogsListView(),
         ),
         const ServicesSliverSection(),
       ],

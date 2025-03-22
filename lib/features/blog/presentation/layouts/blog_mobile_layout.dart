@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:maher_law_app/features/blog/presentation/widgets/blog_content.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../../../../core/widgets/footer/footer_widget.dart';
 import '../widgets/blog_comment_section.dart';
 
 class BlogMobileLayout extends StatelessWidget {
@@ -12,7 +11,6 @@ class BlogMobileLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        // const SliverMobileNavBar(),
         SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
           sliver: SliverList.list(
@@ -37,7 +35,6 @@ class BlogMobileLayout extends StatelessWidget {
             ),
           ),
         ),
-        const SliverToBoxAdapter(child: Footer()),
       ],
     );
   }

@@ -1,5 +1,7 @@
 // pagination_cubit.dart
 
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
@@ -11,123 +13,145 @@ import '../../../../../core/api_keys.dart';
 part 'pagination_state.dart';
 
 class PaginationCubit extends Cubit<PaginationState> {
-  PaginationCubit() : super(PaginationInitial());
+  PaginationCubit(this.isBlogs) : super(PaginationInitial());
+  final bool isBlogs;
   var searchController = TextEditingController();
   var collection =
       getIt<FirebaseFirestore>().collection(ApiKeys.blogsCollection);
-
-  int pageSize = 5;
-  int currentPage = -1;
 
   List<QueryDocumentSnapshot<Map<String, dynamic>>> currentPageItems = [];
 
   bool hasNextPage = true;
 
-  Future<void> loadFirstPage() async {
+  Future<void> loadData() async {
     emit(PaginationLoading());
     try {
-      final snapshot = await collection
-          .orderBy(ApiKeys.createdAt, descending: true)
-          .limit(pageSize)
-          .get();
+      final snapshot =
+          await collection.orderBy(ApiKeys.createdAt, descending: true).get();
 
       currentPageItems = snapshot.docs;
-      hasNextPage = snapshot.docs.length == pageSize;
 
-      currentPage = 1;
-      emit(PaginationLoaded(data: currentPageItems, currentPage: currentPage));
+      currentPageItems.removeWhere((blog) => blog.data()['is_blog'] == isBlogs);
+
+      emit(PaginationLoaded(data: currentPageItems));
     } catch (e) {
-      emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
+      log('==================================');
+      log(e.toString());
+      emit(
+        PaginationError(
+          'عذرًا نرجو منك التأكد من الاتصال بالانترنت والمحاولة مرة أخرى',
+        ),
+      );
     }
   }
+  // Future<void> loadFirstPage() async {
+  //   emit(PaginationLoading());
+  //   try {
+  //     final snapshot = await collection
+  //         .orderBy(ApiKeys.createdAt, descending: true)
+  //         .where('is_blog', isEqualTo: true)
+  //         .limit(pageSize)
+  //         .get();
 
-  Future<void> getBySearch() async {
-    emit(PaginationLoading());
+  //     currentPageItems = snapshot.docs;
+  //     hasNextPage = snapshot.docs.length == pageSize;
 
-    try {
-      final snapshot = await getIt<FirebaseFirestore>()
-          .collection(ApiKeys.blogsCollection)
-          .where(ApiKeys.title, isGreaterThanOrEqualTo: searchController.text)
-          .where(ApiKeys.title, isLessThan: '${searchController.text}\uf8ff')
-          .get();
+  //     currentPage = 1;
+  //     emit(PaginationLoaded(data: currentPageItems, currentPage: currentPage));
+  //   } catch (e) {
+  //     emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
+  //   }
+  // }
 
-      currentPageItems = snapshot.docs;
-      currentPage = -1;
+  // Future<void> getBySearch() async {
+  //   emit(PaginationLoading());
 
-      emit(PaginationLoaded(data: currentPageItems, currentPage: -1));
-    } catch (e) {
-      emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
-    }
-  }
+  //   try {
+  //     final snapshot = await getIt<FirebaseFirestore>()
+  //         .collection(ApiKeys.blogsCollection)
+  //         .where(ApiKeys.title, isGreaterThanOrEqualTo: searchController.text)
+  //         .where(ApiKeys.title, isLessThan: '${searchController.text}\uf8ff')
+  //         .where('is_blog', isEqualTo: true)
+  //         .get();
 
-  Future<bool> nextPage() async {
-    if (currentPage == -1) {
-      loadFirstPage();
-      return true;
-    } else if (hasNextPage) {
-      try {
-        emit(PaginationLoading());
+  //     currentPageItems = snapshot.docs;
+  //     currentPage = -1;
 
-        final lastDoc = currentPageItems.last;
-        final snapshot = await collection
-            .orderBy(ApiKeys.createdAt, descending: true)
-            .startAfterDocument(lastDoc)
-            .limit(pageSize)
-            .get();
+  //     emit(PaginationLoaded(data: currentPageItems, currentPage: -1));
+  //   } catch (e) {
+  //     emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
+  //   }
+  // }
 
-        currentPageItems = snapshot.docs;
+  // Future<bool> nextPage() async {
+  //   if (currentPage == -1) {
+  //     loadFirstPage();
+  //     return true;
+  //   } else if (hasNextPage) {
+  //     try {
+  //       emit(PaginationLoading());
 
-        hasNextPage = currentPageItems.length == pageSize;
+  //       final lastDoc = currentPageItems.last;
+  //       final snapshot = await collection
+  //           .orderBy(ApiKeys.createdAt, descending: true)
+  //           .where('is_blog', isEqualTo: true)
+  //           .startAfterDocument(lastDoc)
+  //           .limit(pageSize)
+  //           .get();
 
-        currentPage++;
+  //       currentPageItems = snapshot.docs;
 
-        emit(
-          PaginationLoaded(
-            data: currentPageItems,
-            currentPage: currentPage,
-          ),
-        );
-        return true;
-      } catch (e) {
-        emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
-        return true;
-      }
-    } else {
-      return false;
-    }
-  }
+  //       hasNextPage = currentPageItems.length == pageSize;
 
-  Future<bool> previousPage() async {
-    if (currentPage == -1) {
-      loadFirstPage();
-      return true;
-    } else if (currentPage > 1) {
-      try {
-        emit(PaginationLoading());
+  //       currentPage++;
 
-        final firstDoc = currentPageItems.first;
-        final snapshot = await collection
-            .orderBy(ApiKeys.createdAt, descending: true)
-            .endBeforeDocument(firstDoc)
-            .limitToLast(pageSize)
-            .get();
+  //       emit(
+  //         PaginationLoaded(
+  //           data: currentPageItems,
+  //           currentPage: currentPage,
+  //         ),
+  //       );
+  //       return true;
+  //     } catch (e) {
+  //       emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
+  //       return true;
+  //     }
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
-        currentPageItems = snapshot.docs;
+  // Future<bool> previousPage() async {
+  //   if (currentPage == -1) {
+  //     loadFirstPage();
+  //     return true;
+  //   } else if (currentPage > 1) {
+  //     try {
+  //       emit(PaginationLoading());
 
-        hasNextPage = currentPageItems.length == pageSize;
+  //       final firstDoc = currentPageItems.first;
+  //       final snapshot = await collection
+  //           .orderBy(ApiKeys.createdAt, descending: true)
+  //           .endBeforeDocument(firstDoc)
+  //           .limitToLast(pageSize)
+  //           .get();
 
-        currentPage--;
+  //       currentPageItems = snapshot.docs;
 
-        emit(
-          PaginationLoaded(data: currentPageItems, currentPage: currentPage),
-        );
-        return true;
-      } catch (e) {
-        emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
-        return true;
-      }
-    } else {
-      return false;
-    }
-  }
+  //       hasNextPage = currentPageItems.length == pageSize;
+
+  //       currentPage--;
+
+  //       emit(
+  //         PaginationLoaded(data: currentPageItems, currentPage: currentPage),
+  //       );
+  //       return true;
+  //     } catch (e) {
+  //       emit(PaginationError('عذرًا نرجو منك المحاولة في وقت لاحق'));
+  //       return true;
+  //     }
+  //   } else {
+  //     return false;
+  //   }
+  // }
 }
