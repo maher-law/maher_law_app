@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:maher_law_app/core/models/keyword_model.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -20,9 +19,7 @@ class _KeyworkDesktopWidgetState extends State<KeyworkDesktopWidget> {
   @override
   Widget build(BuildContext context) {
     return HoverButton(
-      onTap: () {
-        context.go(widget.keyword.link);
-      },
+      onTap: () {},
       endScale: 1.02,
       onHoverStart: () {
         setState(() {
@@ -35,6 +32,7 @@ class _KeyworkDesktopWidgetState extends State<KeyworkDesktopWidget> {
         });
       },
       child: Container(
+        constraints: const BoxConstraints(maxWidth: 350),
         padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: .8.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
@@ -45,6 +43,8 @@ class _KeyworkDesktopWidgetState extends State<KeyworkDesktopWidget> {
         child: Text(
           widget.keyword.title,
           textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1 ,
           style: AppStyles.style14medium(context).copyWith(
             color: AppColors.grey,
           ),

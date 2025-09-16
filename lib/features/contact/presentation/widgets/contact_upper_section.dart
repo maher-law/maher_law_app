@@ -11,27 +11,31 @@ class ContactUpperSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<ContactModel> items = [
-      ContactModel(
-        title: 'الواتس',
-        data: context.read<DataCubit>().phone.replaceFirst(RegExp(r'2'), ''),
-        svg: AppIcons.whatsapp,
-      ),
-      ContactModel(
-        title: 'الدعم',
-        data: context.read<DataCubit>().email,
-        svg: AppIcons.email,
-      ),
-    ];
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      spacing: 10.w,
-      children: List.generate(
-        items.length,
-        (index) => ContactWidget(
-          item: items[index],
-        ),
-      ),
+    return BlocBuilder<DataCubit, DataState>(
+      builder: (context, state) {
+        List<ContactModel> items = [
+          ContactModel(
+            title: 'الواتس',
+            data: context.read<DataCubit>().phone,
+            svg: AppIcons.whatsapp,
+          ),
+          ContactModel(
+            title: 'الدعم',
+            data: context.read<DataCubit>().email,
+            svg: AppIcons.email,
+          ),
+        ];
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          spacing: 10.w,
+          children: List.generate(
+            items.length,
+            (index) => ContactWidget(
+              item: items[index],
+            ),
+          ),
+        );
+      },
     );
   }
 }
@@ -41,26 +45,30 @@ class ContactMobileUpperSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<ContactModel> items = [
-      ContactModel(
-        title: 'الواتس',
-        data: context.read<DataCubit>().phone.replaceFirst(RegExp(r'2'), ''),
-        svg: AppIcons.whatsapp,
-      ),
-      ContactModel(
-        title: 'الدعم',
-        data: context.read<DataCubit>().email,
-        svg: AppIcons.email,
-      ),
-    ];
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      spacing: 2.3.h,
-      children: List.generate(
-        items.length,
-        (index) => ContactMobileWidget(item: items[index]),
-      ),
+    return BlocBuilder<DataCubit, DataState>(
+      builder: (context, state) {
+        List<ContactModel> items = [
+          ContactModel(
+            title: 'الواتس',
+            data: context.read<DataCubit>().phone,
+            svg: AppIcons.whatsapp,
+          ),
+          ContactModel(
+            title: 'الدعم',
+            data: context.read<DataCubit>().email,
+            svg: AppIcons.email,
+          ),
+        ];
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 2.3.h,
+          children: List.generate(
+            items.length,
+            (index) => ContactMobileWidget(item: items[index]),
+          ),
+        );
+      },
     );
   }
 }

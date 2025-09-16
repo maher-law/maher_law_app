@@ -7,7 +7,12 @@ import '../theme/app_styles.dart';
 
 void pushWhatsapp(BuildContext context) {
   try {
-    launchUrlString('https://wa.me/${context.read<DataCubit>().phone}');
+    String number = context.read<DataCubit>().phone!;
+    final last10 = number.substring(number.length - 10);
+
+    final finalNumber = '20$last10';
+
+    launchUrlString('https://wa.me/$finalNumber');
   } catch (e) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

@@ -6,8 +6,8 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_styles.dart';
 
 class ContactModel {
-  final String title, data, svg;
-
+  final String title, svg;
+  final String? data;
   ContactModel({
     required this.title,
     required this.data,
@@ -52,12 +52,14 @@ class ContactWidget extends StatelessWidget {
               ),
             ),
             SizedBox(height: .8.h),
-            Text(
-              item.data,
-              style: AppStyles.style16medium(context).copyWith(
-                color: AppColors.grey,
+            if (item.data != null)
+              Text(
+                item.data!,
+                style: AppStyles.style16medium(context).copyWith(
+                  color: AppColors.grey,
+                ),
               ),
-            ),
+            if (item.data == null) const CircularProgressIndicator(),
           ],
         ),
       ],
@@ -102,12 +104,14 @@ class ContactMobileWidget extends StatelessWidget {
               ),
             ),
             SizedBox(height: .8.h),
-            Text(
-              item.data,
-              style: AppStyles.style18medium(context).copyWith(
-                color: AppColors.grey,
+            if (item.data != null)
+              Text(
+                item.data!,
+                style: AppStyles.style18medium(context).copyWith(
+                  color: AppColors.grey,
+                ),
               ),
-            ),
+            if (item.data == null) const CircularProgressIndicator(),
           ],
         ),
       ],

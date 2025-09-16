@@ -24,7 +24,9 @@ class KeywordsDesktopListView extends StatelessWidget {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    KeyworkDesktopWidget(keyword: state.keywords[index]),
+                    KeyworkDesktopWidget(
+                      keyword: state.keywords[index],
+                    ),
                   ],
                 );
               },

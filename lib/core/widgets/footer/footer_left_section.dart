@@ -22,7 +22,7 @@ class FooterLeftSection extends StatelessWidget {
         ),
         SizedBox(height: 3.h),
         Text(
-          'الهاتف: ${context.read<DataCubit>().phone.replaceFirst(RegExp(r'2'), '')}',
+          'الهاتف: ${context.read<DataCubit>().phone}',
           textAlign: SizeConfig.isMobile ? TextAlign.center : null,
           style: AppStyles.style16medium(context).copyWith(
             color: Colors.black,

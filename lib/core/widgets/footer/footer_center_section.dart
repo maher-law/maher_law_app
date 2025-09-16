@@ -22,7 +22,7 @@ class FooterCenterSection extends StatelessWidget {
         ),
         SizedBox(height: 3.h),
         Text(
-          'متاح 24 ساعة للخدمات والاستشارات القانونية عبر الواتس ${context.read<DataCubit>().phone.replaceFirst(RegExp(r'2'), '')}',
+          'متاح 24 ساعة للخدمات والاستشارات القانونية عبر الواتس ${context.read<DataCubit>().phone}',
           textAlign: SizeConfig.isMobile ? TextAlign.center : null,
           style: AppStyles.style16medium(context).copyWith(
             color: Colors.black,

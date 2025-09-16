@@ -19,7 +19,7 @@ import '../../features/about/presentation/about_screen.dart'
     deferred as about_screen;
 
 abstract class AppRouter {
-  static const home = '/';
+  static const home = '/home';
   static const services = '/services';
   static const about = '/about';
   static const contact = '/contact';

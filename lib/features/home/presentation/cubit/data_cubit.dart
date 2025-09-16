@@ -10,21 +10,21 @@ part 'data_state.dart';
 class DataCubit extends Cubit<DataState> {
   DataCubit() : super(DataInitial());
 
-  String email = 'maher.law3@gmail.com';
-  String phone = '201050764021';
+  String? email = 'mr.maher_lawyer@yahoo.com';
+  String? phone = '201050764021';
   // String email = 'taha@gmail.com';
   // String phone = '201033527637';
 
   void getData() async {
-    log('test');
     try {
-      var snpashot = await getIt<FirebaseFirestore>()
+      final snapshot = await getIt<FirebaseFirestore>()
           .collection('settings')
           .doc('contact')
           .get();
 
-      email = snpashot.data()?['email'];
-      phone = snpashot.data()?['phone'];
+      email = snapshot.data()?['email'];
+      phone = snapshot.data()?['phone'];
+      emit(state);
     } catch (e) {
       log(e.toString());
     }

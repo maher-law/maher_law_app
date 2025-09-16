@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maher_law_app/core/helpers/size_config.dart';
@@ -31,15 +32,9 @@ class BlogContentImage extends StatelessWidget {
           child: ImageRenderer(
             alt: 'صورة المقالة',
             src: context.read<BlogCubit>().blog!.thumbnailImageUrl,
-            child: Image.network(
-              context.read<BlogCubit>().blog!.thumbnailImageUrl,
+            child: CachedNetworkImage(
+              imageUrl: context.read<BlogCubit>().blog!.thumbnailImageUrl,
               width: SizeConfig.isDesktop ? 40.w : 85.w,
-              errorBuilder: (_, __, ___) => const Center(
-                child: Icon(
-                  Icons.error,
-                  color: Colors.red,
-                ),
-              ),
             ),
           ),
         ),

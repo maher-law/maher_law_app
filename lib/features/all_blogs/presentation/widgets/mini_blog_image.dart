@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:maher_law_app/core/widgets/hover_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -5,7 +6,8 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../../../core/theme/app_colors.dart';
 
 class MiniBlogImage extends StatelessWidget {
-  const MiniBlogImage({super.key, required this.image, this.width, this.height});
+  const MiniBlogImage(
+      {super.key, required this.image, this.width, this.height});
   final String image;
   final double? width, height;
 
@@ -22,10 +24,10 @@ class MiniBlogImage extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(24),
-          child: Image.network(
-            image,
-            width: width?? 100.w,
-            height:height?? 30.h,
+          child: CachedNetworkImage(
+            imageUrl: image,
+            width: width ?? 100.w,
+            height: height ?? 30.h,
             fit: BoxFit.fill,
           ),
         ),
