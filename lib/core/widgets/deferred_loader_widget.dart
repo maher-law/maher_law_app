@@ -17,11 +17,14 @@ class DeferredWidget extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           return widgetBuilder();
+        } else {
+          return const Scaffold(
+            body: Center(child: CircularProgressIndicator()),
+          );
         }
-        return const Scaffold(
-          body: Center(child: CircularProgressIndicator()),
-        );
       },
     );
   }
 }
+
+

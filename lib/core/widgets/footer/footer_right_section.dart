@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:maher_law_app/core/app_constants.dart';
 import 'package:maher_law_app/core/helpers/functions.dart';
 import 'package:maher_law_app/core/widgets/hover_button.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../../../features/home/presentation/cubit/data_cubit.dart';
 import '../../helpers/size_config.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_icons.dart';
@@ -66,7 +67,7 @@ class _SocialMediaButtonState extends State<SocialMediaButton> {
         if (widget.index == 1) {
           pushWhatsapp(context);
         } else {
-          pushToCustom(context, url: 'tel:${AppConstants.whatsappNumber}');
+          pushToCustom(context, url: 'tel:${context.read<DataCubit>().phone}');
         }
       },
       onHoverStart: () => setState(() => isActive = true),

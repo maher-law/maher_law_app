@@ -5,6 +5,8 @@ import 'package:maher_law_app/core/theme/app_colors.dart';
 import 'package:maher_law_app/core/theme/app_icons.dart';
 import 'package:maher_law_app/core/widgets/custom_icon_button.dart';
 import 'package:maher_law_app/core/widgets/nav_bar/nav_bar_action_section.dart';
+import 'package:maher_law_app/features/home/presentation/cubit/data_cubit.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../../core/theme/app_images.dart';
@@ -16,6 +18,7 @@ class SliverNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<DataCubit>().getData();
     if (context.screenWidth < SizeConfig.mobile) {
       return const SliverMobileNavBar();
     } else if (context.screenWidth < SizeConfig.tablet) {

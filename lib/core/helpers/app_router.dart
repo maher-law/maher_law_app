@@ -4,8 +4,6 @@ import 'package:maher_law_app/core/models/blog_model.dart';
 import 'package:maher_law_app/core/widgets/deferred_loader_widget.dart';
 import 'package:maher_law_app/features/blog/presentation/blog_screen.dart';
 
-import '../../features/about/presentation/about_screen.dart'
-    deferred as about_screen;
 import '../../features/all_blogs/presentation/all_blogs_screen.dart'
     deferred as blogs_screen;
 import '../../features/contact/presentation/contact_screen.dart'
@@ -13,11 +11,15 @@ import '../../features/contact/presentation/contact_screen.dart'
 import '../../features/error/page_not_found_screen.dart'
     deferred as error_screen;
 import '../../features/home/presentation/home_screen.dart';
+
 import '../../features/services/presentation/services_screen.dart'
     deferred as services_screen;
 
+import '../../features/about/presentation/about_screen.dart'
+    deferred as about_screen;
+
 abstract class AppRouter {
-  static const home = '/home';
+  static const home = '/';
   static const services = '/services';
   static const about = '/about';
   static const contact = '/contact';
@@ -98,3 +100,4 @@ abstract class AppRouter {
     },
   );
 }
+

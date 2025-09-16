@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:maher_law_app/core/app_constants.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import '../../../features/home/presentation/cubit/data_cubit.dart';
 import '../../helpers/size_config.dart';
 import '../../theme/app_styles.dart';
 
@@ -21,7 +22,7 @@ class FooterLeftSection extends StatelessWidget {
         ),
         SizedBox(height: 3.h),
         Text(
-          'الهاتف: ${AppConstants.whatsappNumber}',
+          'الهاتف: ${context.read<DataCubit>().phone.replaceFirst(RegExp(r'2'), '')}',
           textAlign: SizeConfig.isMobile ? TextAlign.center : null,
           style: AppStyles.style16medium(context).copyWith(
             color: Colors.black,
@@ -29,7 +30,7 @@ class FooterLeftSection extends StatelessWidget {
         ),
         SizedBox(height: 3.h),
         Text(
-          'الايميل: ${AppConstants.email}',
+          'الايميل: ${context.read<DataCubit>().email}',
           textAlign: SizeConfig.isMobile ? TextAlign.center : null,
           style: AppStyles.style16medium(context).copyWith(
             color: Colors.black,
